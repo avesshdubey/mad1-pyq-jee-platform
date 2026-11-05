@@ -2,7 +2,13 @@
 Initialized: 2026-11-05
 Working Directory: C:\Users\avesh\Desktop\mad1-pyq-jee-platform
 Source PYQ Papers: C:\Users\avesh\Desktop\PYQS
-Git Remote: Pending setup
-Live GitHub Pages: Pending setup
+Git Remote: https://github.com/avesshdubey/mad1-pyq-jee-platform
+Live GitHub Pages: https://avesshdubey.github.io/mad1-pyq-jee-platform/
 Stack: Python 3.13, PyMuPDF (fitz), WinRT OCR, ReportLab, HTML5, CSS3, JavaScript
 --------------------------------------------------------------------------------
+
+[2026-11-05 22:45] Milestone 1 - Baseline Setup & Remote Linking:
+- Initialized local Git repository on main branch.
+- Created public remote repository on GitHub: https://github.com/avesshdubey/mad1-pyq-jee-platform.
+- Enabled GitHub Pages on main branch with .nojekyll flag.
+- Configured 4-tier assets (GOAL.md, PRD.md, progress.txt, STEERING.md, .clinerules).

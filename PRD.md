@@ -2,7 +2,7 @@
 
 ## Tasks Breakdown
 
-- [ ] **Task 1: Establish Git & 4-Tier Configuration Baseline (`/addgit` + `/addconfig4`)**
+- [x] **Task 1: Establish Git & 4-Tier Configuration Baseline (`/addgit` + `/addconfig4`)**
   - Initialize local Git repository on `main` branch.
   - Generate comprehensive `.gitignore` tailored to Python, web assets, and raw binary archives.
   - Create baseline commit.
