@@ -1,0 +1,9 @@
+# MAD 1 (Modern Application Development 1) Project Guidelines
+
+## Roo Code Adherence & Engineering Standards
+1. Follow GDD, Ralph Loop, and CodeRabbit quality gates strictly.
+2. Maintain durable state on disk across iterations in PRD.md and progress.txt.
+3. Every completed milestone must pass verification tests and auto-push to GitHub origin.
+4. Ensure real functionality only - no fake dashboards or placeholder data.
+5. Provide accessible, high-contrast, responsive IIT Madras CBT interface.
+6. Verify verbatim question extraction and 150-DPI visual question card captures.

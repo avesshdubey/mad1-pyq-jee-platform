@@ -1,0 +1,8 @@
+# Ralph Loop Progress Log - MAD 1 PYQ & JEE CBT Platform
+Initialized: 2026-11-05
+Working Directory: C:\Users\avesh\Desktop\mad1-pyq-jee-platform
+Source PYQ Papers: C:\Users\avesh\Desktop\PYQS
+Git Remote: Pending setup
+Live GitHub Pages: Pending setup
+Stack: Python 3.13, PyMuPDF (fitz), WinRT OCR, ReportLab, HTML5, CSS3, JavaScript
+--------------------------------------------------------------------------------
