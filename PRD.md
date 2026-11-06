@@ -55,3 +55,15 @@
   - Preserved 100% data integrity for official ground-truth correct answer keys across `data/questions.json`, `data/questions_data.js`, and `mad1_questions_categorized.pdf`.
   - Built and styled interactive "Show Answer & Detailed Explanation" feature (`#btnToggleSolution` and `#solutionDrawer`) with step-by-step logical derivation, core IITM concepts, high-yield exam tricks (< 15s), and common trap alerts.
   - Expanded automated test suite to 8 tests in `tests/test_platform.py` validating explanation schema, UI components, and state management.
+
+- [x] **Task 9: Fix Option Truncation Across Page Boundaries, Eliminate Multi-Question Card Bleeding & Align Accurate 4-Week Syllabus Taxonomy**
+  - Eliminated option truncation on multi-page questions (e.g. `MAD1_163` where prompt and 4 option images spanned onto the continuation page; resolved all 63 questions where options spilled across the page boundary after the `Options :` heading).
+  - Fixed multi-question card bleeding (e.g. `MAD1_135` where Question 45 and Question 46 appeared together on one card) by strictly bounding top and bottom cropping coordinates to the active question's exact raw ID.
+  - Reclassified all 301 questions into authentic curriculum taxonomy based on actual content, resolving 85 previously miscategorized questions:
+    - Week 1: Internet Architecture, HTTP & Network Calculations (76 questions)
+    - Week 2: HTML5, CSS3, Box Model & Form Controls (104 questions)
+    - Week 3: Backend Python, Flask Essentials, Routing & Request Handling (80 questions)
+    - Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications (41 questions)
+  - Regenerated publication-grade categorized PDF `mad1_questions_categorized.pdf` (23.60 MB) with clean non-overlapping visual cards and updated syllabus summary.
+  - Updated `index.html` section tabs, `data/questions.json`, `data/questions_data.js`, and `data/stats.json`.
+  - Verified test suite passes 8/8 tests in `tests/test_platform.py`.

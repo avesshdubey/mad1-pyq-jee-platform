@@ -45,10 +45,10 @@ class TestMAD1Platform(unittest.TestCase):
             prefix = q["week"].split(":")[0].strip()
             week_counts[prefix] = week_counts.get(prefix, 0) + 1
 
-        self.assertEqual(week_counts.get("Week 1"), 50, f"Week 1 must contain 50 questions (got {week_counts.get('Week 1')})")
-        self.assertEqual(week_counts.get("Week 2"), 115, f"Week 2 must contain 115 questions (got {week_counts.get('Week 2')})")
-        self.assertEqual(week_counts.get("Week 3"), 78, f"Week 3 must contain 78 questions (got {week_counts.get('Week 3')})")
-        self.assertEqual(week_counts.get("Week 4"), 58, f"Week 4 must contain 58 questions (got {week_counts.get('Week 4')})")
+        self.assertEqual(week_counts.get("Week 1"), 76, f"Week 1 must contain 76 questions (got {week_counts.get('Week 1')})")
+        self.assertEqual(week_counts.get("Week 2"), 104, f"Week 2 must contain 104 questions (got {week_counts.get('Week 2')})")
+        self.assertEqual(week_counts.get("Week 3"), 80, f"Week 3 must contain 80 questions (got {week_counts.get('Week 3')})")
+        self.assertEqual(week_counts.get("Week 4"), 41, f"Week 4 must contain 41 questions (got {week_counts.get('Week 4')})")
         self.assertEqual(sum(week_counts.values()), 301, "Total questions across all weeks must equal 301")
 
     def test_04_card_images_exist_and_non_empty(self):

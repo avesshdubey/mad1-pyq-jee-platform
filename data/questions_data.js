@@ -81,8 +81,8 @@ window.MAD1_QUESTIONS = [
       "6406534366184"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298434.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.3 Routing, Dynamic URL Converters & View Functions",
     "id": "MAD1_002",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
@@ -91,15 +91,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Flask requires `render_template(template_name, **context)` to render HTML templates from the `templates/` folder.",
-        "Step 2: Route endpoints must be registered using the decorator `@app.route('/score')`.",
-        "Step 3: Context variables are passed as keyword arguments: `render_template('score.html', mayur=50, manoj=45)`.",
-        "Step 4: The function `render()` does not exist in Flask (that is Django's syntax).",
-        "Step 5: Therefore, Option B with `@app.route('/score')` and `return render_template('score.html', mayur=50, manoj=45)` is correct."
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
       ],
-      "concept": "Flask View Function & Template Context Passing: `@app.route()` decorator binds URL endpoints to Python view functions returning rendered templates with keyword context.",
-      "exam_trick": "Look for `render_template`, never `render`. In Flask, it's always `render_template('file.html', var=val)`.",
-      "trap_alert": "Confusing Django's `render(request, ...)` helper with Flask's `render_template(...)`."
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
     }
   },
   {
@@ -132,8 +131,8 @@ window.MAD1_QUESTIONS = [
       "6406534366189"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298435.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
+    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_003",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
@@ -142,15 +141,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: The selector is `.container p.highlight`.",
-        "Step 2: The space between `.container` and `p.highlight` is the descendant combinator.",
-        "Step 3: The descendant combinator matches ALL target elements nested inside `.container` at any depth, not merely direct children.",
-        "Step 4: `p.highlight` specifically targets paragraph `<p>` tags carrying the `highlight` class.",
-        "Step 5: Thus, all elements with class `highlight` that are descendants of `.container` receive the red background."
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
       ],
-      "concept": "CSS Combinators: Descendant selector (` `) matches any nested descendant at arbitrary depth; Child selector (`>`) matches strictly direct child elements.",
-      "exam_trick": "Space = Anywhere inside (descendants). Greater-than `>` = Immediate child only.",
-      "trap_alert": "Confusing descendant selector (space) with direct child selector (`>`)."
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
     }
   },
   {
@@ -183,8 +181,8 @@ window.MAD1_QUESTIONS = [
       "6406534366191"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298436.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_004",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
@@ -193,15 +191,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: `templatel` is created with Python's standard `string.Template('Hello $name, welcome to $city!')`.",
-        "Step 2: `templatel.substitute(name='Alice')` is called, but `$city` is not provided in keyword arguments.",
-        "Step 3: Python's `string.Template.substitute()` strictly requires all placeholders to be provided; missing keys raise a `KeyError: 'city'`.",
-        "Step 4: In contrast, Jinja2's `template2.render()` does not throw KeyError when keys are missing (it defaults to empty string).",
-        "Step 5: Therefore, `templatel.substitute(name='Alice')` throws the KeyError."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Python `string.Template` vs Jinja2 Template Variable Handling: `string.Template.substitute()` raises KeyError on missing keys (use `safe_substitute()` to avoid), whereas Jinja2 handles undefined variables gracefully by default.",
-      "exam_trick": "Standard `string.Template.substitute()` = strict (KeyError on missing variable). `safe_substitute()` or `jinja2.render()` = lenient.",
-      "trap_alert": "Assuming Jinja2 throws an error on missing variables; Jinja2 renders empty strings for missing context variables unless `StrictUndefined` is explicitly configured."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -286,7 +283,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298438.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.6 Flask Responses, Redirects & Error Handling",
+    "subtopic": "3.5 Flask Responses, Redirects & Error Handling",
     "id": "MAD1_006",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
@@ -335,8 +332,8 @@ window.MAD1_QUESTIONS = [
       "6406534366204"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298439.jpg",
-    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
-    "subtopic": "1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers)",
+    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
+    "subtopic": "2.3 CSS Selectors, Specificity & Cascade Rules",
     "id": "MAD1_007",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
@@ -345,17 +342,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Green",
       "step_by_step": [
-        "Step 1: Inspect the target HTML element: `<p class=\"important\" id=\"highlight\">This is a paragraph.</p>`.",
-        "Step 2: Calculate CSS Specificity (IDs, Classes, Elements) for all matching rules:",
-        "  - `p`: Specificity = (0, 0, 1) -> color: blue",
-        "  - `.important`: Specificity = (0, 1, 0) -> color: red",
-        "  - `#highlight`: Specificity = (1, 0, 0) -> color: green",
-        "Step 3: Compare specificities: (1, 0, 0) beats (0, 1, 0) and (0, 0, 1). The ID selector `#highlight` has highest specificity.",
-        "Step 4: Therefore, the paragraph renders in Green."
+        "Step 1: Inspect the competing CSS rules targeting the `<p>` element:\n  - Element selector `p`: Specificity = (0, 0, 1)\n  - Class selector `.important`: Specificity = (0, 1, 0)\n  - ID selector `#highlight`: Specificity = (1, 0, 0).",
+        "Step 2: Compare specificities from left to right: (1, 0, 0) > (0, 1, 0) > (0, 0, 1).",
+        "Step 3: The ID selector `#highlight` has the highest specificity (1 ID vs 0 IDs).",
+        "Step 4: Therefore, the color defined by `#highlight` ('green') wins, regardless of order in the stylesheet."
       ],
-      "concept": "CSS Cascade & Specificity Weighting: Inline style (1,0,0,0) > ID selector (0,1,0,0) > Class / Attribute / Pseudo-class (0,0,1,0) > Element / Pseudo-element (0,0,0,1). Source order only breaks ties.",
-      "exam_trick": "Count the '#' symbols first! One ID rule overrides any number of class rules. Since `#highlight` is an ID, Green wins immediately.",
-      "trap_alert": "Do not be distracted by the name `.important`! It is a normal class with specificity (0,1,0); only the actual CSS declaration `!important` elevates priority."
+      "concept": "CSS Specificity Hierarchy: Inline styles (1,0,0,0) > ID selectors (0,1,0,0) > Class/Attribute/Pseudo-class selectors (0,0,1,0) > Element selectors (0,0,0,1).",
+      "exam_trick": "Rule of thumb: Count IDs first. Any rule with an ID beats any number of classes without `!important`.",
+      "trap_alert": "Assuming `.important` wins because of its class name — it is merely a normal class name, NOT the `!important` directive!"
     }
   },
   {
@@ -448,14 +442,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -483,14 +477,15 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Value: 250",
       "correct_text": "250 MB",
       "step_by_step": [
-        "Step 1: Network bandwidth given = 2 Gbps = 2,000,000,000 bits per second.",
-        "Step 2: Convert bits to Bytes by dividing by 8: (2 × 10^9) / 8 = 250 × 10^6 Bytes per second.",
-        "Step 3: Apply the prompt's specified decimal conversion convention (1 KB = 1000 Bytes, 1 MB = 1000 KB = 10^6 Bytes).",
-        "Step 4: Maximum document size per second = (250 × 10^6 Bytes) / 10^6 = 250 MB."
+        "Step 1: Network bandwidth capacity is given as 2 Gbps (gigabits per second).",
+        "Step 2: The question asks for transmission volume in MB (Megabytes) per second.",
+        "Step 3: Recall binary/networking conversion: 8 bits = 1 Byte.",
+        "Step 4: 2 Gbps = 2000 Mbps (or 2 × 10^9 bits/sec).",
+        "Step 5: Convert megabits to Megabytes: 2000 Mbps / 8 = 250 MB/s. Hence, the numerical value is 250."
       ],
-      "concept": "Bandwidth & Data Rate Conversion: Bandwidth in bits/sec must be divided by 8 to get Bytes/sec. Pay strict attention to decimal (1000) vs. binary (1024) prefix definitions in problem specifications.",
-      "exam_trick": "Mental shortcut: (Gbps * 1000) / 8 = (2 * 1000) / 8 = 2000 / 8 = 250 MB/s. Instant 3-second calculation!",
-      "trap_alert": "Confusing gigabits (Gb) with gigabytes (GB) and forgetting to divide by 8, yielding an incorrect answer of 2000."
+      "concept": "Bandwidth Unit Conversion: 1 Byte = 8 bits. Always divide gigabits or megabits by 8 when converting to gigabytes or megabytes.",
+      "exam_trick": "Fast conversion: Gbps to MB/s -> Multiply Gbps by 1000 and divide by 8: (2 * 1000) / 8 = 250 MB!",
+      "trap_alert": "Forgetting to divide by 8 and reporting 2000 MB instead of 250 MB."
     }
   },
   {
@@ -506,8 +501,8 @@ window.MAD1_QUESTIONS = [
       "72"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298443.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.2 Data Transmission, Bandwidth, RTT & Propagation Delay Calculations",
     "id": "MAD1_011",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
@@ -621,14 +616,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -671,14 +666,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -811,8 +806,8 @@ window.MAD1_QUESTIONS = [
       "6406531148333"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345241.jpg",
-    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
-    "subtopic": "1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.2 Flask Application Setup & App Configuration",
     "id": "MAD1_017",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
@@ -922,14 +917,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "64000 bits",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -972,14 +967,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -1012,8 +1007,8 @@ window.MAD1_QUESTIONS = [
       "6406531148346"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345244.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_021",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf",
@@ -1023,14 +1018,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -1081,14 +1076,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -1282,14 +1277,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -1322,8 +1317,8 @@ window.MAD1_QUESTIONS = [
       "6406531148393"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345256.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.2 Data Transmission, Bandwidth, RTT & Propagation Delay Calculations",
     "id": "MAD1_027",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
@@ -1382,14 +1377,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "1 - c, 2 - a, 3 - b, 4 - d",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze the client-server architecture model and internet protocols (DNS, TCP, IP, HTTP).",
+        "Step 2: DNS translates human-readable domain names into routable numerical IP addresses.",
+        "Step 3: TCP provides reliable, ordered byte-stream delivery with 3-way handshakes, while UDP offers lightweight connectionless transmission.",
+        "Step 4: Select the statement that accurately captures core internet infrastructure operation."
       ],
-      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Web & Internet Architectural Foundations: Client-server interaction, name resolution (DNS), and transport-layer abstractions.",
+      "exam_trick": "DNS = Name-to-IP directory; TCP = Reliable connection; Port 80 = Standard HTTP; Port 443 = HTTPS.",
+      "trap_alert": "Confusing application layer protocols (HTTP, DNS) with transport layer protocols (TCP, UDP)."
     }
   },
   {
@@ -1432,14 +1427,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -1482,14 +1477,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -1632,14 +1627,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "1101111",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -1682,14 +1677,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "11 12",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -1732,14 +1727,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "1 - d, 2 - c, 3 - b, 4 - a",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze the client-server architecture model and internet protocols (DNS, TCP, IP, HTTP).",
+        "Step 2: DNS translates human-readable domain names into routable numerical IP addresses.",
+        "Step 3: TCP provides reliable, ordered byte-stream delivery with 3-way handshakes, while UDP offers lightweight connectionless transmission.",
+        "Step 4: Select the statement that accurately captures core internet infrastructure operation."
       ],
-      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Web & Internet Architectural Foundations: Client-server interaction, name resolution (DNS), and transport-layer abstractions.",
+      "exam_trick": "DNS = Name-to-IP directory; TCP = Reliable connection; Port 80 = Standard HTTP; Port 443 = HTTPS.",
+      "trap_alert": "Confusing application layer protocols (HTTP, DNS) with transport layer protocols (TCP, UDP)."
     }
   },
   {
@@ -1823,7 +1818,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_640653470039.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.4 CSS Box Model & Layouts (Flexbox, Positioning & Spacing)",
+    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
     "id": "MAD1_037",
     "source_papers": [
       "Quiz 1 Jan23  .pdf",
@@ -1833,14 +1828,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
-        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
-        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
-        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
-      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
-      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -1885,14 +1880,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Perceivable",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -1990,14 +1985,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Options B, C, D",
       "correct_text": "Statement I represents a one-to-many relationship between Author and Book. | Statement II represents a one-to-many relationship between Publisher and | Statement III represents a many-to-one relationship between Book and Genre.",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -2030,8 +2025,8 @@ window.MAD1_QUESTIONS = [
       "6406532467944"
     ],
     "card_image": "assets/q_cards/mad1_card_640653737405.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_041",
     "source_papers": [
       "IIT M DIPLOMA AN2 EXAM QDD2 25 Feb 2024.pdf"
@@ -2040,14 +2035,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "1-d, 2-b, 3-a, 4- c",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -2092,14 +2087,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Options B, C, D",
       "correct_text": "Statement I represents a one-to-many relationship between Author and Book. | Statement II represents a one-to-many relationship between Publisher and | Statement III represents a many-to-one relationship between Book and Genre.",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -2132,8 +2127,8 @@ window.MAD1_QUESTIONS = [
       "6406532468768"
     ],
     "card_image": "assets/q_cards/mad1_card_640653737691.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_043",
     "source_papers": [
       "IIT M DIPLOMA AN3 EXAM QDD3 25 Feb 2024.pdf"
@@ -2142,14 +2137,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "1-d, 2-b, 3-a, 4- c",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -2194,14 +2189,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Options B, C, D",
       "correct_text": "Statement I represents a one-to-many relationship between Author and Book. | Statement II represents a one-to-many relationship between Publisher and | Statement III represents a many-to-one relationship between Book and Genre.",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -2234,8 +2229,8 @@ window.MAD1_QUESTIONS = [
       "6406532469592"
     ],
     "card_image": "assets/q_cards/mad1_card_640653737977.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_045",
     "source_papers": [
       "IIT M DIPLOMA AN4 EXAM QDD4 25 Feb 2024.pdf"
@@ -2244,14 +2239,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "1-d, 2-b, 3-a, 4- c",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -2435,7 +2430,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113763.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.4 CSS Box Model & Layouts (Flexbox, Positioning & Spacing)",
+    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
     "id": "MAD1_049",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
@@ -2444,14 +2439,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
-        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
-        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
-        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
-      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
-      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -2496,14 +2491,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "RED",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -2596,14 +2591,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "python main.py Jailer",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -2646,14 +2641,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -2840,7 +2835,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113771.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
-    "subtopic": "1.3 Character Encoding & Representation (ASCII, Unicode, UTF-8 & Binary)",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_057",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
@@ -2849,14 +2844,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Identify character encoding standard: Standard ASCII (7 bits, 128 characters), Extended ASCII (8 bits, 256 characters), Unicode (code points U+0000 to U+10FFFF), UTF-8 (variable 1 to 4 bytes).",
-        "Step 2: Evaluate code point values: standard English characters (0-127) encode into exactly 1 byte in UTF-8.",
-        "Step 3: Verify binary length and backward-compatibility rules.",
-        "Step 4: Conclude which statement aligns with character representation architecture."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Character Representation Architecture: UTF-8 provides universal character representation while maintaining 100% binary backward compatibility with standard 7-bit ASCII.",
-      "exam_trick": "Standard ASCII code points (0-127) take 1 byte in UTF-8. UTF-8 is self-synchronizing and variable-length.",
-      "trap_alert": "Believing that UTF-8 always uses 8 bits for all characters globally."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -2899,14 +2894,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
-        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
-        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
-        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
-      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
-      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -3190,7 +3185,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114390.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.4 CSS Box Model & Layouts (Flexbox, Positioning & Spacing)",
+    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
     "id": "MAD1_064",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
@@ -3199,14 +3194,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
-        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
-        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
-        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
-      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
-      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -3299,14 +3294,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "python main.py Jailer",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -3349,14 +3344,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -3543,7 +3538,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114398.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
-    "subtopic": "1.3 Character Encoding & Representation (ASCII, Unicode, UTF-8 & Binary)",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_071",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
@@ -3552,14 +3547,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Identify character encoding standard: Standard ASCII (7 bits, 128 characters), Extended ASCII (8 bits, 256 characters), Unicode (code points U+0000 to U+10FFFF), UTF-8 (variable 1 to 4 bytes).",
-        "Step 2: Evaluate code point values: standard English characters (0-127) encode into exactly 1 byte in UTF-8.",
-        "Step 3: Verify binary length and backward-compatibility rules.",
-        "Step 4: Conclude which statement aligns with character representation architecture."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Character Representation Architecture: UTF-8 provides universal character representation while maintaining 100% binary backward compatibility with standard 7-bit ASCII.",
-      "exam_trick": "Standard ASCII code points (0-127) take 1 byte in UTF-8. UTF-8 is self-synchronizing and variable-length.",
-      "trap_alert": "Believing that UTF-8 always uses 8 bits for all characters globally."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -3602,14 +3597,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
-        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
-        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
-        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
-      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
-      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -3893,7 +3888,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114103.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.4 CSS Box Model & Layouts (Flexbox, Positioning & Spacing)",
+    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
     "id": "MAD1_078",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
@@ -3902,14 +3897,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
-        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
-        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
-        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
-      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
-      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -4002,14 +3997,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "python main.py Jailer",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -4052,14 +4047,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -4246,7 +4241,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114111.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
-    "subtopic": "1.3 Character Encoding & Representation (ASCII, Unicode, UTF-8 & Binary)",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_085",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
@@ -4255,14 +4250,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Identify character encoding standard: Standard ASCII (7 bits, 128 characters), Extended ASCII (8 bits, 256 characters), Unicode (code points U+0000 to U+10FFFF), UTF-8 (variable 1 to 4 bytes).",
-        "Step 2: Evaluate code point values: standard English characters (0-127) encode into exactly 1 byte in UTF-8.",
-        "Step 3: Verify binary length and backward-compatibility rules.",
-        "Step 4: Conclude which statement aligns with character representation architecture."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Character Representation Architecture: UTF-8 provides universal character representation while maintaining 100% binary backward compatibility with standard 7-bit ASCII.",
-      "exam_trick": "Standard ASCII code points (0-127) take 1 byte in UTF-8. UTF-8 is self-synchronizing and variable-length.",
-      "trap_alert": "Believing that UTF-8 always uses 8 bits for all characters globally."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -4305,14 +4300,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
-        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
-        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
-        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
-      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
-      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -4655,14 +4650,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "a → c → b → d",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze the client-server architecture model and internet protocols (DNS, TCP, IP, HTTP).",
+        "Step 2: DNS translates human-readable domain names into routable numerical IP addresses.",
+        "Step 3: TCP provides reliable, ordered byte-stream delivery with 3-way handshakes, while UDP offers lightweight connectionless transmission.",
+        "Step 4: Select the statement that accurately captures core internet infrastructure operation."
       ],
-      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Web & Internet Architectural Foundations: Client-server interaction, name resolution (DNS), and transport-layer abstractions.",
+      "exam_trick": "DNS = Name-to-IP directory; TCP = Reliable connection; Port 80 = Standard HTTP; Port 443 = HTTPS.",
+      "trap_alert": "Confusing application layer protocols (HTTP, DNS) with transport layer protocols (TCP, UDP)."
     }
   },
   {
@@ -4705,15 +4700,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: The `<dl>` element defines a Description/Definition List in HTML5.",
-        "Step 2: `<dt>` defines the description term, rendered flush left without indentation.",
-        "Step 3: `<dd>` defines the description details, rendered indented below the corresponding `<dt>`.",
-        "Step 4: Unlike `<ul>` or `<ol>`, `<dl>` generates NO bullet points or numbers.",
-        "Step 5: Therefore, 'Flask' and 'SQLAlchemy' appear flush left, while their descriptions are indented beneath them."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "HTML5 Description Lists (`<dl>`, `<dt>`, `<dd>`): Semantic structure for key-value pairs, glossaries, and metadata catalogs.",
-      "exam_trick": "Mnemonic: DT = Direct Term (no indent), DD = Detailed Data (indented). Never has bullets (-).",
-      "trap_alert": "Selecting options that display bullet points or options where `<dd>` text is not indented."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -4746,8 +4740,8 @@ window.MAD1_QUESTIONS = [
       "6406534364642"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297894.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.3 Routing, Dynamic URL Converters & View Functions",
     "id": "MAD1_095",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
@@ -4756,15 +4750,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Flask requires `render_template(template_name, **context)` to render HTML templates from the `templates/` folder.",
-        "Step 2: Route endpoints must be registered using the decorator `@app.route('/score')`.",
-        "Step 3: Context variables are passed as keyword arguments: `render_template('score.html', mayur=50, manoj=45)`.",
-        "Step 4: The function `render()` does not exist in Flask (that is Django's syntax).",
-        "Step 5: Therefore, Option B with `@app.route('/score')` and `return render_template('score.html', mayur=50, manoj=45)` is correct."
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
       ],
-      "concept": "Flask View Function & Template Context Passing: `@app.route()` decorator binds URL endpoints to Python view functions returning rendered templates with keyword context.",
-      "exam_trick": "Look for `render_template`, never `render`. In Flask, it's always `render_template('file.html', var=val)`.",
-      "trap_alert": "Confusing Django's `render(request, ...)` helper with Flask's `render_template(...)`."
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
     }
   },
   {
@@ -4797,8 +4790,8 @@ window.MAD1_QUESTIONS = [
       "6406534364647"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297895.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
+    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_096",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
@@ -4807,15 +4800,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: The selector is `.container p.highlight`.",
-        "Step 2: The space between `.container` and `p.highlight` is the descendant combinator.",
-        "Step 3: The descendant combinator matches ALL target elements nested inside `.container` at any depth, not merely direct children.",
-        "Step 4: `p.highlight` specifically targets paragraph `<p>` tags carrying the `highlight` class.",
-        "Step 5: Thus, all elements with class `highlight` that are descendants of `.container` receive the red background."
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
       ],
-      "concept": "CSS Combinators: Descendant selector (` `) matches any nested descendant at arbitrary depth; Child selector (`>`) matches strictly direct child elements.",
-      "exam_trick": "Space = Anywhere inside (descendants). Greater-than `>` = Immediate child only.",
-      "trap_alert": "Confusing descendant selector (space) with direct child selector (`>`)."
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
     }
   },
   {
@@ -4848,8 +4840,8 @@ window.MAD1_QUESTIONS = [
       "6406534364649"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297896.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_097",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
@@ -4858,15 +4850,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: `templatel` is created with Python's standard `string.Template('Hello $name, welcome to $city!')`.",
-        "Step 2: `templatel.substitute(name='Alice')` is called, but `$city` is not provided in keyword arguments.",
-        "Step 3: Python's `string.Template.substitute()` strictly requires all placeholders to be provided; missing keys raise a `KeyError: 'city'`.",
-        "Step 4: In contrast, Jinja2's `template2.render()` does not throw KeyError when keys are missing (it defaults to empty string).",
-        "Step 5: Therefore, `templatel.substitute(name='Alice')` throws the KeyError."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Python `string.Template` vs Jinja2 Template Variable Handling: `string.Template.substitute()` raises KeyError on missing keys (use `safe_substitute()` to avoid), whereas Jinja2 handles undefined variables gracefully by default.",
-      "exam_trick": "Standard `string.Template.substitute()` = strict (KeyError on missing variable). `safe_substitute()` or `jinja2.render()` = lenient.",
-      "trap_alert": "Assuming Jinja2 throws an error on missing variables; Jinja2 renders empty strings for missing context variables unless `StrictUndefined` is explicitly configured."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -4951,7 +4942,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297898.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.6 Flask Responses, Redirects & Error Handling",
+    "subtopic": "3.5 Flask Responses, Redirects & Error Handling",
     "id": "MAD1_099",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
@@ -5000,8 +4991,8 @@ window.MAD1_QUESTIONS = [
       "6406534364662"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297899.jpg",
-    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
-    "subtopic": "1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers)",
+    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
+    "subtopic": "2.3 CSS Selectors, Specificity & Cascade Rules",
     "id": "MAD1_100",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
@@ -5010,17 +5001,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Green",
       "step_by_step": [
-        "Step 1: Inspect the target HTML element: `<p class=\"important\" id=\"highlight\">This is a paragraph.</p>`.",
-        "Step 2: Calculate CSS Specificity (IDs, Classes, Elements) for all matching rules:",
-        "  - `p`: Specificity = (0, 0, 1) -> color: blue",
-        "  - `.important`: Specificity = (0, 1, 0) -> color: red",
-        "  - `#highlight`: Specificity = (1, 0, 0) -> color: green",
-        "Step 3: Compare specificities: (1, 0, 0) beats (0, 1, 0) and (0, 0, 1). The ID selector `#highlight` has highest specificity.",
-        "Step 4: Therefore, the paragraph renders in Green."
+        "Step 1: Deconstruct competing selectors into specificity tuples: (Inline, IDs, Classes/Attributes/Pseudo-classes, Elements/Pseudo-elements).",
+        "Step 2: Compare from left to right: (1, 0, 0, 0) > (0, 1, 0, 0) > (0, 0, 1, 0) > (0, 0, 0, 1).",
+        "Step 3: An ID selector always overrules any number of class selectors.",
+        "Step 4: If specificities are equal, the rule defined later in the stylesheet wins."
       ],
-      "concept": "CSS Cascade & Specificity Weighting: Inline style (1,0,0,0) > ID selector (0,1,0,0) > Class / Attribute / Pseudo-class (0,0,1,0) > Element / Pseudo-element (0,0,0,1). Source order only breaks ties.",
-      "exam_trick": "Count the '#' symbols first! One ID rule overrides any number of class rules. Since `#highlight` is an ID, Green wins immediately.",
-      "trap_alert": "Do not be distracted by the name `.important`! It is a normal class with specificity (0,1,0); only the actual CSS declaration `!important` elevates priority."
+      "concept": "CSS Specificity Cascade Hierarchy: Precision determines rule precedence, with source order serving solely as a tie-breaker.",
+      "exam_trick": "Count IDs (#) first. If one has an ID and others do not, it wins instantly without further calculation.",
+      "trap_alert": "Assuming a higher class count can defeat an ID selector — specificity levels never carry over."
     }
   },
   {
@@ -5113,14 +5101,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -5136,8 +5124,8 @@ window.MAD1_QUESTIONS = [
       "72"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297903.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.2 Data Transmission, Bandwidth, RTT & Propagation Delay Calculations",
     "id": "MAD1_103",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
@@ -5251,14 +5239,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -5301,14 +5289,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -5451,15 +5439,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: The `<dl>` element defines a Description/Definition List in HTML5.",
-        "Step 2: `<dt>` defines the description term, rendered flush left without indentation.",
-        "Step 3: `<dd>` defines the description details, rendered indented below the corresponding `<dt>`.",
-        "Step 4: Unlike `<ul>` or `<ol>`, `<dl>` generates NO bullet points or numbers.",
-        "Step 5: Therefore, 'Flask' and 'SQLAlchemy' appear flush left, while their descriptions are indented beneath them."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "HTML5 Description Lists (`<dl>`, `<dt>`, `<dd>`): Semantic structure for key-value pairs, glossaries, and metadata catalogs.",
-      "exam_trick": "Mnemonic: DT = Direct Term (no indent), DD = Detailed Data (indented). Never has bullets (-).",
-      "trap_alert": "Selecting options that display bullet points or options where `<dd>` text is not indented."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -5492,8 +5479,8 @@ window.MAD1_QUESTIONS = [
       "6406534365413"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298164.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.3 Routing, Dynamic URL Converters & View Functions",
     "id": "MAD1_110",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
@@ -5502,15 +5489,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Flask requires `render_template(template_name, **context)` to render HTML templates from the `templates/` folder.",
-        "Step 2: Route endpoints must be registered using the decorator `@app.route('/score')`.",
-        "Step 3: Context variables are passed as keyword arguments: `render_template('score.html', mayur=50, manoj=45)`.",
-        "Step 4: The function `render()` does not exist in Flask (that is Django's syntax).",
-        "Step 5: Therefore, Option B with `@app.route('/score')` and `return render_template('score.html', mayur=50, manoj=45)` is correct."
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
       ],
-      "concept": "Flask View Function & Template Context Passing: `@app.route()` decorator binds URL endpoints to Python view functions returning rendered templates with keyword context.",
-      "exam_trick": "Look for `render_template`, never `render`. In Flask, it's always `render_template('file.html', var=val)`.",
-      "trap_alert": "Confusing Django's `render(request, ...)` helper with Flask's `render_template(...)`."
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
     }
   },
   {
@@ -5543,8 +5529,8 @@ window.MAD1_QUESTIONS = [
       "6406534365418"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298165.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
+    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_111",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
@@ -5553,15 +5539,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: The selector is `.container p.highlight`.",
-        "Step 2: The space between `.container` and `p.highlight` is the descendant combinator.",
-        "Step 3: The descendant combinator matches ALL target elements nested inside `.container` at any depth, not merely direct children.",
-        "Step 4: `p.highlight` specifically targets paragraph `<p>` tags carrying the `highlight` class.",
-        "Step 5: Thus, all elements with class `highlight` that are descendants of `.container` receive the red background."
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
       ],
-      "concept": "CSS Combinators: Descendant selector (` `) matches any nested descendant at arbitrary depth; Child selector (`>`) matches strictly direct child elements.",
-      "exam_trick": "Space = Anywhere inside (descendants). Greater-than `>` = Immediate child only.",
-      "trap_alert": "Confusing descendant selector (space) with direct child selector (`>`)."
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
     }
   },
   {
@@ -5594,8 +5579,8 @@ window.MAD1_QUESTIONS = [
       "6406534365420"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298166.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_112",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
@@ -5604,15 +5589,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: `templatel` is created with Python's standard `string.Template('Hello $name, welcome to $city!')`.",
-        "Step 2: `templatel.substitute(name='Alice')` is called, but `$city` is not provided in keyword arguments.",
-        "Step 3: Python's `string.Template.substitute()` strictly requires all placeholders to be provided; missing keys raise a `KeyError: 'city'`.",
-        "Step 4: In contrast, Jinja2's `template2.render()` does not throw KeyError when keys are missing (it defaults to empty string).",
-        "Step 5: Therefore, `templatel.substitute(name='Alice')` throws the KeyError."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Python `string.Template` vs Jinja2 Template Variable Handling: `string.Template.substitute()` raises KeyError on missing keys (use `safe_substitute()` to avoid), whereas Jinja2 handles undefined variables gracefully by default.",
-      "exam_trick": "Standard `string.Template.substitute()` = strict (KeyError on missing variable). `safe_substitute()` or `jinja2.render()` = lenient.",
-      "trap_alert": "Assuming Jinja2 throws an error on missing variables; Jinja2 renders empty strings for missing context variables unless `StrictUndefined` is explicitly configured."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -5697,7 +5681,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298168.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.6 Flask Responses, Redirects & Error Handling",
+    "subtopic": "3.5 Flask Responses, Redirects & Error Handling",
     "id": "MAD1_114",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
@@ -5746,8 +5730,8 @@ window.MAD1_QUESTIONS = [
       "6406534365433"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298169.jpg",
-    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
-    "subtopic": "1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers)",
+    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
+    "subtopic": "2.3 CSS Selectors, Specificity & Cascade Rules",
     "id": "MAD1_115",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
@@ -5756,17 +5740,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Green",
       "step_by_step": [
-        "Step 1: Inspect the target HTML element: `<p class=\"important\" id=\"highlight\">This is a paragraph.</p>`.",
-        "Step 2: Calculate CSS Specificity (IDs, Classes, Elements) for all matching rules:",
-        "  - `p`: Specificity = (0, 0, 1) -> color: blue",
-        "  - `.important`: Specificity = (0, 1, 0) -> color: red",
-        "  - `#highlight`: Specificity = (1, 0, 0) -> color: green",
-        "Step 3: Compare specificities: (1, 0, 0) beats (0, 1, 0) and (0, 0, 1). The ID selector `#highlight` has highest specificity.",
-        "Step 4: Therefore, the paragraph renders in Green."
+        "Step 1: Deconstruct competing selectors into specificity tuples: (Inline, IDs, Classes/Attributes/Pseudo-classes, Elements/Pseudo-elements).",
+        "Step 2: Compare from left to right: (1, 0, 0, 0) > (0, 1, 0, 0) > (0, 0, 1, 0) > (0, 0, 0, 1).",
+        "Step 3: An ID selector always overrules any number of class selectors.",
+        "Step 4: If specificities are equal, the rule defined later in the stylesheet wins."
       ],
-      "concept": "CSS Cascade & Specificity Weighting: Inline style (1,0,0,0) > ID selector (0,1,0,0) > Class / Attribute / Pseudo-class (0,0,1,0) > Element / Pseudo-element (0,0,0,1). Source order only breaks ties.",
-      "exam_trick": "Count the '#' symbols first! One ID rule overrides any number of class rules. Since `#highlight` is an ID, Green wins immediately.",
-      "trap_alert": "Do not be distracted by the name `.important`! It is a normal class with specificity (0,1,0); only the actual CSS declaration `!important` elevates priority."
+      "concept": "CSS Specificity Cascade Hierarchy: Precision determines rule precedence, with source order serving solely as a tie-breaker.",
+      "exam_trick": "Count IDs (#) first. If one has an ID and others do not, it wins instantly without further calculation.",
+      "trap_alert": "Assuming a higher class count can defeat an ID selector — specificity levels never carry over."
     }
   },
   {
@@ -5859,14 +5840,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -5882,8 +5863,8 @@ window.MAD1_QUESTIONS = [
       "72"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298173.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.2 Data Transmission, Bandwidth, RTT & Propagation Delay Calculations",
     "id": "MAD1_118",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
@@ -5997,14 +5978,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -6047,14 +6028,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -6199,14 +6180,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Give users enough time to read and use content.",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -6348,7 +6329,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_640653825034.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.5 Full-Stack CRUD Workflows & Form Processing",
+    "subtopic": "4.3 SQLite & Relational Data Modeling (Schema, Tables, Types, Primary & Foreign Keys)",
     "id": "MAD1_127",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
@@ -6451,8 +6432,8 @@ window.MAD1_QUESTIONS = [
       "6406532774744"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825024.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_129",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf"
@@ -6461,14 +6442,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "1000 bits",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -6513,14 +6494,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
-        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
-        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
-        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
-      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
-      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -6605,8 +6586,8 @@ window.MAD1_QUESTIONS = [
       "6406532774772"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825031.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_132",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf"
@@ -6615,14 +6596,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Determine the HTTP method and data source.",
-        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
-        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
-        "Step 4: Select the corresponding option."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
-      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
-      "trap_alert": "Using `request.args` to inspect POST form submissions."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -6667,14 +6648,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -6719,14 +6700,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "265",
       "step_by_step": [
-        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
-        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
-        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
-        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+        "Step 1: Calculate one-way propagation delays across each network segment:\n  - Link A to B: Distance = 12,000 km, Speed = 3 × 10^8 m/s = 300,000 km/s -> Delay = 12,000 / 300,000 = 0.040 s = 40 ms.\n  - Link B to C: Distance = 8,500 km, Speed = 2 × 10^8 m/s = 200,000 km/s -> Delay = 8,500 / 200,000 = 0.0425 s = 42.5 ms.\n  - Link C to D: Distance = 7,500 km, Speed = 1.5 × 10^8 m/s = 150,000 km/s -> Delay = 7,500 / 150,000 = 0.050 s = 50 ms.",
+        "Step 2: Sum the one-way delays from client A through B and C to datacenter D: 40 ms + 42.5 ms + 50 ms = 132.5 ms.",
+        "Step 3: Calculate full Round-Trip Time (RTT): The return path traverses the reverse route, doubling the propagation delay: 2 × 132.5 ms = 265 ms.",
+        "Step 4: Confirm Option C (265) matches the exact question requirement."
       ],
-      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
-      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
-      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+      "concept": "Multi-Hop Network Latency & Round-Trip Time: RTT = 2 × ∑(Distance_i / Speed_i) across all constituent physical links.",
+      "exam_trick": "Convert speed to km/s: 3e8 = 300,000 km/s; 2e8 = 200,000 km/s; 1.5e8 = 150,000 km/s. One-way = 40 + 42.5 + 50 = 132.5 ms. Round-trip = 265 ms! Solved in 10 seconds.",
+      "trap_alert": "Selecting Option B (132.5 ms) by reporting one-way delay instead of round-trip latency."
     }
   },
   {
@@ -6828,14 +6809,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Options A, B",
       "correct_text": "A student can exist without enrolling to any course | A student can have more than one courses",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -6922,8 +6903,8 @@ window.MAD1_QUESTIONS = [
       "6406532781268"
     ],
     "card_image": "assets/q_cards/mad1_card_640653827493.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_138",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf"
@@ -6932,14 +6913,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "1000 bits",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -6972,8 +6953,8 @@ window.MAD1_QUESTIONS = [
       "6406532781296"
     ],
     "card_image": "assets/q_cards/mad1_card_640653827500.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_139",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf"
@@ -6982,14 +6963,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Determine the HTTP method and data source.",
-        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
-        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
-        "Step 4: Select the corresponding option."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
-      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
-      "trap_alert": "Using `request.args` to inspect POST form submissions."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -7022,8 +7003,8 @@ window.MAD1_QUESTIONS = [
       "6406532782064"
     ],
     "card_image": "assets/q_cards/mad1_card_640653827781.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_140",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
@@ -7032,14 +7013,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "1000 bits",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -7072,8 +7053,8 @@ window.MAD1_QUESTIONS = [
       "6406532782092"
     ],
     "card_image": "assets/q_cards/mad1_card_640653827788.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_141",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
@@ -7082,14 +7063,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Determine the HTTP method and data source.",
-        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
-        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
-        "Step 4: Select the corresponding option."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
-      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
-      "trap_alert": "Using `request.args` to inspect POST form submissions."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -7132,14 +7113,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -7290,14 +7271,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -7331,7 +7312,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527811.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.2 Jinja2 Filters, Macros & Template Inheritance",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_146",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
@@ -7537,8 +7518,8 @@ window.MAD1_QUESTIONS = [
       "6406535115582"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527813.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.4 Flask Request Object & Data Extraction",
     "id": "MAD1_150",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
@@ -7547,14 +7528,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
     }
   },
   {
@@ -7690,8 +7671,8 @@ window.MAD1_QUESTIONS = [
       "6406535115597"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527818.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_153",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
@@ -7700,14 +7681,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -7740,8 +7721,8 @@ window.MAD1_QUESTIONS = [
       "6406535115602"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527819.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.2 Flask Application Setup & App Configuration",
     "id": "MAD1_154",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf",
@@ -7752,14 +7733,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -7810,14 +7791,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -7860,14 +7841,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -7960,14 +7941,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -8000,8 +7981,8 @@ window.MAD1_QUESTIONS = [
       "6406535116417"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528114.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.2 Jinja2 Filters, Macros & Template Inheritance",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_159",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
@@ -8010,14 +7991,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "1 → B, 2 → D, 3 → C, 4 → A",
       "step_by_step": [
-        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
-        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
-        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
-        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
-      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
-      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -8207,8 +8188,8 @@ window.MAD1_QUESTIONS = [
       "6406535116425"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528116.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.4 Flask Request Object & Data Extraction",
     "id": "MAD1_163",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
@@ -8217,14 +8198,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
     }
   },
   {
@@ -8360,8 +8341,8 @@ window.MAD1_QUESTIONS = [
       "6406535116440"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528121.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_166",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
@@ -8370,14 +8351,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -8420,14 +8401,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -8520,14 +8501,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -8561,7 +8542,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528776.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.2 Jinja2 Filters, Macros & Template Inheritance",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_170",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
@@ -8767,8 +8748,8 @@ window.MAD1_QUESTIONS = [
       "6406535118356"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528778.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.4 Flask Request Object & Data Extraction",
     "id": "MAD1_174",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
@@ -8777,14 +8758,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
     }
   },
   {
@@ -8920,8 +8901,8 @@ window.MAD1_QUESTIONS = [
       "6406535118371"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528783.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_177",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
@@ -8930,14 +8911,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -9032,14 +9013,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -9132,14 +9113,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -9173,7 +9154,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533254.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.2 Jinja2 Filters, Macros & Template Inheritance",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_182",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
@@ -9379,8 +9360,8 @@ window.MAD1_QUESTIONS = [
       "6406535130976"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533256.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.4 Flask Request Object & Data Extraction",
     "id": "MAD1_186",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
@@ -9389,14 +9370,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
     }
   },
   {
@@ -9532,8 +9513,8 @@ window.MAD1_QUESTIONS = [
       "6406535130991"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533261.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_189",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
@@ -9542,14 +9523,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -9582,8 +9563,8 @@ window.MAD1_QUESTIONS = [
       "6406535130996"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533262.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.2 Flask Application Setup & App Configuration",
     "id": "MAD1_190",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf",
@@ -9594,14 +9575,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -9644,14 +9625,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -9744,14 +9725,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -9785,7 +9766,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533579.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.2 Jinja2 Filters, Macros & Template Inheritance",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_194",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
@@ -9991,8 +9972,8 @@ window.MAD1_QUESTIONS = [
       "6406535131872"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533581.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.4 Flask Request Object & Data Extraction",
     "id": "MAD1_198",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
@@ -10001,14 +9982,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
     }
   },
   {
@@ -10144,8 +10125,8 @@ window.MAD1_QUESTIONS = [
       "6406535131887"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533586.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_201",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
@@ -10154,14 +10135,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -10204,14 +10185,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -10304,14 +10285,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -10345,7 +10326,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533904.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.2 Jinja2 Filters, Macros & Template Inheritance",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_205",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
@@ -10551,8 +10532,8 @@ window.MAD1_QUESTIONS = [
       "6406535132768"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533906.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.4 Flask Request Object & Data Extraction",
     "id": "MAD1_209",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
@@ -10561,14 +10542,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
     }
   },
   {
@@ -10704,8 +10685,8 @@ window.MAD1_QUESTIONS = [
       "6406535132783"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533911.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_212",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
@@ -10714,14 +10695,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -10764,14 +10745,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -10864,14 +10845,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -10905,7 +10886,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531445.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.2 Jinja2 Filters, Macros & Template Inheritance",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_216",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
@@ -11111,8 +11092,8 @@ window.MAD1_QUESTIONS = [
       "6406535125849"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531447.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.4 Flask Request Object & Data Extraction",
     "id": "MAD1_220",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
@@ -11121,14 +11102,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
     }
   },
   {
@@ -11264,8 +11245,8 @@ window.MAD1_QUESTIONS = [
       "6406535125864"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531452.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_223",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
@@ -11274,14 +11255,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -11314,8 +11295,8 @@ window.MAD1_QUESTIONS = [
       "6406535125869"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531453.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.2 Flask Application Setup & App Configuration",
     "id": "MAD1_224",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf",
@@ -11326,14 +11307,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -11376,14 +11357,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -11476,14 +11457,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -11517,7 +11498,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532328.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.2 Jinja2 Filters, Macros & Template Inheritance",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_228",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
@@ -11723,8 +11704,8 @@ window.MAD1_QUESTIONS = [
       "6406535128341"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532330.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.4 Flask Request Object & Data Extraction",
     "id": "MAD1_232",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
@@ -11733,14 +11714,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
     }
   },
   {
@@ -11876,8 +11857,8 @@ window.MAD1_QUESTIONS = [
       "6406535128356"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532335.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_235",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
@@ -11886,14 +11867,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -11936,14 +11917,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze Flask app initialization: `app = Flask(__name__)`.",
+        "Step 2: In MVC architecture: Model = data/business logic; View = presentation layer (HTML/Jinja2); Controller = Flask route handler coordinating requests.",
+        "Step 3: Running `app.run(debug=True)` activates the interactive debugger and auto-reloader (should NEVER be used in production).",
+        "Step 4: Verify the application configuration and execution entry point."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Flask Application Architecture & MVC: Clean separation between data model, view templates, and routing controllers.",
+      "exam_trick": "Flask is a WSGI microframework. `__name__` helps Flask locate static files and templates relative to the module.",
+      "trap_alert": "Leaving `debug=True` on in production environments, exposing arbitrary code execution via the web console."
     }
   },
   {
@@ -12036,14 +12017,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -12077,7 +12058,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532891.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.2 Jinja2 Filters, Macros & Template Inheritance",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_239",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
@@ -12283,8 +12264,8 @@ window.MAD1_QUESTIONS = [
       "6406535129911"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532893.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
+    "subtopic": "3.4 Flask Request Object & Data Extraction",
     "id": "MAD1_243",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
@@ -12293,14 +12274,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option C",
       "correct_text": "Option C",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
     }
   },
   {
@@ -12436,8 +12417,8 @@ window.MAD1_QUESTIONS = [
       "6406535129926"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532898.jpg",
-    "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.2 Flask Application Setup & App Configuration",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_246",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
@@ -12446,14 +12427,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -12591,7 +12572,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_640653668548.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.2 HTML Forms, Input Types, Attributes & Form Submission",
+    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
     "id": "MAD1_249",
     "source_papers": [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf",
@@ -12602,14 +12583,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -12862,14 +12843,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Options A, C, D",
       "correct_text": "Person - Passport | Person - Birth certificate | Person - Fingerprint",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -12913,14 +12894,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Options C, D",
       "correct_text": "The page is generated on demand by a program or a request from a browser. | On every request, every new page created may be different from the last.",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze the client-server architecture model and internet protocols (DNS, TCP, IP, HTTP).",
+        "Step 2: DNS translates human-readable domain names into routable numerical IP addresses.",
+        "Step 3: TCP provides reliable, ordered byte-stream delivery with 3-way handshakes, while UDP offers lightweight connectionless transmission.",
+        "Step 4: Select the statement that accurately captures core internet infrastructure operation."
       ],
-      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Web & Internet Architectural Foundations: Client-server interaction, name resolution (DNS), and transport-layer abstractions.",
+      "exam_trick": "DNS = Name-to-IP directory; TCP = Reliable connection; Port 80 = Standard HTTP; Port 443 = HTTPS.",
+      "trap_alert": "Confusing application layer protocols (HTTP, DNS) with transport layer protocols (TCP, UDP)."
     }
   },
   {
@@ -13014,14 +12995,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Options C, D",
       "correct_text": "The page is generated on demand by a program or a request from a browser. | On every request, every new page created may be different from the last.",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze the client-server architecture model and internet protocols (DNS, TCP, IP, HTTP).",
+        "Step 2: DNS translates human-readable domain names into routable numerical IP addresses.",
+        "Step 3: TCP provides reliable, ordered byte-stream delivery with 3-way handshakes, while UDP offers lightweight connectionless transmission.",
+        "Step 4: Select the statement that accurately captures core internet infrastructure operation."
       ],
-      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Web & Internet Architectural Foundations: Client-server interaction, name resolution (DNS), and transport-layer abstractions.",
+      "exam_trick": "DNS = Name-to-IP directory; TCP = Reliable connection; Port 80 = Standard HTTP; Port 443 = HTTPS.",
+      "trap_alert": "Confusing application layer protocols (HTTP, DNS) with transport layer protocols (TCP, UDP)."
     }
   },
   {
@@ -13115,14 +13096,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Options C, D",
       "correct_text": "The page is generated on demand by a program or a request from a browser. | On every request, every new page created may be different from the last.",
       "step_by_step": [
-        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
-        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
-        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
-        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+        "Step 1: Analyze the client-server architecture model and internet protocols (DNS, TCP, IP, HTTP).",
+        "Step 2: DNS translates human-readable domain names into routable numerical IP addresses.",
+        "Step 3: TCP provides reliable, ordered byte-stream delivery with 3-way handshakes, while UDP offers lightweight connectionless transmission.",
+        "Step 4: Select the statement that accurately captures core internet infrastructure operation."
       ],
-      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
-      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
-      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+      "concept": "Web & Internet Architectural Foundations: Client-server interaction, name resolution (DNS), and transport-layer abstractions.",
+      "exam_trick": "DNS = Name-to-IP directory; TCP = Reliable connection; Port 80 = Standard HTTP; Port 443 = HTTPS.",
+      "trap_alert": "Confusing application layer protocols (HTTP, DNS) with transport layer protocols (TCP, UDP)."
     }
   },
   {
@@ -13258,7 +13239,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_640653995533.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.2 HTML Forms, Input Types, Attributes & Form Submission",
+    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
     "id": "MAD1_262",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
@@ -13267,14 +13248,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -13367,14 +13348,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
-        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
-        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
-        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
-      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
-      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -13407,8 +13388,8 @@ window.MAD1_QUESTIONS = [
       "6406533360913"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995540.jpg",
-    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
-    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
+    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_265",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
@@ -13417,14 +13398,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
-        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
-        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
-        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
       ],
-      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
-      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
-      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
     }
   },
   {
@@ -13610,7 +13591,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_640653995541.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.5 Flask Request Object & Data Extraction",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_269",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
@@ -13619,14 +13600,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Determine the HTTP method and data source.",
-        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
-        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
-        "Step 4: Select the corresponding option."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
-      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
-      "trap_alert": "Using `request.args` to inspect POST form submissions."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -13870,8 +13851,8 @@ window.MAD1_QUESTIONS = [
       "6406533360896"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995536.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.2 HTML Forms, Input Types, Attributes & Form Submission",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_274",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
@@ -13880,14 +13861,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -13920,8 +13901,8 @@ window.MAD1_QUESTIONS = [
       "6406533360903"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995537.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.2 HTML Forms, Input Types, Attributes & Form Submission",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_275",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
@@ -13930,14 +13911,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -14021,7 +14002,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_640653995815.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.2 HTML Forms, Input Types, Attributes & Form Submission",
+    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
     "id": "MAD1_277",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
@@ -14030,14 +14011,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -14130,14 +14111,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
-        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
-        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
-        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
-      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
-      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -14170,8 +14151,8 @@ window.MAD1_QUESTIONS = [
       "6406533361697"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995822.jpg",
-    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
-    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
+    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_280",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
@@ -14180,14 +14161,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
-        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
-        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
-        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
       ],
-      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
-      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
-      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
     }
   },
   {
@@ -14321,7 +14302,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_640653995823.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.5 Flask Request Object & Data Extraction",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_283",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
@@ -14330,14 +14311,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Determine the HTTP method and data source.",
-        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
-        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
-        "Step 4: Select the corresponding option."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
-      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
-      "trap_alert": "Using `request.args` to inspect POST form submissions."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -14523,8 +14504,8 @@ window.MAD1_QUESTIONS = [
       "6406533361680"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995818.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.2 HTML Forms, Input Types, Attributes & Form Submission",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_287",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
@@ -14533,14 +14514,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -14573,8 +14554,8 @@ window.MAD1_QUESTIONS = [
       "6406533361687"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995819.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.2 HTML Forms, Input Types, Attributes & Form Submission",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_288",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
@@ -14583,14 +14564,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -14674,7 +14655,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_640653996097.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.2 HTML Forms, Input Types, Attributes & Form Submission",
+    "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
     "id": "MAD1_290",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
@@ -14683,14 +14664,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -14783,14 +14764,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
-        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
-        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
-        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+        "Step 1: Examine the HTML5 markup structure and tags (`<header>`, `<nav>`, `<article>`, `<section>`, `<footer>`, `<dl>`, `<table>`).",
+        "Step 2: HTML5 semantic tags communicate document meaning to browsers, screen readers, and search engine crawlers without altering visual appearance by default.",
+        "Step 3: Verify parent-child nesting rules (e.g. `<dt>` and `<dd>` must be inside `<dl>`; `<tr>` inside `<table>`, `<tbody>`, etc.).",
+        "Step 4: Determine the valid output or layout structure matching the specification."
       ],
-      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
-      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
-      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+      "concept": "HTML5 Document Structure & Semantic Elements: Enhances accessibility, SEO, and structural clarity across web applications.",
+      "exam_trick": "Semantic tags like `<section>` and `<article>` behave visually as generic block elements (`display: block`) by default.",
+      "trap_alert": "Assuming HTML5 semantic elements apply special decorative styling automatically."
     }
   },
   {
@@ -14823,8 +14804,8 @@ window.MAD1_QUESTIONS = [
       "6406533362481"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996104.jpg",
-    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
-    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
+    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
+    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
     "id": "MAD1_293",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
@@ -14833,14 +14814,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
-        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
-        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
-        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
       ],
-      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
-      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
-      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
     }
   },
   {
@@ -14873,8 +14854,8 @@ window.MAD1_QUESTIONS = [
       "6406533362500"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996108.jpg",
-    "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
-    "subtopic": "4.1 Jinja2 Templating Basics (Variables & Control Flow)",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_294",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
@@ -14883,14 +14864,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
-        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
-        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
-        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
-      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
-      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -14974,7 +14955,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_640653996105.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.5 Flask Request Object & Data Extraction",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_296",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
@@ -14983,14 +14964,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option B",
       "correct_text": "Option B",
       "step_by_step": [
-        "Step 1: Determine the HTTP method and data source.",
-        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
-        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
-        "Step 4: Select the corresponding option."
+        "Step 1: In Python, `sys.argv` stores command-line arguments as a list of strings.",
+        "Step 2: `sys.argv[0]` is ALWAYS the script name itself.",
+        "Step 3: Additional arguments passed on the terminal begin at `sys.argv[1]`.",
+        "Step 4: Remember all elements in `sys.argv` are of type `str`; integer operations require explicit casting `int(sys.argv[i])`."
       ],
-      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
-      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
-      "trap_alert": "Using `request.args` to inspect POST form submissions."
+      "concept": "Python Command-Line Interface (`sys.argv`): Capturing terminal parameters to configure server execution and scripts.",
+      "exam_trick": "Remember length offset: `python script.py a b` -> `len(sys.argv) == 3`, `sys.argv[0] == 'script.py'`.",
+      "trap_alert": "IndexError: Accessing `sys.argv[1]` when no command line arguments were provided."
     }
   },
   {
@@ -15176,8 +15157,8 @@ window.MAD1_QUESTIONS = [
       "6406533362464"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996100.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.2 HTML Forms, Input Types, Attributes & Form Submission",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_300",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
@@ -15186,14 +15167,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option A",
       "correct_text": "Option A",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   },
   {
@@ -15226,8 +15207,8 @@ window.MAD1_QUESTIONS = [
       "6406533362471"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996101.jpg",
-    "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
-    "subtopic": "2.2 HTML Forms, Input Types, Attributes & Form Submission",
+    "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
+    "subtopic": "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes",
     "id": "MAD1_301",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
@@ -15236,14 +15217,14 @@ window.MAD1_QUESTIONS = [
       "correct_label": "Option D",
       "correct_text": "Option D",
       "step_by_step": [
-        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
-        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
-        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
-        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
       ],
-      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
-      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
-      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
     }
   }
 ];
