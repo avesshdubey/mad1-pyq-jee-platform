@@ -48,3 +48,10 @@
   - Synchronized sidebar legend counters with active filtered question set.
   - Added real-time question counts to subtopic filter options.
   - Implemented responsive section test score calculation.
+
+- [x] **Task 8: Black Option Text Sanitization, Stem Whiteout Elimination & Interactive Step-by-Step Explanation System**
+  - Regenerated and sanitized all 301 question cards to 100% crisp, neutral black option text, removing all color cues and answer spoilers.
+  - Resolved `class="important"` code whiteout glitch by strictly constraining masking to regions below the `Options :` header and eliminating blind pixel sweepers.
+  - Preserved 100% data integrity for official ground-truth correct answer keys across `data/questions.json`, `data/questions_data.js`, and `mad1_questions_categorized.pdf`.
+  - Built and styled interactive "Show Answer & Detailed Explanation" feature (`#btnToggleSolution` and `#solutionDrawer`) with step-by-step logical derivation, core IITM concepts, high-yield exam tricks (< 15s), and common trap alerts.
+  - Expanded automated test suite to 8 tests in `tests/test_platform.py` validating explanation schema, UI components, and state management.

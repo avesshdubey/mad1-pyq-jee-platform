@@ -163,5 +163,43 @@ class TestMAD1Platform(unittest.TestCase):
         self.assertEqual(res.returncode, 0, f"Auth test harness failed: {res.stderr}\n{res.stdout}")
         self.assertIn("ALL_AUTH_CHECKS_PASSED", res.stdout)
 
+    def test_08_explanations_and_solution_drawer_integrity(self):
+        with open(self.data_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        
+        self.assertEqual(len(data), 301)
+        for q in data:
+            self.assertIn("explanation", q, f"Missing explanation in {q['id']}")
+            exp = q["explanation"]
+            self.assertIn("correct_label", exp, f"Missing correct_label in {q['id']}")
+            self.assertIn("step_by_step", exp, f"Missing step_by_step in {q['id']}")
+            self.assertIsInstance(exp["step_by_step"], list, f"step_by_step must be list in {q['id']}")
+            self.assertGreaterEqual(len(exp["step_by_step"]), 3, f"Expected >= 3 explanation steps in {q['id']}")
+            self.assertIn("concept", exp, f"Missing concept in {q['id']}")
+            self.assertIn("exam_trick", exp, f"Missing exam_trick in {q['id']}")
+            self.assertIn("trap_alert", exp, f"Missing trap_alert in {q['id']}")
+            self.assertTrue(len(exp["concept"]) > 10, f"Concept text too short in {q['id']}")
+            self.assertTrue(len(exp["exam_trick"]) > 10, f"Exam trick too short in {q['id']}")
+            self.assertTrue(len(exp["trap_alert"]) > 10, f"Trap alert too short in {q['id']}")
+
+        with open(self.index_html_path, "r", encoding="utf-8") as f:
+            html = f.read()
+
+        self.assertIn("btnToggleSolution", html, "index.html must have btnToggleSolution")
+        self.assertIn("solutionDrawer", html, "index.html must have solutionDrawer")
+        self.assertIn("solCorrectLabel", html, "index.html must have solCorrectLabel")
+        self.assertIn("solStepsList", html, "index.html must have solStepsList")
+        self.assertIn("solConceptText", html, "index.html must have solConceptText")
+        self.assertIn("solTrickText", html, "index.html must have solTrickText")
+        self.assertIn("solTrapText", html, "index.html must have solTrapText")
+
+        jee_app_path = os.path.join(PROJECT_ROOT, "js", "jee_app.js")
+        with open(jee_app_path, "r", encoding="utf-8") as f:
+            jee_src = f.read()
+
+        self.assertIn("toggleSolutionDrawer", jee_src, "jee_app.js must define toggleSolutionDrawer")
+        self.assertIn("renderCurrentSolution", jee_src, "jee_app.js must define renderCurrentSolution")
+        self.assertIn("btnToggleSolution", jee_src, "jee_app.js must reference btnToggleSolution")
+
 if __name__ == "__main__":
     unittest.main()

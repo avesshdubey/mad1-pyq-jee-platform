@@ -26,6 +26,7 @@
     let isPaused = false;
     let isExamSubmitted = false;
     let currentZoom = 1.0;
+    let isSolutionVisible = false;
 
     // DOM Elements
     const elements = {
@@ -58,6 +59,20 @@
         qCardImage: document.getElementById('qCardImage'),
         qStemText: document.getElementById('qStemText'),
         qOptionsContainer: document.getElementById('qOptionsContainer'),
+
+        // Show Answer & Detailed Explanation Elements
+        btnToggleSolution: document.getElementById('btnToggleSolution'),
+        solutionBtnLabel: document.getElementById('solutionBtnLabel'),
+        solutionBtnArrow: document.getElementById('solutionBtnArrow'),
+        solutionDrawer: document.getElementById('solutionDrawer'),
+        solCorrectLabel: document.getElementById('solCorrectLabel'),
+        solSubtopicBadge: document.getElementById('solSubtopicBadge'),
+        solAnswerHighlight: document.getElementById('solAnswerHighlight'),
+        solAnswerText: document.getElementById('solAnswerText'),
+        solStepsList: document.getElementById('solStepsList'),
+        solConceptText: document.getElementById('solConceptText'),
+        solTrickText: document.getElementById('solTrickText'),
+        solTrapText: document.getElementById('solTrapText'),
         
         // Zoom & Preview Modal Elements
         btnZoomIn: document.getElementById('btnZoomIn'),
@@ -395,6 +410,94 @@
         // Render Option Inputs
         renderOptions(q, resp);
         updateNavButtons();
+
+        // If solution drawer is open, keep it open and update content for new question
+        if (isSolutionVisible) {
+            renderCurrentSolution();
+        }
+    }
+
+    // Toggle and Render Solution / Detailed Explanation
+    function toggleSolutionDrawer(forceState) {
+        if (typeof forceState === 'boolean') {
+            isSolutionVisible = forceState;
+        } else {
+            isSolutionVisible = !isSolutionVisible;
+        }
+
+        if (!elements.solutionDrawer || !elements.btnToggleSolution) return;
+
+        if (isSolutionVisible) {
+            renderCurrentSolution();
+            elements.solutionDrawer.style.display = 'block';
+            elements.btnToggleSolution.classList.add('active');
+            if (elements.solutionBtnLabel) elements.solutionBtnLabel.textContent = 'Hide Answer & Explanation';
+            if (elements.solutionBtnArrow) elements.solutionBtnArrow.textContent = '▲';
+            elements.btnToggleSolution.setAttribute('aria-expanded', 'true');
+        } else {
+            elements.solutionDrawer.style.display = 'none';
+            elements.btnToggleSolution.classList.remove('active');
+            if (elements.solutionBtnLabel) elements.solutionBtnLabel.textContent = 'Show Answer & Detailed Explanation';
+            if (elements.solutionBtnArrow) elements.solutionBtnArrow.textContent = '▼';
+            elements.btnToggleSolution.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    function renderCurrentSolution() {
+        const q = currentQuestions[currentIndex];
+        if (!q || !elements.solutionDrawer) return;
+
+        const exp = q.explanation || {};
+
+        // 1. Correct Answer Label & Subtopic
+        if (elements.solCorrectLabel) {
+            elements.solCorrectLabel.textContent = `Correct Answer: ${exp.correct_label || 'Verified Key'}`;
+        }
+        if (elements.solSubtopicBadge) {
+            elements.solSubtopicBadge.textContent = q.subtopic || 'MAD 1 Core Concept';
+        }
+
+        // 2. Verified Text Highlight (if available)
+        if (elements.solAnswerHighlight && elements.solAnswerText) {
+            const customText = (exp.correct_text || '').trim();
+            if (customText && customText !== exp.correct_label) {
+                elements.solAnswerHighlight.style.display = 'flex';
+                elements.solAnswerText.textContent = customText;
+            } else {
+                elements.solAnswerHighlight.style.display = 'none';
+            }
+        }
+
+        // 3. Step-by-Step Reason List
+        if (elements.solStepsList) {
+            elements.solStepsList.innerHTML = '';
+            const steps = exp.step_by_step || [
+                'Step 1: Inspect the question prompt and technical conditions.',
+                'Step 2: Trace logic or calculate result according to IITM MAD 1 syllabus.',
+                'Step 3: Eliminate distractors and verify matching option.'
+            ];
+            steps.forEach(st => {
+                const p = document.createElement('p');
+                p.className = 'sol-step-item';
+                p.textContent = st;
+                elements.solStepsList.appendChild(p);
+            });
+        }
+
+        // 4. Core Concept
+        if (elements.solConceptText) {
+            elements.solConceptText.textContent = exp.concept || `Core Concept in ${q.subtopic || 'MAD 1'}: Key architectural principles and syntax specifications.`;
+        }
+
+        // 5. Exam Trick
+        if (elements.solTrickText) {
+            elements.solTrickText.textContent = exp.exam_trick || 'Eliminate extreme or syntactically invalid choices first to save time in timed exams.';
+        }
+
+        // 6. Common Trap
+        if (elements.solTrapText) {
+            elements.solTrapText.textContent = exp.trap_alert || 'Double check quotes, case-sensitivity, and default parameter fallbacks.';
+        }
     }
 
     function renderOptions(q, resp) {
@@ -912,6 +1015,13 @@
         }
         if (elements.btnFooterRandom) {
             elements.btnFooterRandom.addEventListener('click', () => selectRandomQuestion());
+        }
+
+        // Show Answer & Detailed Explanation Button
+        if (elements.btnToggleSolution) {
+            elements.btnToggleSolution.addEventListener('click', () => {
+                toggleSolutionDrawer();
+            });
         }
 
         // Image Zoom Controls

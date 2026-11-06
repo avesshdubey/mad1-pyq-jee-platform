@@ -178,6 +178,70 @@
                         <!-- Populated dynamically via jee_app.js -->
                     </div>
 
+                    <!-- Show Answer & Detailed Explanation Feature -->
+                    <div class="solution-toggle-bar">
+                        <button type="button" class="btn-toggle-solution" id="btnToggleSolution" aria-expanded="false" title="Reveal verified correct answer and step-by-step derivation">
+                            <span class="solution-btn-icon">💡</span>
+                            <span class="solution-btn-label" id="solutionBtnLabel">Show Answer & Detailed Explanation</span>
+                            <span class="solution-btn-arrow" id="solutionBtnArrow">▼</span>
+                        </button>
+                    </div>
+
+                    <!-- Expandable Solution & Learning Drawer -->
+                    <div class="solution-drawer" id="solutionDrawer" style="display: none;">
+                        <div class="solution-card">
+                            <div class="solution-header">
+                                <div class="sol-badge-correct">
+                                    <span class="sol-correct-icon">✔</span>
+                                    <span class="sol-correct-label" id="solCorrectLabel">Correct Answer: Option B</span>
+                                </div>
+                                <div class="sol-meta-subtopic" id="solSubtopicBadge">CSS Specificity</div>
+                            </div>
+
+                            <div class="sol-content-body">
+                                <!-- Specific Option Text Highlight (if available) -->
+                                <div class="sol-answer-highlight" id="solAnswerHighlight" style="display: none;">
+                                    <span class="sol-highlight-label">Verified Key:</span>
+                                    <strong id="solAnswerText" class="sol-highlight-text"></strong>
+                                </div>
+
+                                <!-- Step-by-Step Reason -->
+                                <div class="sol-section sol-section-steps">
+                                    <h4 class="sol-section-title">
+                                        <span class="sol-sec-icon">📝</span> Step-by-Step Logical Derivation
+                                    </h4>
+                                    <div class="sol-steps-list" id="solStepsList">
+                                        <!-- Steps injected dynamically -->
+                                    </div>
+                                </div>
+
+                                <!-- Core IITM Syllabus Concept -->
+                                <div class="sol-section sol-section-concept">
+                                    <h4 class="sol-section-title">
+                                        <span class="sol-sec-icon">🎯</span> Core IITM Concept Tested
+                                    </h4>
+                                    <p class="sol-section-text" id="solConceptText"></p>
+                                </div>
+
+                                <!-- High-Yield Exam Trick / Cheat Code (< 15s) -->
+                                <div class="sol-section sol-section-trick">
+                                    <h4 class="sol-section-title">
+                                        <span class="sol-sec-icon">⚡</span> Exam Hack / Quick Mental Model (&lt; 15s)
+                                    </h4>
+                                    <p class="sol-section-text" id="solTrickText"></p>
+                                </div>
+
+                                <!-- Common Trap to Avoid -->
+                                <div class="sol-section sol-section-trap">
+                                    <h4 class="sol-section-title">
+                                        <span class="sol-sec-icon">⚠️</span> Common Student Trap & Pitfall
+                                    </h4>
+                                    <p class="sol-section-text" id="solTrapText"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Bottom Action Controls Bar -->

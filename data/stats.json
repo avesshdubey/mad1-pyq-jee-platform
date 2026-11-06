@@ -1,10 +1,15 @@
 {
-  "total_unique_questions": 301,
+  "total_questions": 301,
+  "type_counts": {
+    "MCQ": 235,
+    "SA": 4,
+    "MSQ": 62
+  },
   "week_counts": {
-    "Week 3": 78,
-    "Week 4": 58,
-    "Week 2": 115,
-    "Week 1": 50
+    "Week 3: Backend Python, Flask Essentials, Routing & Request Handling": 78,
+    "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications": 58,
+    "Week 2: HTML5, CSS3, Box Model & Form Controls": 115,
+    "Week 1: Internet Architecture, HTTP & Network Calculations": 50
   },
   "subtopic_counts": {
     "3.2 Flask Application Setup & App Configuration": 31,

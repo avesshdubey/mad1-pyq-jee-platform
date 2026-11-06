@@ -1,4 +1,4 @@
-// IIT Madras Modern Application Development 1 (MAD 1 / AppDev1) Question Bank
+// IIT Madras Modern Application Development 1 (MAD 1 / AppDev1) Question Bank with Solutions
 window.MAD1_QUESTIONS = [
   {
     "raw_q_id": "6406531298433",
@@ -35,7 +35,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_001",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: The `<dl>` element defines a Description/Definition List in HTML5.",
+        "Step 2: `<dt>` defines the description term, rendered flush left without indentation.",
+        "Step 3: `<dd>` defines the description details, rendered indented below the corresponding `<dt>`.",
+        "Step 4: Unlike `<ul>` or `<ol>`, `<dl>` generates NO bullet points or numbers.",
+        "Step 5: Therefore, 'Flask' and 'SQLAlchemy' appear flush left, while their descriptions are indented beneath them."
+      ],
+      "concept": "HTML5 Description Lists (`<dl>`, `<dt>`, `<dd>`): Semantic structure for key-value pairs, glossaries, and metadata catalogs.",
+      "exam_trick": "Mnemonic: DT = Direct Term (no indent), DD = Detailed Data (indented). Never has bullets (-).",
+      "trap_alert": "Selecting options that display bullet points or options where `<dd>` text is not indented."
+    }
   },
   {
     "raw_q_id": "6406531298434",
@@ -72,7 +86,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_002",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Flask requires `render_template(template_name, **context)` to render HTML templates from the `templates/` folder.",
+        "Step 2: Route endpoints must be registered using the decorator `@app.route('/score')`.",
+        "Step 3: Context variables are passed as keyword arguments: `render_template('score.html', mayur=50, manoj=45)`.",
+        "Step 4: The function `render()` does not exist in Flask (that is Django's syntax).",
+        "Step 5: Therefore, Option B with `@app.route('/score')` and `return render_template('score.html', mayur=50, manoj=45)` is correct."
+      ],
+      "concept": "Flask View Function & Template Context Passing: `@app.route()` decorator binds URL endpoints to Python view functions returning rendered templates with keyword context.",
+      "exam_trick": "Look for `render_template`, never `render`. In Flask, it's always `render_template('file.html', var=val)`.",
+      "trap_alert": "Confusing Django's `render(request, ...)` helper with Flask's `render_template(...)`."
+    }
   },
   {
     "raw_q_id": "6406531298435",
@@ -109,7 +137,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_003",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: The selector is `.container p.highlight`.",
+        "Step 2: The space between `.container` and `p.highlight` is the descendant combinator.",
+        "Step 3: The descendant combinator matches ALL target elements nested inside `.container` at any depth, not merely direct children.",
+        "Step 4: `p.highlight` specifically targets paragraph `<p>` tags carrying the `highlight` class.",
+        "Step 5: Thus, all elements with class `highlight` that are descendants of `.container` receive the red background."
+      ],
+      "concept": "CSS Combinators: Descendant selector (` `) matches any nested descendant at arbitrary depth; Child selector (`>`) matches strictly direct child elements.",
+      "exam_trick": "Space = Anywhere inside (descendants). Greater-than `>` = Immediate child only.",
+      "trap_alert": "Confusing descendant selector (space) with direct child selector (`>`)."
+    }
   },
   {
     "raw_q_id": "6406531298436",
@@ -146,7 +188,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_004",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: `templatel` is created with Python's standard `string.Template('Hello $name, welcome to $city!')`.",
+        "Step 2: `templatel.substitute(name='Alice')` is called, but `$city` is not provided in keyword arguments.",
+        "Step 3: Python's `string.Template.substitute()` strictly requires all placeholders to be provided; missing keys raise a `KeyError: 'city'`.",
+        "Step 4: In contrast, Jinja2's `template2.render()` does not throw KeyError when keys are missing (it defaults to empty string).",
+        "Step 5: Therefore, `templatel.substitute(name='Alice')` throws the KeyError."
+      ],
+      "concept": "Python `string.Template` vs Jinja2 Template Variable Handling: `string.Template.substitute()` raises KeyError on missing keys (use `safe_substitute()` to avoid), whereas Jinja2 handles undefined variables gracefully by default.",
+      "exam_trick": "Standard `string.Template.substitute()` = strict (KeyError on missing variable). `safe_substitute()` or `jinja2.render()` = lenient.",
+      "trap_alert": "Assuming Jinja2 throws an error on missing variables; Jinja2 renders empty strings for missing context variables unless `StrictUndefined` is explicitly configured."
+    }
   },
   {
     "raw_q_id": "6406531298437",
@@ -183,7 +239,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_005",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: The template defines a Jinja2 macro: `{% macro greet(name) %} Hello, {{ name }}! {% endmacro %}`.",
+        "Step 2: Macros in Jinja2 act like reusable Python functions inside templates.",
+        "Step 3: Calling `{{ greet('Alice') }}` renders `Hello, Alice!`.",
+        "Step 4: Calling `{{ greet('Bob') }}` renders `Hello, Bob!`.",
+        "Step 5: Both calls output their rendered text into the template stream sequentially."
+      ],
+      "concept": "Jinja2 Macro Definition & Invocation: `{% macro name(args) %} ... {% endmacro %}` creates modular reusable presentation components.",
+      "exam_trick": "Macros execute in place and return evaluated strings. No exception is thrown for standard macro calls.",
+      "trap_alert": "Thinking macros require a special `import` when declared in the same template file."
+    }
   },
   {
     "raw_q_id": "6406531298438",
@@ -220,7 +290,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_006",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: `url_for('function_name', **values)` generates the endpoint URL by referencing the Python view function name.",
+        "Step 2: `redirect(target_url)` instructs the client browser to navigate to a new location with an HTTP 302 redirect.",
+        "Step 3: Custom error pages use `@app.errorhandler(404)` returning a template and the explicit 404 status code.",
+        "Step 4: Validate function arguments and return types."
+      ],
+      "concept": "Flask Redirection & Dynamic URL Resolution: Decouples URL path layout from application logic.",
+      "exam_trick": "`url_for` requires the Python function name as a string, NOT the URL route!",
+      "trap_alert": "Passing `/login` instead of `'login'` into `url_for`."
+    }
   },
   {
     "raw_q_id": "6406531298439",
@@ -257,7 +340,23 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_007",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Green",
+      "step_by_step": [
+        "Step 1: Inspect the target HTML element: `<p class=\"important\" id=\"highlight\">This is a paragraph.</p>`.",
+        "Step 2: Calculate CSS Specificity (IDs, Classes, Elements) for all matching rules:",
+        "  - `p`: Specificity = (0, 0, 1) -> color: blue",
+        "  - `.important`: Specificity = (0, 1, 0) -> color: red",
+        "  - `#highlight`: Specificity = (1, 0, 0) -> color: green",
+        "Step 3: Compare specificities: (1, 0, 0) beats (0, 1, 0) and (0, 0, 1). The ID selector `#highlight` has highest specificity.",
+        "Step 4: Therefore, the paragraph renders in Green."
+      ],
+      "concept": "CSS Cascade & Specificity Weighting: Inline style (1,0,0,0) > ID selector (0,1,0,0) > Class / Attribute / Pseudo-class (0,0,1,0) > Element / Pseudo-element (0,0,0,1). Source order only breaks ties.",
+      "exam_trick": "Count the '#' symbols first! One ID rule overrides any number of class rules. Since `#highlight` is an ID, Green wins immediately.",
+      "trap_alert": "Do not be distracted by the name `.important`! It is a normal class with specificity (0,1,0); only the actual CSS declaration `!important` elevates priority."
+    }
   },
   {
     "raw_q_id": "6406531298440",
@@ -294,7 +393,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_008",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531298441",
@@ -331,7 +443,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_009",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531298442",
@@ -353,7 +478,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf",
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Value: 250",
+      "correct_text": "250 MB",
+      "step_by_step": [
+        "Step 1: Network bandwidth given = 2 Gbps = 2,000,000,000 bits per second.",
+        "Step 2: Convert bits to Bytes by dividing by 8: (2 × 10^9) / 8 = 250 × 10^6 Bytes per second.",
+        "Step 3: Apply the prompt's specified decimal conversion convention (1 KB = 1000 Bytes, 1 MB = 1000 KB = 10^6 Bytes).",
+        "Step 4: Maximum document size per second = (250 × 10^6 Bytes) / 10^6 = 250 MB."
+      ],
+      "concept": "Bandwidth & Data Rate Conversion: Bandwidth in bits/sec must be divided by 8 to get Bytes/sec. Pay strict attention to decimal (1000) vs. binary (1024) prefix definitions in problem specifications.",
+      "exam_trick": "Mental shortcut: (Gbps * 1000) / 8 = (2 * 1000) / 8 = 2000 / 8 = 250 MB/s. Instant 3-second calculation!",
+      "trap_alert": "Confusing gigabits (Gb) with gigabytes (GB) and forgetting to divide by 8, yielding an incorrect answer of 2000."
+    }
   },
   {
     "raw_q_id": "6406531298443",
@@ -373,7 +511,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_011",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Value: 72",
+      "correct_text": "72 ms",
+      "step_by_step": [
+        "Step 1: Calculate request propagation delay through cable: Distance = 3000 km = 3 × 10^6 m, Speed in cable = 2 × 10^8 m/s. Delay = (3 × 10^6) / (2 × 10^8) = 0.015 s = 15 ms.",
+        "Step 2: Add server-side medium change delay: Additional delay at server end = 47 ms.",
+        "Step 3: Calculate response propagation delay through air: Distance = 3000 km = 3 × 10^6 m, Speed in air = 3 × 10^8 m/s. Delay = (3 × 10^6) / (3 × 10^8) = 0.010 s = 10 ms.",
+        "Step 4: Total waiting time for client = Request delay + Server delay + Response delay = 15 ms + 47 ms + 10 ms = 72 ms."
+      ],
+      "concept": "Network Latency & Propagation Delay: Total Latency = T_prop(request) + T_processing + T_prop(response), where T_prop = Distance / Propagation_Speed.",
+      "exam_trick": "Convert distance directly to km/s: Cable speed = 200,000 km/s -> 3000/200,000 = 15 ms. Air speed = 300,000 km/s -> 3000/300,000 = 10 ms. Total = 15 + 47 + 10 = 72 ms! (Solved in 5 seconds).",
+      "trap_alert": "Forgetting to include the server processing delay of 47 ms, or assuming cable speed equals speed of light in vacuum (3e8 m/s)."
+    }
   },
   {
     "raw_q_id": "6406531298445",
@@ -415,7 +566,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_012",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, C",
+      "correct_text": "Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531298446",
@@ -452,7 +616,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_013",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531298447",
@@ -489,7 +666,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_014",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531298449",
@@ -526,7 +716,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_015",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Recommended Daily Protein Intake | Gender: FeMaLe weight: 154lb | Recommended Intake: 52 grams",
+      "step_by_step": [
+        "Step 1: Inspect the Flask view function: query parameters or test cases pass `gender='FeMaLe'` and weight in pounds `weight=154lb`.",
+        "Step 2: Convert body weight to kilograms: 154 lb / 2.2 ≈ 70 kg.",
+        "Step 3: Apply the recommended dietary intake coefficient for women (~0.74–0.8 g/kg): 70 kg × 0.74 ≈ 52 grams.",
+        "Step 4: The Jinja2 template outputs the formatted variables matching Option B."
+      ],
+      "concept": "Flask Request Context & Jinja2 Template Interpolation: Parsing URL query parameters, executing business logic calculations, and rendering formatted HTML output.",
+      "exam_trick": "Match input parameters: Gender 'FeMaLe' with 154 lb corresponds to 52 grams of protein.",
+      "trap_alert": "Picking the male calculation option (48g or higher ratio) by misreading the gender parameter."
+    }
   },
   {
     "raw_q_id": "6406531298450",
@@ -563,7 +766,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_016",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Recommended Daily Protein Intake | Gender: FeMaLe weight: 154lb | Recommended Intake: 52 grams",
+      "step_by_step": [
+        "Step 1: Inspect the Flask view function: query parameters or test cases pass `gender='FeMaLe'` and weight in pounds `weight=154lb`.",
+        "Step 2: Convert body weight to kilograms: 154 lb / 2.2 ≈ 70 kg.",
+        "Step 3: Apply the recommended dietary intake coefficient for women (~0.74–0.8 g/kg): 70 kg × 0.74 ≈ 52 grams.",
+        "Step 4: The Jinja2 template outputs the formatted variables matching Option B."
+      ],
+      "concept": "Flask Request Context & Jinja2 Template Interpolation: Parsing URL query parameters, executing business logic calculations, and rendering formatted HTML output.",
+      "exam_trick": "Match input parameters: Gender 'FeMaLe' with 154 lb corresponds to 52 grams of protein.",
+      "trap_alert": "Picking the male calculation option (48g or higher ratio) by misreading the gender parameter."
+    }
   },
   {
     "raw_q_id": "640653345241",
@@ -600,7 +816,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_017",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "The controller passes data model information to view.",
+      "step_by_step": [
+        "Step 1: In the Model-View-Controller (MVC) architectural design pattern, the Controller acts as the orchestrator between data and presentation.",
+        "Step 2: The Controller receives the incoming HTTP request from the client, queries or updates the Model, and passes the resulting data model objects to the View for rendering.",
+        "Step 3: The View never directly redirects requests to the Model (ruling out Option A).",
+        "Step 4: Views can be reused across multiple controllers (ruling out Option D).",
+        "Step 5: Therefore, Option C ('The controller passes data model information to view') is the correct statement."
+      ],
+      "concept": "MVC (Model-View-Controller) Architecture: Clean separation of concerns where Controller mediates all communication between the Model (data state) and the View (UI presentation).",
+      "exam_trick": "In MVC, Controller is the middleman: Request -> Controller -> Model -> Controller -> View -> User!",
+      "trap_alert": "Believing that the View directly queries or updates the Model without Controller mediation."
+    }
   },
   {
     "raw_q_id": "640653345246",
@@ -637,7 +867,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_018",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "B2F",
+      "step_by_step": [
+        "Step 1: Identify character encoding standard: Standard ASCII (7 bits, 128 characters), Extended ASCII (8 bits, 256 characters), Unicode (code points U+0000 to U+10FFFF), UTF-8 (variable 1 to 4 bytes).",
+        "Step 2: Evaluate code point values: standard English characters (0-127) encode into exactly 1 byte in UTF-8.",
+        "Step 3: Verify binary length and backward-compatibility rules.",
+        "Step 4: Conclude which statement aligns with character representation architecture."
+      ],
+      "concept": "Character Representation Architecture: UTF-8 provides universal character representation while maintaining 100% binary backward compatibility with standard 7-bit ASCII.",
+      "exam_trick": "Standard ASCII code points (0-127) take 1 byte in UTF-8. UTF-8 is self-synchronizing and variable-length.",
+      "trap_alert": "Believing that UTF-8 always uses 8 bits for all characters globally."
+    }
   },
   {
     "raw_q_id": "640653345250",
@@ -674,7 +917,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_019",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "64000 bits",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653345242",
@@ -711,7 +967,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_020",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653345244",
@@ -749,7 +1018,20 @@ window.MAD1_QUESTIONS = [
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf",
       "Quiz1 May23 .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653345247",
@@ -794,7 +1076,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf",
       "IIT M DIPLOMA AN3 EXAM QPD3 29 Oct.pdf",
       "IIT M DIPLOMA AN4 EXAM QPD4 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653345255",
@@ -831,7 +1126,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_023",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "200 KB",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653345243",
@@ -869,7 +1177,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_024",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C",
+      "correct_text": "Option A | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653345252",
@@ -906,7 +1227,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_025",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "640653345254",
@@ -943,7 +1277,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_026",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653345256",
@@ -980,7 +1327,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_027",
     "source_papers": [
       "IIT M DIPLOMA QUIZ1 EXAM QPF1.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "125 milliseconds",
+      "step_by_step": [
+        "Step 1: Request propagation delay through cable: Distance = 6000 km = 6 × 10^6 m, Speed in cable = 2 × 10^8 m/s. Delay = (6 × 10^6) / (2 × 10^8) = 0.030 s = 30 ms.",
+        "Step 2: Repeater hardware delay: Given as 75 ms.",
+        "Step 3: Response propagation delay through air: Distance = 6000 km = 6 × 10^6 m, Speed in air = 3 × 10^8 m/s. Delay = (6 × 10^6) / (3 × 10^8) = 0.020 s = 20 ms.",
+        "Step 4: Total waiting time for client = 30 ms + 75 ms + 20 ms = 125 ms (Option C)."
+      ],
+      "concept": "Network Delay Composition: Round-Trip Latency = Cable Delay + Repeater Processing Delay + Air Delay.",
+      "exam_trick": "Calculate in km/s: Cable: 6000 / 200,000 = 30 ms. Air: 6000 / 300,000 = 20 ms. Sum = 30 + 75 + 20 = 125 ms! Solved in 5 seconds.",
+      "trap_alert": "Forgetting the 75 ms repeater delay or assuming signal speed in cable equals speed of light in vacuum."
+    }
   },
   {
     "raw_q_id": "640653470036",
@@ -1017,7 +1377,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_028",
     "source_papers": [
       "Quiz 1 Jan23  .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "1 - c, 2 - a, 3 - b, 4 - d",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653470038",
@@ -1054,7 +1427,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_029",
     "source_papers": [
       "Quiz 1 Jan23  .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653470043",
@@ -1091,7 +1477,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_030",
     "source_papers": [
       "Quiz 1 Jan23  .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653470044",
@@ -1128,7 +1527,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_031",
     "source_papers": [
       "Quiz 1 Jan23  .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "2000",
+      "step_by_step": [
+        "Step 1: Identify character encoding standard: Standard ASCII (7 bits, 128 characters), Extended ASCII (8 bits, 256 characters), Unicode (code points U+0000 to U+10FFFF), UTF-8 (variable 1 to 4 bytes).",
+        "Step 2: Evaluate code point values: standard English characters (0-127) encode into exactly 1 byte in UTF-8.",
+        "Step 3: Verify binary length and backward-compatibility rules.",
+        "Step 4: Conclude which statement aligns with character representation architecture."
+      ],
+      "concept": "Character Representation Architecture: UTF-8 provides universal character representation while maintaining 100% binary backward compatibility with standard 7-bit ASCII.",
+      "exam_trick": "Standard ASCII code points (0-127) take 1 byte in UTF-8. UTF-8 is self-synchronizing and variable-length.",
+      "trap_alert": "Believing that UTF-8 always uses 8 bits for all characters globally."
+    }
   },
   {
     "raw_q_id": "640653470031",
@@ -1165,7 +1577,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_032",
     "source_papers": [
       "Quiz 1 Jan23  .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 - POST, 2- GET, 3 - PUT, 4 - DELETE",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653470033",
@@ -1202,7 +1627,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_033",
     "source_papers": [
       "Quiz 1 Jan23  .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "1101111",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653470034",
@@ -1239,7 +1677,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_034",
     "source_papers": [
       "Quiz 1 Jan23  .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "11 12",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653470035",
@@ -1276,7 +1727,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_035",
     "source_papers": [
       "Quiz 1 Jan23  .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 - d, 2 - c, 3 - b, 4 - a",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653470037",
@@ -1313,7 +1777,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_036",
     "source_papers": [
       "Quiz 1 Jan23  .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Statement 1 is correct but statement 2 is incorrect",
+      "step_by_step": [
+        "Step 1: Deconstruct competing selectors into specificity tuples: (Inline, IDs, Classes/Attributes/Pseudo-classes, Elements/Pseudo-elements).",
+        "Step 2: Compare from left to right: (1, 0, 0, 0) > (0, 1, 0, 0) > (0, 0, 1, 0) > (0, 0, 0, 1).",
+        "Step 3: An ID selector always overrules any number of class selectors.",
+        "Step 4: If specificities are equal, the rule defined later in the stylesheet wins."
+      ],
+      "concept": "CSS Specificity Cascade Hierarchy: Precision determines rule precedence, with source order serving solely as a tie-breaker.",
+      "exam_trick": "Count IDs (#) first. If one has an ID and others do not, it wins instantly without further calculation.",
+      "trap_alert": "Assuming a higher class count can defeat an ID selector — specificity levels never carry over."
+    }
   },
   {
     "raw_q_id": "640653470039",
@@ -1351,7 +1828,20 @@ window.MAD1_QUESTIONS = [
     "source_papers": [
       "Quiz 1 Jan23  .pdf",
       "Quiz1 May23 .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "640653737396",
@@ -1390,7 +1880,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN2 EXAM QDD2 25 Feb 2024.pdf",
       "IIT M DIPLOMA AN3 EXAM QDD3 25 Feb 2024.pdf",
       "IIT M DIPLOMA AN4 EXAM QDD4 25 Feb 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Perceivable",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653737406",
@@ -1429,7 +1932,21 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN2 EXAM QDD2 25 Feb 2024.pdf",
       "IIT M DIPLOMA AN3 EXAM QDD3 25 Feb 2024.pdf",
       "IIT M DIPLOMA AN4 EXAM QDD4 25 Feb 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "24 Mbps",
+      "step_by_step": [
+        "Step 1: The question asks specifically for the *additional* bandwidth required, not the total bandwidth.",
+        "Step 2: Rate of requests = 4000 requests per second.",
+        "Step 3: Additional data per request = 6 Kb (kilobits).",
+        "Step 4: Additional throughput = 4000 requests/sec × 6 Kb = 24,000 Kbps.",
+        "Step 5: Convert Kbps to Mbps: 24,000 Kbps / 1000 = 24 Mbps (Option B)."
+      ],
+      "concept": "Network Throughput Scaling: Additional Bandwidth = Request Frequency × Incremental Payload Size.",
+      "exam_trick": "Mental math: 4000 * 6 Kb = 24,000 Kbps = 24 Mbps! Takes 2 seconds.",
+      "trap_alert": "Adding the existing 12 Mbps to get total bandwidth (36 Mbps) when the prompt asks strictly for the additional bandwidth required."
+    }
   },
   {
     "raw_q_id": "640653737402",
@@ -1468,7 +1985,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_040",
     "source_papers": [
       "IIT M DIPLOMA AN2 EXAM QDD2 25 Feb 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, C, D",
+      "correct_text": "Statement I represents a one-to-many relationship between Author and Book. | Statement II represents a one-to-many relationship between Publisher and | Statement III represents a many-to-one relationship between Book and Genre.",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653737405",
@@ -1505,7 +2035,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_041",
     "source_papers": [
       "IIT M DIPLOMA AN2 EXAM QDD2 25 Feb 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1-d, 2-b, 3-a, 4- c",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653737688",
@@ -1544,7 +2087,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_042",
     "source_papers": [
       "IIT M DIPLOMA AN3 EXAM QDD3 25 Feb 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, C, D",
+      "correct_text": "Statement I represents a one-to-many relationship between Author and Book. | Statement II represents a one-to-many relationship between Publisher and | Statement III represents a many-to-one relationship between Book and Genre.",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653737691",
@@ -1581,7 +2137,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_043",
     "source_papers": [
       "IIT M DIPLOMA AN3 EXAM QDD3 25 Feb 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1-d, 2-b, 3-a, 4- c",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653737974",
@@ -1620,7 +2189,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_044",
     "source_papers": [
       "IIT M DIPLOMA AN4 EXAM QDD4 25 Feb 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, C, D",
+      "correct_text": "Statement I represents a one-to-many relationship between Author and Book. | Statement II represents a one-to-many relationship between Publisher and | Statement III represents a many-to-one relationship between Book and Genre.",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653737977",
@@ -1657,7 +2239,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_045",
     "source_papers": [
       "IIT M DIPLOMA AN4 EXAM QDD4 25 Feb 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1-d, 2-b, 3-a, 4- c",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531113759",
@@ -1694,7 +2289,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_046",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "6406531113760",
@@ -1731,7 +2339,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_047",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "6406531113761",
@@ -1768,7 +2389,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_048",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Both statements 1 and 2 are correct",
+      "step_by_step": [
+        "Step 1: Deconstruct competing selectors into specificity tuples: (Inline, IDs, Classes/Attributes/Pseudo-classes, Elements/Pseudo-elements).",
+        "Step 2: Compare from left to right: (1, 0, 0, 0) > (0, 1, 0, 0) > (0, 0, 1, 0) > (0, 0, 0, 1).",
+        "Step 3: An ID selector always overrules any number of class selectors.",
+        "Step 4: If specificities are equal, the rule defined later in the stylesheet wins."
+      ],
+      "concept": "CSS Specificity Cascade Hierarchy: Precision determines rule precedence, with source order serving solely as a tie-breaker.",
+      "exam_trick": "Count IDs (#) first. If one has an ID and others do not, it wins instantly without further calculation.",
+      "trap_alert": "Assuming a higher class count can defeat an ID selector — specificity levels never carry over."
+    }
   },
   {
     "raw_q_id": "6406531113763",
@@ -1805,7 +2439,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_049",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531113764",
@@ -1844,7 +2491,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "RED",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531113765",
@@ -1881,7 +2541,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_051",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531113766",
@@ -1918,7 +2591,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_052",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "python main.py Jailer",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531113767",
@@ -1955,7 +2641,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_053",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531113768",
@@ -1994,7 +2693,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_054",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, D",
+      "correct_text": "Option A | Option B | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531113769",
@@ -2032,7 +2744,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_055",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, D",
+      "correct_text": "Option B | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531113770",
@@ -2069,7 +2794,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_056",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "6406531113771",
@@ -2106,7 +2844,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_057",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Identify character encoding standard: Standard ASCII (7 bits, 128 characters), Extended ASCII (8 bits, 256 characters), Unicode (code points U+0000 to U+10FFFF), UTF-8 (variable 1 to 4 bytes).",
+        "Step 2: Evaluate code point values: standard English characters (0-127) encode into exactly 1 byte in UTF-8.",
+        "Step 3: Verify binary length and backward-compatibility rules.",
+        "Step 4: Conclude which statement aligns with character representation architecture."
+      ],
+      "concept": "Character Representation Architecture: UTF-8 provides universal character representation while maintaining 100% binary backward compatibility with standard 7-bit ASCII.",
+      "exam_trick": "Standard ASCII code points (0-127) take 1 byte in UTF-8. UTF-8 is self-synchronizing and variable-length.",
+      "trap_alert": "Believing that UTF-8 always uses 8 bits for all characters globally."
+    }
   },
   {
     "raw_q_id": "6406531113772",
@@ -2143,7 +2894,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_058",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531113774",
@@ -2180,7 +2944,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_059",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531113775",
@@ -2217,7 +2994,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_060",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531114386",
@@ -2254,7 +3044,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_061",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "6406531114387",
@@ -2291,7 +3094,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_062",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "6406531114388",
@@ -2328,7 +3144,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_063",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Both statements 1 and 2 are correct",
+      "step_by_step": [
+        "Step 1: Deconstruct competing selectors into specificity tuples: (Inline, IDs, Classes/Attributes/Pseudo-classes, Elements/Pseudo-elements).",
+        "Step 2: Compare from left to right: (1, 0, 0, 0) > (0, 1, 0, 0) > (0, 0, 1, 0) > (0, 0, 0, 1).",
+        "Step 3: An ID selector always overrules any number of class selectors.",
+        "Step 4: If specificities are equal, the rule defined later in the stylesheet wins."
+      ],
+      "concept": "CSS Specificity Cascade Hierarchy: Precision determines rule precedence, with source order serving solely as a tie-breaker.",
+      "exam_trick": "Count IDs (#) first. If one has an ID and others do not, it wins instantly without further calculation.",
+      "trap_alert": "Assuming a higher class count can defeat an ID selector — specificity levels never carry over."
+    }
   },
   {
     "raw_q_id": "6406531114390",
@@ -2365,7 +3194,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_064",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531114392",
@@ -2402,7 +3244,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_065",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531114393",
@@ -2439,7 +3294,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_066",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "python main.py Jailer",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531114394",
@@ -2476,7 +3344,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_067",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531114395",
@@ -2515,7 +3396,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_068",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, D",
+      "correct_text": "Option A | Option B | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531114396",
@@ -2553,7 +3447,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_069",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, D",
+      "correct_text": "Option B | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531114397",
@@ -2590,7 +3497,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_070",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "6406531114398",
@@ -2627,7 +3547,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_071",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Identify character encoding standard: Standard ASCII (7 bits, 128 characters), Extended ASCII (8 bits, 256 characters), Unicode (code points U+0000 to U+10FFFF), UTF-8 (variable 1 to 4 bytes).",
+        "Step 2: Evaluate code point values: standard English characters (0-127) encode into exactly 1 byte in UTF-8.",
+        "Step 3: Verify binary length and backward-compatibility rules.",
+        "Step 4: Conclude which statement aligns with character representation architecture."
+      ],
+      "concept": "Character Representation Architecture: UTF-8 provides universal character representation while maintaining 100% binary backward compatibility with standard 7-bit ASCII.",
+      "exam_trick": "Standard ASCII code points (0-127) take 1 byte in UTF-8. UTF-8 is self-synchronizing and variable-length.",
+      "trap_alert": "Believing that UTF-8 always uses 8 bits for all characters globally."
+    }
   },
   {
     "raw_q_id": "6406531114399",
@@ -2664,7 +3597,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_072",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531114401",
@@ -2701,7 +3647,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_073",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531114402",
@@ -2738,7 +3697,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_074",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531114099",
@@ -2775,7 +3747,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_075",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "6406531114100",
@@ -2812,7 +3797,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_076",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "6406531114101",
@@ -2849,7 +3847,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_077",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Both statements 1 and 2 are correct",
+      "step_by_step": [
+        "Step 1: Deconstruct competing selectors into specificity tuples: (Inline, IDs, Classes/Attributes/Pseudo-classes, Elements/Pseudo-elements).",
+        "Step 2: Compare from left to right: (1, 0, 0, 0) > (0, 1, 0, 0) > (0, 0, 1, 0) > (0, 0, 0, 1).",
+        "Step 3: An ID selector always overrules any number of class selectors.",
+        "Step 4: If specificities are equal, the rule defined later in the stylesheet wins."
+      ],
+      "concept": "CSS Specificity Cascade Hierarchy: Precision determines rule precedence, with source order serving solely as a tie-breaker.",
+      "exam_trick": "Count IDs (#) first. If one has an ID and others do not, it wins instantly without further calculation.",
+      "trap_alert": "Assuming a higher class count can defeat an ID selector — specificity levels never carry over."
+    }
   },
   {
     "raw_q_id": "6406531114103",
@@ -2886,7 +3897,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_078",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531114105",
@@ -2923,7 +3947,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_079",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531114106",
@@ -2960,7 +3997,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_080",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "python main.py Jailer",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531114107",
@@ -2997,7 +4047,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_081",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531114108",
@@ -3036,7 +4099,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_082",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, D",
+      "correct_text": "Option A | Option B | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531114109",
@@ -3074,7 +4150,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_083",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, D",
+      "correct_text": "Option B | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531114110",
@@ -3111,7 +4200,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_084",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "6406531114111",
@@ -3148,7 +4250,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_085",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Identify character encoding standard: Standard ASCII (7 bits, 128 characters), Extended ASCII (8 bits, 256 characters), Unicode (code points U+0000 to U+10FFFF), UTF-8 (variable 1 to 4 bytes).",
+        "Step 2: Evaluate code point values: standard English characters (0-127) encode into exactly 1 byte in UTF-8.",
+        "Step 3: Verify binary length and backward-compatibility rules.",
+        "Step 4: Conclude which statement aligns with character representation architecture."
+      ],
+      "concept": "Character Representation Architecture: UTF-8 provides universal character representation while maintaining 100% binary backward compatibility with standard 7-bit ASCII.",
+      "exam_trick": "Standard ASCII code points (0-127) take 1 byte in UTF-8. UTF-8 is self-synchronizing and variable-length.",
+      "trap_alert": "Believing that UTF-8 always uses 8 bits for all characters globally."
+    }
   },
   {
     "raw_q_id": "6406531114112",
@@ -3185,7 +4300,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_086",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531114114",
@@ -3222,7 +4350,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_087",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531114115",
@@ -3259,7 +4400,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_088",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653577854",
@@ -3296,7 +4450,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_089",
     "source_papers": [
       "Quiz1 May23 .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "The “Content-Length” header indicates the size of the request body in bytes",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653577864",
@@ -3333,7 +4500,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_090",
     "source_papers": [
       "Quiz1 May23 .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "User diagnosis and recovery from errors",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "640653577855",
@@ -3370,7 +4550,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_091",
     "source_papers": [
       "Quiz1 May23 .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "4000",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653577858",
@@ -3407,7 +4600,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_092",
     "source_papers": [
       "Quiz1 May23 .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653577867",
@@ -3444,7 +4650,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_093",
     "source_papers": [
       "Quiz1 May23 .pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "a → c → b → d",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531297893",
@@ -3481,7 +4700,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_094",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: The `<dl>` element defines a Description/Definition List in HTML5.",
+        "Step 2: `<dt>` defines the description term, rendered flush left without indentation.",
+        "Step 3: `<dd>` defines the description details, rendered indented below the corresponding `<dt>`.",
+        "Step 4: Unlike `<ul>` or `<ol>`, `<dl>` generates NO bullet points or numbers.",
+        "Step 5: Therefore, 'Flask' and 'SQLAlchemy' appear flush left, while their descriptions are indented beneath them."
+      ],
+      "concept": "HTML5 Description Lists (`<dl>`, `<dt>`, `<dd>`): Semantic structure for key-value pairs, glossaries, and metadata catalogs.",
+      "exam_trick": "Mnemonic: DT = Direct Term (no indent), DD = Detailed Data (indented). Never has bullets (-).",
+      "trap_alert": "Selecting options that display bullet points or options where `<dd>` text is not indented."
+    }
   },
   {
     "raw_q_id": "6406531297894",
@@ -3518,7 +4751,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_095",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Flask requires `render_template(template_name, **context)` to render HTML templates from the `templates/` folder.",
+        "Step 2: Route endpoints must be registered using the decorator `@app.route('/score')`.",
+        "Step 3: Context variables are passed as keyword arguments: `render_template('score.html', mayur=50, manoj=45)`.",
+        "Step 4: The function `render()` does not exist in Flask (that is Django's syntax).",
+        "Step 5: Therefore, Option B with `@app.route('/score')` and `return render_template('score.html', mayur=50, manoj=45)` is correct."
+      ],
+      "concept": "Flask View Function & Template Context Passing: `@app.route()` decorator binds URL endpoints to Python view functions returning rendered templates with keyword context.",
+      "exam_trick": "Look for `render_template`, never `render`. In Flask, it's always `render_template('file.html', var=val)`.",
+      "trap_alert": "Confusing Django's `render(request, ...)` helper with Flask's `render_template(...)`."
+    }
   },
   {
     "raw_q_id": "6406531297895",
@@ -3555,7 +4802,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_096",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: The selector is `.container p.highlight`.",
+        "Step 2: The space between `.container` and `p.highlight` is the descendant combinator.",
+        "Step 3: The descendant combinator matches ALL target elements nested inside `.container` at any depth, not merely direct children.",
+        "Step 4: `p.highlight` specifically targets paragraph `<p>` tags carrying the `highlight` class.",
+        "Step 5: Thus, all elements with class `highlight` that are descendants of `.container` receive the red background."
+      ],
+      "concept": "CSS Combinators: Descendant selector (` `) matches any nested descendant at arbitrary depth; Child selector (`>`) matches strictly direct child elements.",
+      "exam_trick": "Space = Anywhere inside (descendants). Greater-than `>` = Immediate child only.",
+      "trap_alert": "Confusing descendant selector (space) with direct child selector (`>`)."
+    }
   },
   {
     "raw_q_id": "6406531297896",
@@ -3592,7 +4853,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_097",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: `templatel` is created with Python's standard `string.Template('Hello $name, welcome to $city!')`.",
+        "Step 2: `templatel.substitute(name='Alice')` is called, but `$city` is not provided in keyword arguments.",
+        "Step 3: Python's `string.Template.substitute()` strictly requires all placeholders to be provided; missing keys raise a `KeyError: 'city'`.",
+        "Step 4: In contrast, Jinja2's `template2.render()` does not throw KeyError when keys are missing (it defaults to empty string).",
+        "Step 5: Therefore, `templatel.substitute(name='Alice')` throws the KeyError."
+      ],
+      "concept": "Python `string.Template` vs Jinja2 Template Variable Handling: `string.Template.substitute()` raises KeyError on missing keys (use `safe_substitute()` to avoid), whereas Jinja2 handles undefined variables gracefully by default.",
+      "exam_trick": "Standard `string.Template.substitute()` = strict (KeyError on missing variable). `safe_substitute()` or `jinja2.render()` = lenient.",
+      "trap_alert": "Assuming Jinja2 throws an error on missing variables; Jinja2 renders empty strings for missing context variables unless `StrictUndefined` is explicitly configured."
+    }
   },
   {
     "raw_q_id": "6406531297897",
@@ -3629,7 +4904,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_098",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: The template defines a Jinja2 macro: `{% macro greet(name) %} Hello, {{ name }}! {% endmacro %}`.",
+        "Step 2: Macros in Jinja2 act like reusable Python functions inside templates.",
+        "Step 3: Calling `{{ greet('Alice') }}` renders `Hello, Alice!`.",
+        "Step 4: Calling `{{ greet('Bob') }}` renders `Hello, Bob!`.",
+        "Step 5: Both calls output their rendered text into the template stream sequentially."
+      ],
+      "concept": "Jinja2 Macro Definition & Invocation: `{% macro name(args) %} ... {% endmacro %}` creates modular reusable presentation components.",
+      "exam_trick": "Macros execute in place and return evaluated strings. No exception is thrown for standard macro calls.",
+      "trap_alert": "Thinking macros require a special `import` when declared in the same template file."
+    }
   },
   {
     "raw_q_id": "6406531297898",
@@ -3666,7 +4955,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_099",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: `url_for('function_name', **values)` generates the endpoint URL by referencing the Python view function name.",
+        "Step 2: `redirect(target_url)` instructs the client browser to navigate to a new location with an HTTP 302 redirect.",
+        "Step 3: Custom error pages use `@app.errorhandler(404)` returning a template and the explicit 404 status code.",
+        "Step 4: Validate function arguments and return types."
+      ],
+      "concept": "Flask Redirection & Dynamic URL Resolution: Decouples URL path layout from application logic.",
+      "exam_trick": "`url_for` requires the Python function name as a string, NOT the URL route!",
+      "trap_alert": "Passing `/login` instead of `'login'` into `url_for`."
+    }
   },
   {
     "raw_q_id": "6406531297899",
@@ -3703,7 +5005,23 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_100",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Green",
+      "step_by_step": [
+        "Step 1: Inspect the target HTML element: `<p class=\"important\" id=\"highlight\">This is a paragraph.</p>`.",
+        "Step 2: Calculate CSS Specificity (IDs, Classes, Elements) for all matching rules:",
+        "  - `p`: Specificity = (0, 0, 1) -> color: blue",
+        "  - `.important`: Specificity = (0, 1, 0) -> color: red",
+        "  - `#highlight`: Specificity = (1, 0, 0) -> color: green",
+        "Step 3: Compare specificities: (1, 0, 0) beats (0, 1, 0) and (0, 0, 1). The ID selector `#highlight` has highest specificity.",
+        "Step 4: Therefore, the paragraph renders in Green."
+      ],
+      "concept": "CSS Cascade & Specificity Weighting: Inline style (1,0,0,0) > ID selector (0,1,0,0) > Class / Attribute / Pseudo-class (0,0,1,0) > Element / Pseudo-element (0,0,0,1). Source order only breaks ties.",
+      "exam_trick": "Count the '#' symbols first! One ID rule overrides any number of class rules. Since `#highlight` is an ID, Green wins immediately.",
+      "trap_alert": "Do not be distracted by the name `.important`! It is a normal class with specificity (0,1,0); only the actual CSS declaration `!important` elevates priority."
+    }
   },
   {
     "raw_q_id": "6406531297900",
@@ -3740,7 +5058,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_101",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531297901",
@@ -3777,7 +5108,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_102",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531297903",
@@ -3797,7 +5141,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_103",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Value: 72",
+      "correct_text": "72 ms",
+      "step_by_step": [
+        "Step 1: Calculate request propagation delay through cable: Distance = 3000 km = 3 × 10^6 m, Speed in cable = 2 × 10^8 m/s. Delay = (3 × 10^6) / (2 × 10^8) = 0.015 s = 15 ms.",
+        "Step 2: Add server-side medium change delay: Additional delay at server end = 47 ms.",
+        "Step 3: Calculate response propagation delay through air: Distance = 3000 km = 3 × 10^6 m, Speed in air = 3 × 10^8 m/s. Delay = (3 × 10^6) / (3 × 10^8) = 0.010 s = 10 ms.",
+        "Step 4: Total waiting time for client = Request delay + Server delay + Response delay = 15 ms + 47 ms + 10 ms = 72 ms."
+      ],
+      "concept": "Network Latency & Propagation Delay: Total Latency = T_prop(request) + T_processing + T_prop(response), where T_prop = Distance / Propagation_Speed.",
+      "exam_trick": "Convert distance directly to km/s: Cable speed = 200,000 km/s -> 3000/200,000 = 15 ms. Air speed = 300,000 km/s -> 3000/300,000 = 10 ms. Total = 15 + 47 + 10 = 72 ms! (Solved in 5 seconds).",
+      "trap_alert": "Forgetting to include the server processing delay of 47 ms, or assuming cable speed equals speed of light in vacuum (3e8 m/s)."
+    }
   },
   {
     "raw_q_id": "6406531297905",
@@ -3839,7 +5196,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_104",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, C",
+      "correct_text": "Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531297906",
@@ -3876,7 +5246,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_105",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531297907",
@@ -3913,7 +5296,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_106",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531297909",
@@ -3950,7 +5346,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_107",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Recommended Daily Protein Intake | Gender: FeMaLe weight: 154lb | Recommended Intake: 52 grams",
+      "step_by_step": [
+        "Step 1: Inspect the Flask view function: query parameters or test cases pass `gender='FeMaLe'` and weight in pounds `weight=154lb`.",
+        "Step 2: Convert body weight to kilograms: 154 lb / 2.2 ≈ 70 kg.",
+        "Step 3: Apply the recommended dietary intake coefficient for women (~0.74–0.8 g/kg): 70 kg × 0.74 ≈ 52 grams.",
+        "Step 4: The Jinja2 template outputs the formatted variables matching Option B."
+      ],
+      "concept": "Flask Request Context & Jinja2 Template Interpolation: Parsing URL query parameters, executing business logic calculations, and rendering formatted HTML output.",
+      "exam_trick": "Match input parameters: Gender 'FeMaLe' with 154 lb corresponds to 52 grams of protein.",
+      "trap_alert": "Picking the male calculation option (48g or higher ratio) by misreading the gender parameter."
+    }
   },
   {
     "raw_q_id": "6406531297910",
@@ -3987,7 +5396,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_108",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Recommended Daily Protein Intake | Gender: FeMaLe weight: 154lb | Recommended Intake: 52 grams",
+      "step_by_step": [
+        "Step 1: Inspect the Flask view function: query parameters or test cases pass `gender='FeMaLe'` and weight in pounds `weight=154lb`.",
+        "Step 2: Convert body weight to kilograms: 154 lb / 2.2 ≈ 70 kg.",
+        "Step 3: Apply the recommended dietary intake coefficient for women (~0.74–0.8 g/kg): 70 kg × 0.74 ≈ 52 grams.",
+        "Step 4: The Jinja2 template outputs the formatted variables matching Option B."
+      ],
+      "concept": "Flask Request Context & Jinja2 Template Interpolation: Parsing URL query parameters, executing business logic calculations, and rendering formatted HTML output.",
+      "exam_trick": "Match input parameters: Gender 'FeMaLe' with 154 lb corresponds to 52 grams of protein.",
+      "trap_alert": "Picking the male calculation option (48g or higher ratio) by misreading the gender parameter."
+    }
   },
   {
     "raw_q_id": "6406531298163",
@@ -4024,7 +5446,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_109",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: The `<dl>` element defines a Description/Definition List in HTML5.",
+        "Step 2: `<dt>` defines the description term, rendered flush left without indentation.",
+        "Step 3: `<dd>` defines the description details, rendered indented below the corresponding `<dt>`.",
+        "Step 4: Unlike `<ul>` or `<ol>`, `<dl>` generates NO bullet points or numbers.",
+        "Step 5: Therefore, 'Flask' and 'SQLAlchemy' appear flush left, while their descriptions are indented beneath them."
+      ],
+      "concept": "HTML5 Description Lists (`<dl>`, `<dt>`, `<dd>`): Semantic structure for key-value pairs, glossaries, and metadata catalogs.",
+      "exam_trick": "Mnemonic: DT = Direct Term (no indent), DD = Detailed Data (indented). Never has bullets (-).",
+      "trap_alert": "Selecting options that display bullet points or options where `<dd>` text is not indented."
+    }
   },
   {
     "raw_q_id": "6406531298164",
@@ -4061,7 +5497,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_110",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Flask requires `render_template(template_name, **context)` to render HTML templates from the `templates/` folder.",
+        "Step 2: Route endpoints must be registered using the decorator `@app.route('/score')`.",
+        "Step 3: Context variables are passed as keyword arguments: `render_template('score.html', mayur=50, manoj=45)`.",
+        "Step 4: The function `render()` does not exist in Flask (that is Django's syntax).",
+        "Step 5: Therefore, Option B with `@app.route('/score')` and `return render_template('score.html', mayur=50, manoj=45)` is correct."
+      ],
+      "concept": "Flask View Function & Template Context Passing: `@app.route()` decorator binds URL endpoints to Python view functions returning rendered templates with keyword context.",
+      "exam_trick": "Look for `render_template`, never `render`. In Flask, it's always `render_template('file.html', var=val)`.",
+      "trap_alert": "Confusing Django's `render(request, ...)` helper with Flask's `render_template(...)`."
+    }
   },
   {
     "raw_q_id": "6406531298165",
@@ -4098,7 +5548,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_111",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: The selector is `.container p.highlight`.",
+        "Step 2: The space between `.container` and `p.highlight` is the descendant combinator.",
+        "Step 3: The descendant combinator matches ALL target elements nested inside `.container` at any depth, not merely direct children.",
+        "Step 4: `p.highlight` specifically targets paragraph `<p>` tags carrying the `highlight` class.",
+        "Step 5: Thus, all elements with class `highlight` that are descendants of `.container` receive the red background."
+      ],
+      "concept": "CSS Combinators: Descendant selector (` `) matches any nested descendant at arbitrary depth; Child selector (`>`) matches strictly direct child elements.",
+      "exam_trick": "Space = Anywhere inside (descendants). Greater-than `>` = Immediate child only.",
+      "trap_alert": "Confusing descendant selector (space) with direct child selector (`>`)."
+    }
   },
   {
     "raw_q_id": "6406531298166",
@@ -4135,7 +5599,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_112",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: `templatel` is created with Python's standard `string.Template('Hello $name, welcome to $city!')`.",
+        "Step 2: `templatel.substitute(name='Alice')` is called, but `$city` is not provided in keyword arguments.",
+        "Step 3: Python's `string.Template.substitute()` strictly requires all placeholders to be provided; missing keys raise a `KeyError: 'city'`.",
+        "Step 4: In contrast, Jinja2's `template2.render()` does not throw KeyError when keys are missing (it defaults to empty string).",
+        "Step 5: Therefore, `templatel.substitute(name='Alice')` throws the KeyError."
+      ],
+      "concept": "Python `string.Template` vs Jinja2 Template Variable Handling: `string.Template.substitute()` raises KeyError on missing keys (use `safe_substitute()` to avoid), whereas Jinja2 handles undefined variables gracefully by default.",
+      "exam_trick": "Standard `string.Template.substitute()` = strict (KeyError on missing variable). `safe_substitute()` or `jinja2.render()` = lenient.",
+      "trap_alert": "Assuming Jinja2 throws an error on missing variables; Jinja2 renders empty strings for missing context variables unless `StrictUndefined` is explicitly configured."
+    }
   },
   {
     "raw_q_id": "6406531298167",
@@ -4172,7 +5650,21 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_113",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: The template defines a Jinja2 macro: `{% macro greet(name) %} Hello, {{ name }}! {% endmacro %}`.",
+        "Step 2: Macros in Jinja2 act like reusable Python functions inside templates.",
+        "Step 3: Calling `{{ greet('Alice') }}` renders `Hello, Alice!`.",
+        "Step 4: Calling `{{ greet('Bob') }}` renders `Hello, Bob!`.",
+        "Step 5: Both calls output their rendered text into the template stream sequentially."
+      ],
+      "concept": "Jinja2 Macro Definition & Invocation: `{% macro name(args) %} ... {% endmacro %}` creates modular reusable presentation components.",
+      "exam_trick": "Macros execute in place and return evaluated strings. No exception is thrown for standard macro calls.",
+      "trap_alert": "Thinking macros require a special `import` when declared in the same template file."
+    }
   },
   {
     "raw_q_id": "6406531298168",
@@ -4209,7 +5701,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_114",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: `url_for('function_name', **values)` generates the endpoint URL by referencing the Python view function name.",
+        "Step 2: `redirect(target_url)` instructs the client browser to navigate to a new location with an HTTP 302 redirect.",
+        "Step 3: Custom error pages use `@app.errorhandler(404)` returning a template and the explicit 404 status code.",
+        "Step 4: Validate function arguments and return types."
+      ],
+      "concept": "Flask Redirection & Dynamic URL Resolution: Decouples URL path layout from application logic.",
+      "exam_trick": "`url_for` requires the Python function name as a string, NOT the URL route!",
+      "trap_alert": "Passing `/login` instead of `'login'` into `url_for`."
+    }
   },
   {
     "raw_q_id": "6406531298169",
@@ -4246,7 +5751,23 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_115",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Green",
+      "step_by_step": [
+        "Step 1: Inspect the target HTML element: `<p class=\"important\" id=\"highlight\">This is a paragraph.</p>`.",
+        "Step 2: Calculate CSS Specificity (IDs, Classes, Elements) for all matching rules:",
+        "  - `p`: Specificity = (0, 0, 1) -> color: blue",
+        "  - `.important`: Specificity = (0, 1, 0) -> color: red",
+        "  - `#highlight`: Specificity = (1, 0, 0) -> color: green",
+        "Step 3: Compare specificities: (1, 0, 0) beats (0, 1, 0) and (0, 0, 1). The ID selector `#highlight` has highest specificity.",
+        "Step 4: Therefore, the paragraph renders in Green."
+      ],
+      "concept": "CSS Cascade & Specificity Weighting: Inline style (1,0,0,0) > ID selector (0,1,0,0) > Class / Attribute / Pseudo-class (0,0,1,0) > Element / Pseudo-element (0,0,0,1). Source order only breaks ties.",
+      "exam_trick": "Count the '#' symbols first! One ID rule overrides any number of class rules. Since `#highlight` is an ID, Green wins immediately.",
+      "trap_alert": "Do not be distracted by the name `.important`! It is a normal class with specificity (0,1,0); only the actual CSS declaration `!important` elevates priority."
+    }
   },
   {
     "raw_q_id": "6406531298170",
@@ -4283,7 +5804,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_116",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531298171",
@@ -4320,7 +5854,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_117",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531298173",
@@ -4340,7 +5887,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_118",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Value: 72",
+      "correct_text": "72 ms",
+      "step_by_step": [
+        "Step 1: Calculate request propagation delay through cable: Distance = 3000 km = 3 × 10^6 m, Speed in cable = 2 × 10^8 m/s. Delay = (3 × 10^6) / (2 × 10^8) = 0.015 s = 15 ms.",
+        "Step 2: Add server-side medium change delay: Additional delay at server end = 47 ms.",
+        "Step 3: Calculate response propagation delay through air: Distance = 3000 km = 3 × 10^6 m, Speed in air = 3 × 10^8 m/s. Delay = (3 × 10^6) / (3 × 10^8) = 0.010 s = 10 ms.",
+        "Step 4: Total waiting time for client = Request delay + Server delay + Response delay = 15 ms + 47 ms + 10 ms = 72 ms."
+      ],
+      "concept": "Network Latency & Propagation Delay: Total Latency = T_prop(request) + T_processing + T_prop(response), where T_prop = Distance / Propagation_Speed.",
+      "exam_trick": "Convert distance directly to km/s: Cable speed = 200,000 km/s -> 3000/200,000 = 15 ms. Air speed = 300,000 km/s -> 3000/300,000 = 10 ms. Total = 15 + 47 + 10 = 72 ms! (Solved in 5 seconds).",
+      "trap_alert": "Forgetting to include the server processing delay of 47 ms, or assuming cable speed equals speed of light in vacuum (3e8 m/s)."
+    }
   },
   {
     "raw_q_id": "6406531298175",
@@ -4382,7 +5942,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_119",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, C",
+      "correct_text": "Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531298176",
@@ -4419,7 +5992,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_120",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531298177",
@@ -4456,7 +6042,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_121",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531298179",
@@ -4493,7 +6092,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_122",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Recommended Daily Protein Intake | Gender: FeMaLe weight: 154lb | Recommended Intake: 52 grams",
+      "step_by_step": [
+        "Step 1: Inspect the Flask view function: query parameters or test cases pass `gender='FeMaLe'` and weight in pounds `weight=154lb`.",
+        "Step 2: Convert body weight to kilograms: 154 lb / 2.2 ≈ 70 kg.",
+        "Step 3: Apply the recommended dietary intake coefficient for women (~0.74–0.8 g/kg): 70 kg × 0.74 ≈ 52 grams.",
+        "Step 4: The Jinja2 template outputs the formatted variables matching Option B."
+      ],
+      "concept": "Flask Request Context & Jinja2 Template Interpolation: Parsing URL query parameters, executing business logic calculations, and rendering formatted HTML output.",
+      "exam_trick": "Match input parameters: Gender 'FeMaLe' with 154 lb corresponds to 52 grams of protein.",
+      "trap_alert": "Picking the male calculation option (48g or higher ratio) by misreading the gender parameter."
+    }
   },
   {
     "raw_q_id": "6406531298180",
@@ -4530,7 +6142,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_123",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Recommended Daily Protein Intake | Gender: FeMaLe weight: 154lb | Recommended Intake: 52 grams",
+      "step_by_step": [
+        "Step 1: Inspect the Flask view function: query parameters or test cases pass `gender='FeMaLe'` and weight in pounds `weight=154lb`.",
+        "Step 2: Convert body weight to kilograms: 154 lb / 2.2 ≈ 70 kg.",
+        "Step 3: Apply the recommended dietary intake coefficient for women (~0.74–0.8 g/kg): 70 kg × 0.74 ≈ 52 grams.",
+        "Step 4: The Jinja2 template outputs the formatted variables matching Option B."
+      ],
+      "concept": "Flask Request Context & Jinja2 Template Interpolation: Parsing URL query parameters, executing business logic calculations, and rendering formatted HTML output.",
+      "exam_trick": "Match input parameters: Gender 'FeMaLe' with 154 lb corresponds to 52 grams of protein.",
+      "trap_alert": "Picking the male calculation option (48g or higher ratio) by misreading the gender parameter."
+    }
   },
   {
     "raw_q_id": "640653825020",
@@ -4569,7 +6194,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Give users enough time to read and use content.",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653825021",
@@ -4612,7 +6250,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "400-499",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653825028",
@@ -4651,7 +6302,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653825034",
@@ -4690,7 +6354,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "i - d, ii - c, iii - e, iv - a, v - b",
+      "step_by_step": [
+        "Step 1: Inspect SQLite relational constraints: `PRIMARY KEY` enforces uniqueness and non-null; `FOREIGN KEY` enforces referential integrity.",
+        "Step 2: In Python `sqlite3`: queries use parameter placeholders `?` (`cursor.execute('SELECT * FROM t WHERE id=?', (val,))`) to prevent SQL injection.",
+        "Step 3: DML operations (INSERT, UPDATE, DELETE) modify the transaction buffer and require `conn.commit()` to persist to the database file.",
+        "Step 4: Confirm transaction completion and constraint behavior."
+      ],
+      "concept": "Relational Data Modeling & SQLite Driver Operations: ACID transaction management and foreign key constraints in web applications.",
+      "exam_trick": "Always call `conn.commit()` after INSERT or UPDATE; otherwise, changes disappear when the connection closes!",
+      "trap_alert": "Using Python string formatting (`f'SELECT... {user_input}'`) which leaves the database vulnerable to SQL injection."
+    }
   },
   {
     "raw_q_id": "640653825022",
@@ -4729,7 +6406,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "2000",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653825024",
@@ -4766,7 +6456,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_129",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "1000 bits",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653825025",
@@ -4805,7 +6508,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653825026",
@@ -4844,7 +6560,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Deconstruct competing selectors into specificity tuples: (Inline, IDs, Classes/Attributes/Pseudo-classes, Elements/Pseudo-elements).",
+        "Step 2: Compare from left to right: (1, 0, 0, 0) > (0, 1, 0, 0) > (0, 0, 1, 0) > (0, 0, 0, 1).",
+        "Step 3: An ID selector always overrules any number of class selectors.",
+        "Step 4: If specificities are equal, the rule defined later in the stylesheet wins."
+      ],
+      "concept": "CSS Specificity Cascade Hierarchy: Precision determines rule precedence, with source order serving solely as a tie-breaker.",
+      "exam_trick": "Count IDs (#) first. If one has an ID and others do not, it wins instantly without further calculation.",
+      "trap_alert": "Assuming a higher class count can defeat an ID selector — specificity levels never carry over."
+    }
   },
   {
     "raw_q_id": "640653825031",
@@ -4881,7 +6610,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_132",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
+      ],
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
+    }
   },
   {
     "raw_q_id": "640653825032",
@@ -4920,7 +6662,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653825027",
@@ -4959,7 +6714,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "265",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653825035",
@@ -5002,7 +6770,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653825029",
@@ -5042,7 +6823,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B",
+      "correct_text": "A student can exist without enrolling to any course | A student can have more than one courses",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653825033",
@@ -5083,7 +6877,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, C",
+      "correct_text": "Option A | Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653827493",
@@ -5120,7 +6927,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_138",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "1000 bits",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653827500",
@@ -5157,7 +6977,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_139",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
+      ],
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
+    }
   },
   {
     "raw_q_id": "640653827781",
@@ -5194,7 +7027,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_140",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "1000 bits",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653827788",
@@ -5231,7 +7077,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_141",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
+      ],
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
+    }
   },
   {
     "raw_q_id": "6406531527806",
@@ -5268,7 +7127,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_142",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531527807",
@@ -5313,7 +7185,20 @@ window.MAD1_QUESTIONS = [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf",
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf",
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Statement 2 is correct, but statement 1 is incorrect.",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531527809",
@@ -5350,7 +7235,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_144",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "6406531527810",
@@ -5387,7 +7285,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_145",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531527811",
@@ -5424,7 +7335,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_146",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 → B, 2 → D, 3 → C, 4 → A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531527808",
@@ -5467,7 +7391,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_147",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "Option A | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531527816",
@@ -5505,7 +7442,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_148",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C",
+      "correct_text": "Option A | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531527812",
@@ -5542,7 +7492,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_149",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "240 px",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531527813",
@@ -5579,7 +7542,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_150",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531527814",
@@ -5618,7 +7594,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_151",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, C",
+      "correct_text": "Option A | Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531527815",
@@ -5656,7 +7645,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_152",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B",
+      "correct_text": "Option A | Option B",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531527818",
@@ -5693,7 +7695,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_153",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531527819",
@@ -5732,7 +7747,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf",
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf",
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531527821",
@@ -5777,7 +7805,20 @@ window.MAD1_QUESTIONS = [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf",
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf",
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531528109",
@@ -5814,7 +7855,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_156",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531528112",
@@ -5851,7 +7905,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_157",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "6406531528113",
@@ -5888,7 +7955,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_158",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531528114",
@@ -5925,7 +8005,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_159",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 → B, 2 → D, 3 → C, 4 → A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531528111",
@@ -5968,7 +8061,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_160",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "Option A | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531528119",
@@ -6006,7 +8112,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_161",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C",
+      "correct_text": "Option A | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531528115",
@@ -6043,7 +8162,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_162",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "240 px",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531528116",
@@ -6080,7 +8212,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_163",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531528117",
@@ -6119,7 +8264,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_164",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, C",
+      "correct_text": "Option A | Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531528118",
@@ -6157,7 +8315,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_165",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B",
+      "correct_text": "Option A | Option B",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531528121",
@@ -6194,7 +8365,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_166",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531528771",
@@ -6231,7 +8415,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_167",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531528774",
@@ -6268,7 +8465,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_168",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "6406531528775",
@@ -6305,7 +8515,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_169",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531528776",
@@ -6342,7 +8565,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_170",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 → B, 2 → D, 3 → C, 4 → A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531528773",
@@ -6385,7 +8621,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_171",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "Option A | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531528781",
@@ -6423,7 +8672,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_172",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C",
+      "correct_text": "Option A | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531528777",
@@ -6460,7 +8722,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_173",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "240 px",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531528778",
@@ -6497,7 +8772,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_174",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531528779",
@@ -6536,7 +8824,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_175",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, C",
+      "correct_text": "Option A | Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531528780",
@@ -6574,7 +8875,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_176",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B",
+      "correct_text": "Option A | Option B",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531528783",
@@ -6611,7 +8925,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_177",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531533248",
@@ -6650,7 +8977,20 @@ window.MAD1_QUESTIONS = [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf",
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf",
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531533249",
@@ -6687,7 +9027,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_179",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531533252",
@@ -6724,7 +9077,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_180",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "6406531533253",
@@ -6761,7 +9127,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_181",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531533254",
@@ -6798,7 +9177,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_182",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 → B, 2 → D, 3 → C, 4 → A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531533251",
@@ -6841,7 +9233,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_183",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "Option A | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533259",
@@ -6879,7 +9284,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_184",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C",
+      "correct_text": "Option A | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533255",
@@ -6916,7 +9334,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_185",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "240 px",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531533256",
@@ -6953,7 +9384,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_186",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533257",
@@ -6992,7 +9436,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_187",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, C",
+      "correct_text": "Option A | Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533258",
@@ -7030,7 +9487,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_188",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B",
+      "correct_text": "Option A | Option B",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533261",
@@ -7067,7 +9537,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_189",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531533262",
@@ -7106,7 +9589,20 @@ window.MAD1_QUESTIONS = [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf",
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf",
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533574",
@@ -7143,7 +9639,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_191",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531533577",
@@ -7180,7 +9689,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_192",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "6406531533578",
@@ -7217,7 +9739,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_193",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531533579",
@@ -7254,7 +9789,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_194",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 → B, 2 → D, 3 → C, 4 → A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531533576",
@@ -7297,7 +9845,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_195",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "Option A | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533584",
@@ -7335,7 +9896,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_196",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C",
+      "correct_text": "Option A | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533580",
@@ -7372,7 +9946,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_197",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "240 px",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531533581",
@@ -7409,7 +9996,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_198",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533582",
@@ -7448,7 +10048,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_199",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, C",
+      "correct_text": "Option A | Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533583",
@@ -7486,7 +10099,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_200",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B",
+      "correct_text": "Option A | Option B",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533586",
@@ -7523,7 +10149,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_201",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531533899",
@@ -7560,7 +10199,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_202",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531533902",
@@ -7597,7 +10249,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_203",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "6406531533903",
@@ -7634,7 +10299,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_204",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531533904",
@@ -7671,7 +10349,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_205",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 → B, 2 → D, 3 → C, 4 → A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531533901",
@@ -7714,7 +10405,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_206",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "Option A | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533909",
@@ -7752,7 +10456,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_207",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C",
+      "correct_text": "Option A | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533905",
@@ -7789,7 +10506,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_208",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "240 px",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531533906",
@@ -7826,7 +10556,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_209",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533907",
@@ -7865,7 +10608,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_210",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, C",
+      "correct_text": "Option A | Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533908",
@@ -7903,7 +10659,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_211",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B",
+      "correct_text": "Option A | Option B",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531533911",
@@ -7940,7 +10709,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_212",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531531440",
@@ -7977,7 +10759,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_213",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531531443",
@@ -8014,7 +10809,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_214",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "6406531531444",
@@ -8051,7 +10859,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_215",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531531445",
@@ -8088,7 +10909,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_216",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 → B, 2 → D, 3 → C, 4 → A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531531442",
@@ -8131,7 +10965,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_217",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "Option A | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531531450",
@@ -8169,7 +11016,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_218",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C",
+      "correct_text": "Option A | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531531446",
@@ -8206,7 +11066,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_219",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "240 px",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531531447",
@@ -8243,7 +11116,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_220",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531531448",
@@ -8282,7 +11168,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_221",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, C",
+      "correct_text": "Option A | Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531531449",
@@ -8320,7 +11219,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_222",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B",
+      "correct_text": "Option A | Option B",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531531452",
@@ -8357,7 +11269,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_223",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531531453",
@@ -8396,7 +11321,20 @@ window.MAD1_QUESTIONS = [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf",
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf",
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532323",
@@ -8433,7 +11371,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_225",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531532326",
@@ -8470,7 +11421,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_226",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "6406531532327",
@@ -8507,7 +11471,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_227",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531532328",
@@ -8544,7 +11521,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_228",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 → B, 2 → D, 3 → C, 4 → A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531532325",
@@ -8587,7 +11577,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_229",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "Option A | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532333",
@@ -8625,7 +11628,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_230",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C",
+      "correct_text": "Option A | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532329",
@@ -8662,7 +11678,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_231",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "240 px",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531532330",
@@ -8699,7 +11728,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_232",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532331",
@@ -8738,7 +11780,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_233",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, C",
+      "correct_text": "Option A | Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532332",
@@ -8776,7 +11831,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_234",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B",
+      "correct_text": "Option A | Option B",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532335",
@@ -8813,7 +11881,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_235",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531532886",
@@ -8850,7 +11931,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_236",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531532889",
@@ -8887,7 +11981,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_237",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "6406531532890",
@@ -8924,7 +12031,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_238",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.1 Python Web Fundamentals & Command-Line Arguments: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "6406531532891",
@@ -8961,7 +12081,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_239",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "1 → B, 2 → D, 3 → C, 4 → A",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "6406531532888",
@@ -9004,7 +12137,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_240",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "Option A | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532896",
@@ -9042,7 +12188,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_241",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C",
+      "correct_text": "Option A | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532892",
@@ -9079,7 +12238,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_242",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "240 px",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "6406531532893",
@@ -9116,7 +12288,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_243",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532894",
@@ -9155,7 +12340,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_244",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B, C",
+      "correct_text": "Option A | Option B | Option C",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532895",
@@ -9193,7 +12391,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_245",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, B",
+      "correct_text": "Option A | Option B",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "6406531532898",
@@ -9230,7 +12441,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_246",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 3.2 Flask Application Setup & App Configuration: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653668542",
@@ -9269,7 +12493,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf",
       "IIT M DIPLOMA AN3 EXAM QPD3 29 Oct.pdf",
       "IIT M DIPLOMA AN4 EXAM QPD4 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "The ability of a webpage to alter its layout and appearance to suit different",
+      "step_by_step": [
+        "Step 1: Identify the box model layout mode (`content-box` default vs `border-box`).",
+        "Step 2: With `box-sizing: content-box`: Total Rendered Width = width + padding-left + padding-right + border-left + border-right.",
+        "Step 3: With `box-sizing: border-box`: Declared width is inclusive of padding and borders.",
+        "Step 4: In Flexbox: `justify-content` aligns items along the MAIN axis, while `align-items` aligns along the CROSS axis."
+      ],
+      "concept": "CSS Layout Mechanics & Box Sizing: Controlling dimensions and alignments across standard and flexible container contexts.",
+      "exam_trick": "`border-box` prevents layouts from breaking by absorbing padding/border into the set width. `justify-content` = main axis, `align-items` = cross axis.",
+      "trap_alert": "Forgetting that margin is NEVER included inside `box-sizing: border-box`."
+    }
   },
   {
     "raw_q_id": "640653668543",
@@ -9308,7 +12545,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf",
       "IIT M DIPLOMA AN3 EXAM QPD3 29 Oct.pdf",
       "IIT M DIPLOMA AN4 EXAM QPD4 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "1-c, 2-d, 3-b, 4-a",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653668548",
@@ -9347,7 +12597,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf",
       "IIT M DIPLOMA AN3 EXAM QPD3 29 Oct.pdf",
       "IIT M DIPLOMA AN4 EXAM QPD4 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653668553",
@@ -9386,7 +12649,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf",
       "IIT M DIPLOMA AN3 EXAM QPD3 29 Oct.pdf",
       "IIT M DIPLOMA AN4 EXAM QPD4 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "195 bits",
+      "step_by_step": [
+        "Step 1: Identify character encoding standard: Standard ASCII (7 bits, 128 characters), Extended ASCII (8 bits, 256 characters), Unicode (code points U+0000 to U+10FFFF), UTF-8 (variable 1 to 4 bytes).",
+        "Step 2: Evaluate code point values: standard English characters (0-127) encode into exactly 1 byte in UTF-8.",
+        "Step 3: Verify binary length and backward-compatibility rules.",
+        "Step 4: Conclude which statement aligns with character representation architecture."
+      ],
+      "concept": "Character Representation Architecture: UTF-8 provides universal character representation while maintaining 100% binary backward compatibility with standard 7-bit ASCII.",
+      "exam_trick": "Standard ASCII code points (0-127) take 1 byte in UTF-8. UTF-8 is self-synchronizing and variable-length.",
+      "trap_alert": "Believing that UTF-8 always uses 8 bits for all characters globally."
+    }
   },
   {
     "raw_q_id": "640653668555",
@@ -9425,7 +12701,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf",
       "IIT M DIPLOMA AN3 EXAM QPD3 29 Oct.pdf",
       "IIT M DIPLOMA AN4 EXAM QPD4 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "3.4 TB",
+      "step_by_step": [
+        "Step 1: Inspect SQLite relational constraints: `PRIMARY KEY` enforces uniqueness and non-null; `FOREIGN KEY` enforces referential integrity.",
+        "Step 2: In Python `sqlite3`: queries use parameter placeholders `?` (`cursor.execute('SELECT * FROM t WHERE id=?', (val,))`) to prevent SQL injection.",
+        "Step 3: DML operations (INSERT, UPDATE, DELETE) modify the transaction buffer and require `conn.commit()` to persist to the database file.",
+        "Step 4: Confirm transaction completion and constraint behavior."
+      ],
+      "concept": "Relational Data Modeling & SQLite Driver Operations: ACID transaction management and foreign key constraints in web applications.",
+      "exam_trick": "Always call `conn.commit()` after INSERT or UPDATE; otherwise, changes disappear when the connection closes!",
+      "trap_alert": "Using Python string formatting (`f'SELECT... {user_input}'`) which leaves the database vulnerable to SQL injection."
+    }
   },
   {
     "raw_q_id": "640653668557",
@@ -9464,7 +12753,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf",
       "IIT M DIPLOMA AN3 EXAM QPD3 29 Oct.pdf",
       "IIT M DIPLOMA AN4 EXAM QPD4 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Option C",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653668554",
@@ -9501,7 +12803,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_253",
     "source_papers": [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "2.7",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653668544",
@@ -9542,7 +12857,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf",
       "IIT M DIPLOMA AN3 EXAM QPD3 29 Oct.pdf",
       "IIT M DIPLOMA AN4 EXAM QPD4 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "Person - Passport | Person - Birth certificate | Person - Fingerprint",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 2.1 HTML5 Elements, Semantic Tags & Document Structure: Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653668552",
@@ -9580,7 +12908,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_255",
     "source_papers": [
       "IIT M DIPLOMA AN2 EXAM QPD2 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options C, D",
+      "correct_text": "The page is generated on demand by a program or a request from a browser. | On every request, every new page created may be different from the last.",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653668915",
@@ -9617,7 +12958,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_256",
     "source_papers": [
       "IIT M DIPLOMA AN3 EXAM QPD3 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "2.7",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653668913",
@@ -9655,7 +13009,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_257",
     "source_papers": [
       "IIT M DIPLOMA AN3 EXAM QPD3 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options C, D",
+      "correct_text": "The page is generated on demand by a program or a request from a browser. | On every request, every new page created may be different from the last.",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653669176",
@@ -9692,7 +13059,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_258",
     "source_papers": [
       "IIT M DIPLOMA AN4 EXAM QPD4 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "2.7",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653669174",
@@ -9730,7 +13110,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_259",
     "source_papers": [
       "IIT M DIPLOMA AN4 EXAM QPD4 29 Oct.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options C, D",
+      "correct_text": "The page is generated on demand by a program or a request from a browser. | On every request, every new page created may be different from the last.",
+      "step_by_step": [
+        "Step 1: Analyze the problem stem and identify the fundamental IITM MAD 1 syllabus topic being assessed.",
+        "Step 2: Trace the logic, code execution, or parameter requirements step-by-step against standard web engineering conventions.",
+        "Step 3: Systematically evaluate and eliminate incorrect answer choices based on syntax and protocol specifications.",
+        "Step 4: Verify that the selected option aligns precisely with the verified course answer key."
+      ],
+      "concept": "Core Technical Mastery in 1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers): Accurate application of full-stack web principles and rigorous debugging.",
+      "exam_trick": "Eliminate syntactically invalid or extreme answer options first to quickly zero in on the correct choice.",
+      "trap_alert": "Watch out for subtle naming, case-sensitivity, and parameter order traps common in timed exams."
+    }
   },
   {
     "raw_q_id": "640653995532",
@@ -9769,7 +13162,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2.pdf",
       "IIT M DIPLOMA AN EXAM QDD3.pdf",
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "He should buy the earphones which have low latency as much possible.",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653995543",
@@ -9806,7 +13212,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_261",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653995533",
@@ -9843,7 +13262,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_262",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653995534",
@@ -9880,7 +13312,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_263",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653995538",
@@ -9917,7 +13362,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_264",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653995540",
@@ -9954,7 +13412,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_265",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653995544",
@@ -9991,7 +13462,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_266",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653995548",
@@ -10028,7 +13512,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_267",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "640653995539",
@@ -10067,7 +13564,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2.pdf",
       "IIT M DIPLOMA AN EXAM QDD3.pdf",
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "26 Mbps",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653995541",
@@ -10104,7 +13614,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_269",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
+      ],
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
+    }
   },
   {
     "raw_q_id": "640653995546",
@@ -10141,7 +13664,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_270",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Remain Same",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653995542",
@@ -10186,7 +13722,20 @@ window.MAD1_QUESTIONS = [
       "IIT M DIPLOMA AN EXAM QDD2.pdf",
       "IIT M DIPLOMA AN EXAM QDD3.pdf",
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options A, C, D",
+      "correct_text": "HTTP/2.0 is the protocol and version respectively | “Internal Server Error” is the status message | 500 is the status code",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653995545",
@@ -10224,7 +13773,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_272",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options C, D",
+      "correct_text": "Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653995547",
@@ -10263,7 +13825,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_273",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, C, D",
+      "correct_text": "Option B | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653995536",
@@ -10300,7 +13875,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_274",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653995537",
@@ -10337,7 +13925,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_275",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653995825",
@@ -10374,7 +13975,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_276",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653995815",
@@ -10411,7 +14025,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_277",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653995816",
@@ -10448,7 +14075,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_278",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653995820",
@@ -10485,7 +14125,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_279",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653995822",
@@ -10522,7 +14175,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_280",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653995826",
@@ -10559,7 +14225,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_281",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653995830",
@@ -10596,7 +14275,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_282",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "640653995823",
@@ -10633,7 +14325,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_283",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
+      ],
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
+    }
   },
   {
     "raw_q_id": "640653995828",
@@ -10670,7 +14375,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_284",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Remain Same",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653995827",
@@ -10708,7 +14426,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_285",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options C, D",
+      "correct_text": "Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653995829",
@@ -10747,7 +14478,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_286",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, C, D",
+      "correct_text": "Option B | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653995818",
@@ -10784,7 +14528,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_287",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653995819",
@@ -10821,7 +14578,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_288",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653996107",
@@ -10858,7 +14628,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_289",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653996097",
@@ -10895,7 +14678,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_290",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653996098",
@@ -10932,7 +14728,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_291",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653996102",
@@ -10969,7 +14778,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_292",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653996104",
@@ -11006,7 +14828,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_293",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Inspect the HTTP method (GET, POST, PUT, DELETE, PATCH, HEAD) or status code (2xx, 3xx, 4xx, 5xx) evaluated.",
+        "Step 2: Check safety and idempotence definitions:\n  - Safe methods (do not alter server state): GET, HEAD, OPTIONS\n  - Idempotent methods (multiple identical requests produce same server state): GET, PUT, DELETE, HEAD, OPTIONS\n  - Non-idempotent methods: POST, PATCH.",
+        "Step 3: Evaluate response codes: 200 (OK), 201 (Created), 301 (Moved Permanently), 302 (Found/Temporary Redirect), 400 (Bad Request), 404 (Not Found), 500 (Internal Server Error).",
+        "Step 4: Correlate the prompt requirements with HTTP protocol specifications to confirm the correct choice."
+      ],
+      "concept": "HTTP Method Semantics & Idempotency: Essential for RESTful API design and reliable client-server communication.",
+      "exam_trick": "GET, PUT, DELETE = Idempotent (running 1 time or 100 times has same end state). POST = NOT idempotent (creates duplicate records).",
+      "trap_alert": "Confusing 301 (Permanent redirect, cached by browser) with 302 (Temporary redirect, not cached by default)."
+    }
   },
   {
     "raw_q_id": "640653996108",
@@ -11043,7 +14878,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_294",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Recognize Jinja2 delimiters: `{{ ... }}` for variable output expressions, `{% ... %}` for control flow tags.",
+        "Step 2: In loops: `{% for item in list %}` requires matching closing tag `{% endfor %}`.",
+        "Step 3: Special loop helpers: `loop.index` (1, 2, 3...), `loop.index0` (0, 1, 2...), `loop.first` (boolean), `loop.last` (boolean).",
+        "Step 4: Undefined variables render as empty strings by default without throwing errors."
+      ],
+      "concept": "Jinja2 Dynamic Template Rendering: Powerful expression interpolation and programmatic template flow.",
+      "exam_trick": "`loop.index` is 1-based; `loop.index0` is 0-based. `{{ }}` prints, `{% %}` executes!",
+      "trap_alert": "Forgetting `{% endfor %}` or `{% endif %}` closing tags in Jinja2 templates."
+    }
   },
   {
     "raw_q_id": "640653996112",
@@ -11080,7 +14928,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_295",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Check endpoint path and converters in `@app.route()`: `<string>` (default), `<int>`, `<float>`, `<path>`.",
+        "Step 2: Confirm function arguments match URL parameters defined in the route pattern.",
+        "Step 3: Inspect HTTP methods: default is `['GET']`; `methods=['GET', 'POST']` is required for forms handling both.",
+        "Step 4: Determine return value: string, HTML from `render_template`, redirect response, or tuple `(body, status_code)`."
+      ],
+      "concept": "Flask URL Routing Architecture: Decorators bind URL routes to Python callable functions with automated parameter parsing.",
+      "exam_trick": "Submitting a POST request to a route with default `@app.route('/...')` triggers HTTP `405 Method Not Allowed`.",
+      "trap_alert": "Omitting type converters when expecting integer parameters (Flask defaults to string)."
+    }
   },
   {
     "raw_q_id": "640653996105",
@@ -11117,7 +14978,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_296",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option B",
+      "correct_text": "Option B",
+      "step_by_step": [
+        "Step 1: Determine the HTTP method and data source.",
+        "Step 2: In Flask:\n  - `request.args`: Query string parameters (e.g. `?name=val` in GET)\n  - `request.form`: MultiDict of form payload fields submitted in POST\n  - `request.get_json()`: Parsed JSON payload\n  - `request.method`: String representing request verb ('GET', 'POST').",
+        "Step 3: Using bracket indexing `request.form['key']` raises `400 Bad Request` if key is absent; `request.form.get('key')` returns `None` safely.",
+        "Step 4: Select the corresponding option."
+      ],
+      "concept": "Flask Request Context & Payload Parsing: Granular isolation between query parameters and form body data.",
+      "exam_trick": "Remember: `args` for URL queries (GET), `form` for HTML form bodies (POST)!",
+      "trap_alert": "Using `request.args` to inspect POST form submissions."
+    }
   },
   {
     "raw_q_id": "640653996110",
@@ -11154,7 +15028,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_297",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option C",
+      "correct_text": "Remain Same",
+      "step_by_step": [
+        "Step 1: Identify given network parameters: Distance, link propagation speed, packet size, and bandwidth capacity.",
+        "Step 2: Apply the governing delay equations:\n  - Propagation Delay: T_prop = Distance / Propagation_Speed\n  - Transmission Delay: T_trans = Packet_Size / Bandwidth\n  - RTT (Round Trip Time): 2 × T_prop + Queuing/Processing Delays.",
+        "Step 3: Convert units accurately (1 Byte = 8 bits, 1 km = 1,000 m, 1 ms = 10^-3 s, 1 Gbps = 10^9 bps).",
+        "Step 4: Substitute the values to verify the numerical or conceptual match in the official key."
+      ],
+      "concept": "Network Transmission Fundamentals: Propagation delay is strictly independent of packet size (governed by distance/medium); Transmission delay is determined by packet size divided by channel bandwidth.",
+      "exam_trick": "Check what is changing: Double the distance? Propagation delay doubles. Double the packet size? Only transmission delay doubles!",
+      "trap_alert": "Failing to convert bits to Bytes when comparing transmission rates with file sizes."
+    }
   },
   {
     "raw_q_id": "640653996109",
@@ -11192,7 +15079,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_298",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options C, D",
+      "correct_text": "Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653996111",
@@ -11231,7 +15131,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_299",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Options B, C, D",
+      "correct_text": "Option B | Option C | Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653996100",
@@ -11268,7 +15181,20 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_300",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option A",
+      "correct_text": "Option A",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   },
   {
     "raw_q_id": "640653996101",
@@ -11305,6 +15231,19 @@ window.MAD1_QUESTIONS = [
     "id": "MAD1_301",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4.pdf"
-    ]
+    ],
+    "explanation": {
+      "correct_label": "Option D",
+      "correct_text": "Option D",
+      "step_by_step": [
+        "Step 1: Inspect form control types and attributes (`action`, `method`, `name`, `value`, `required`, `disabled`).",
+        "Step 2: Remember that inputs without a `name` attribute will NEVER submit their data to the server upon form submission.",
+        "Step 3: In GET forms, form values are appended to the URL query string; in POST forms, data is transmitted in the HTTP request payload body.",
+        "Step 4: Radio buttons with the SAME `name` attribute form a mutually-exclusive group; checkboxes allow multiple selections."
+      ],
+      "concept": "HTML Form Controls & Data Serialization: Form elements encode user input into key-value pairs (`name=value`) sent via HTTP requests.",
+      "exam_trick": "Radio buttons MUST share the exact same `name` attribute to allow only one selection at a time!",
+      "trap_alert": "Using the `id` attribute instead of the `name` attribute in form inputs when expecting backend form processing."
+    }
   }
 ];

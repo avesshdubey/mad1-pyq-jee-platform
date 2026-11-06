@@ -2314,4 +2314,235 @@ body {
     background-color: #1d4ed8;
 }
 
+/* ==========================================================================
+   SHOW ANSWER & DETAILED EXPLANATION FEATURE
+   ========================================================================== */
+.solution-toggle-bar {
+    margin: 12px 16px 16px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-toggle-solution {
+    background: #f8fafc;
+    border: 1.5px solid #0284c7;
+    color: #0369a1;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(2, 132, 199, 0.08);
+}
+
+.btn-toggle-solution:hover {
+    background: #e0f2fe;
+    color: #0284c7;
+    border-color: #0284c7;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.16);
+    transform: translateY(-1px);
+}
+
+.btn-toggle-solution.active {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #0369a1;
+    box-shadow: 0 2px 10px rgba(2, 132, 199, 0.25);
+}
+
+.solution-btn-icon {
+    font-size: 15px;
+}
+
+.solution-btn-arrow {
+    font-size: 11px;
+    transition: transform 0.2s ease;
+}
+
+.btn-toggle-solution.active .solution-btn-arrow {
+    transform: rotate(180deg);
+}
+
+/* Solution Drawer Card */
+.solution-drawer {
+    margin: 0 16px 24px 16px;
+    animation: solFadeIn 0.25s ease-out;
+}
+
+@keyframes solFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.solution-card {
+    background: #ffffff;
+    border: 1.5px solid #86efac;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(22, 163, 74, 0.08);
+    overflow: hidden;
+}
+
+.solution-header {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-bottom: 1.5px solid #bbf7d0;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sol-badge-correct {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #15803d;
+}
+
+.sol-correct-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #16a34a;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sol-meta-subtopic {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1e40af;
+    background: #dbeafe;
+    padding: 3px 10px;
+    border-radius: 4px;
+    border: 1px solid #bfdbfe;
+}
+
+.sol-content-body {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sol-answer-highlight {
+    background: #f8fafc;
+    border-left: 4px solid #16a34a;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13.5px;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sol-highlight-label {
+    font-weight: 600;
+    color: #475569;
+}
+
+.sol-highlight-text {
+    font-weight: 700;
+    color: #15803d;
+}
+
+.sol-section {
+    border-radius: 6px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.sol-section-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.2px;
+}
+
+.sol-sec-icon {
+    font-size: 14px;
+}
+
+/* Section Variations */
+.sol-section-steps {
+    border-left: 4px solid #0284c7;
+    background: #f0f9ff;
+    border-color: #bae6fd;
+}
+.sol-section-steps .sol-section-title {
+    color: #0369a1;
+}
+
+.sol-steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sol-step-item {
+    font-size: 13.5px;
+    color: #1e293b;
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.sol-section-concept {
+    border-left: 4px solid #6366f1;
+    background: #f5f3ff;
+    border-color: #ddd6fe;
+}
+.sol-section-concept .sol-section-title {
+    color: #4f46e5;
+}
+
+.sol-section-trick {
+    border-left: 4px solid #d97706;
+    background: #fffbeb;
+    border-color: #fde68a;
+}
+.sol-section-trick .sol-section-title {
+    color: #b45309;
+}
+
+.sol-section-trap {
+    border-left: 4px solid #e11d48;
+    background: #fff1f2;
+    border-color: #fecdd3;
+}
+.sol-section-trap .sol-section-title {
+    color: #be123c;
+}
+
+.sol-section-text {
+    font-size: 13.5px;
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
 
