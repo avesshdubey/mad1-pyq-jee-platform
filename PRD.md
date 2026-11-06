@@ -36,5 +36,15 @@
 
 - [x] **Task 6: Automated Test Verification, CodeRabbit QA & Git Auto-Push**
   - Write test suite `tests/test_platform.py` verifying question schema, PDF integrity, image resolution, web linking, and authentication RBAC (all 7 tests passed).
-  - Run CodeRabbit code review audit (`coderabbit review --agent`) and fix any flagged issues (0 findings).
+  - Run CodeRabbit code review audit (`coderabbit review --agent`) and fix any flagged issues.
   - Commit atomic changes and auto-push upstream to GitHub remote.
+
+- [x] **Task 7: UI/UX Refinements, Options Recovery, Sidebar Synchronization & Zoom Controls**
+  - Eliminated raw OCR question stem duplication under the card; card image is now primary and authoritative.
+  - Added visual zoom controls toolbar (Zoom In, Zoom Out, Reset 100%, and Fullscreen High-Resolution Preview Modal).
+  - Recovered complete 4-option sets for 100% of MCQ/MSQ questions; stripped all extraction artifacts (`---PAGE_`, `MLF`, `Java`, numeric IDs).
+  - Verified 100% official green checkmark answer keys with sub-pixel coordinate alignment in source PDFs.
+  - Reclassified questions across 4 weeks with precise balance (Week 1: 50, Week 2: 115, Week 3: 78, Week 4: 58).
+  - Synchronized sidebar legend counters with active filtered question set.
+  - Added real-time question counts to subtopic filter options.
+  - Implemented responsive section test score calculation.

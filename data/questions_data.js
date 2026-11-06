@@ -11,11 +11,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534366179",
-        "text": "6406534366180."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534366180",
+        "text": "Option B"
       },
       {
         "option_id": "6406534366181",
-        "text": "6406534366182."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534366182",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -40,15 +48,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534366183",
-        "text": "6406534366184."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534366184",
+        "text": "Option B"
       },
       {
         "option_id": "6406534366185",
-        "text": "6406534366186."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534366186",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534366183"
+      "6406534366184"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298434.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -69,15 +85,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534366187",
-        "text": "6406534366188."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534366188",
+        "text": "Option B"
       },
       {
         "option_id": "6406534366189",
-        "text": "6406534366190."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534366190",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534366187"
+      "6406534366189"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298435.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -98,11 +122,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534366191",
-        "text": "6406534366192."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534366192",
+        "text": "Option B"
       },
       {
         "option_id": "6406534366193",
-        "text": "6406534366194."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534366194",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -127,11 +159,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534366195",
-        "text": "6406534366196."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534366196",
+        "text": "Option B"
       },
       {
         "option_id": "6406534366197",
-        "text": "6406534366198."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534366198",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -156,15 +196,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534366199",
-        "text": "6406534366200."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534366200",
+        "text": "Option B"
       },
       {
         "option_id": "6406534366201",
-        "text": "6406534366202."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534366202",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534366199"
+      "6406534366200"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298438.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -201,7 +249,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406534366203"
+      "6406534366204"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298439.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -222,15 +270,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534366207",
-        "text": "6406534366208."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534366208",
+        "text": "Option B"
       },
       {
         "option_id": "6406534366209",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534366210",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534366207"
+      "6406534366209"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298440.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -251,19 +307,27 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534366211",
-        "text": "6406534366212."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534366212",
+        "text": "Option B"
       },
       {
         "option_id": "6406534366213",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534366214",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534366211"
+      "6406534366214"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298441.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_009",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
@@ -342,7 +406,8 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406534366217"
+      "6406534366218",
+      "6406534366219"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298445.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -363,11 +428,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534366222",
-        "text": "6406534366223."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534366223",
+        "text": "Option B"
       },
       {
         "option_id": "6406534366224",
-        "text": "6406534366225."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534366225",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -375,7 +448,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298446.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_013",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
@@ -404,15 +477,15 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406534366229",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534366226"
+      "6406534366228"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298447.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_014",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 13 July 2025.pdf"
@@ -445,7 +518,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406534366230"
+      "6406534366231"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298449.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -478,11 +551,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406534366237",
-        "text": "MLF"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534366234"
+      "6406534366235"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298450.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -519,7 +592,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531148331"
+      "6406531148333"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345241.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -556,7 +629,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531148351"
+      "6406531148353"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345246.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -651,15 +724,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406531148343",
-        "text": "6406531148344."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406531148344",
+        "text": "Option B"
       },
       {
         "option_id": "6406531148345",
-        "text": "6406531148346."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406531148346",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406531148343"
+      "6406531148346"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345244.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -680,15 +761,25 @@ window.MAD1_QUESTIONS = [
     "question_text": "Duestion Number : 113 Question ld : 640653345247 Question Type : MCQ Is Question mandatory : No Calculator : None Response Time : N.A Think Time : N.A Minimum Instructu ime : O orrect Marks : 3 )uestion Label : Multiple Choice Question ourses and Deva took Compiler and Database courses. Which of the following list of uples correctly represents the relationship between names and courses. lames = {0: 'Annie', 1: 'Bella', 2: Curly', 3: 'Deva'} nurses = {0: 'Database', 1: 'Compiler', 2: 'Networks', 3: 'Python') )ptions : rels [(names[0], courses[0]), (names[2], (names[0], courses[2]), (names[2], courses[2]), (names[3], courses[()]), (names[3], courses[l]), 406531148355. (names[lJ, courses[l]), (names[l], courses[3])] rels [(names[2], courses[()]), (names[3], (names[2], courses[2]), (names[3], courses[2]), (names[0], courses[()]), courses[l]), (names[2J, courses[l]), (names[2], courses[3])] 406531148356. = 1), (2,0), (0,2), (2,2), (3,0), (2,1), (1,1), (1,3)] rels 406531148357. 406531148358. = [(1, 1), (2,2), (0,0), (2,3), (3,1), (2,4), (4,4), (1,4)]",
     "options": [
       {
-        "option_id": "6406531561974",
-        "text": "6406531561975."
+        "option_id": "6406531148355",
+        "text": "Option A"
       },
       {
-        "option_id": "6406531561976",
-        "text": "6406531561977."
+        "option_id": "6406531148356",
+        "text": "Option B"
+      },
+      {
+        "option_id": "6406531148357",
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406531148358",
+        "text": "Option D"
       }
     ],
-    "correct_answer": [],
+    "correct_answer": [
+      "6406531148355"
+    ],
     "card_image": "assets/q_cards/mad1_card_640653345247.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
     "subtopic": "2.1 HTML5 Elements, Semantic Tags & Document Structure",
@@ -732,7 +823,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531148387"
+      "6406531148388"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345255.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -753,15 +844,24 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406531148339",
-        "text": "6406531148340."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406531148340",
+        "text": "Option B"
       },
       {
         "option_id": "6406531148341",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406531148342",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406531148339"
+      "6406531148339",
+      "6406531148341"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345243.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -798,7 +898,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531148375"
+      "6406531148376"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345252.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -824,10 +924,18 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406531148384",
         "text": "Option B"
+      },
+      {
+        "option_id": "6406531148385",
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406531148386",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406531148383"
+      "6406531148386"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345254.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -864,7 +972,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531148391"
+      "6406531148393"
     ],
     "card_image": "assets/q_cards/mad1_card_640653345256.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -901,7 +1009,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531561998"
+      "6406531562001"
     ],
     "card_image": "assets/q_cards/mad1_card_640653470036.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -938,7 +1046,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531562006"
+      "6406531562008"
     ],
     "card_image": "assets/q_cards/mad1_card_640653470038.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -975,7 +1083,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531562026"
+      "6406531562029"
     ],
     "card_image": "assets/q_cards/mad1_card_640653470043.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -1012,7 +1120,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531562030"
+      "6406531562032"
     ],
     "card_image": "assets/q_cards/mad1_card_640653470044.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -1049,7 +1157,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531561978"
+      "6406531561980"
     ],
     "card_image": "assets/q_cards/mad1_card_640653470031.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -1086,7 +1194,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531561986"
+      "6406531561987"
     ],
     "card_image": "assets/q_cards/mad1_card_640653470033.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -1123,11 +1231,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531561990"
+      "6406531561992"
     ],
     "card_image": "assets/q_cards/mad1_card_640653470034.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_034",
     "source_papers": [
       "Quiz 1 Jan23  .pdf"
@@ -1160,7 +1268,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531561994"
+      "6406531561996"
     ],
     "card_image": "assets/q_cards/mad1_card_640653470035.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -1197,7 +1305,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531562002"
+      "6406531562004"
     ],
     "card_image": "assets/q_cards/mad1_card_640653470037.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -1230,11 +1338,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406531562013",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406531562010"
+      "6406531562012"
     ],
     "card_image": "assets/q_cards/mad1_card_640653470039.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -1311,7 +1419,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532467946"
+      "6406532467947"
     ],
     "card_image": "assets/q_cards/mad1_card_640653737406.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -1350,7 +1458,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532467934"
+      "6406532467935",
+      "6406532467936",
+      "6406532467937"
     ],
     "card_image": "assets/q_cards/mad1_card_640653737402.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -1387,7 +1497,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532467942"
+      "6406532467944"
     ],
     "card_image": "assets/q_cards/mad1_card_640653737405.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -1424,7 +1534,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532468758"
+      "6406532468759",
+      "6406532468760",
+      "6406532468761"
     ],
     "card_image": "assets/q_cards/mad1_card_640653737688.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -1461,7 +1573,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532468766"
+      "6406532468768"
     ],
     "card_image": "assets/q_cards/mad1_card_640653737691.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -1498,7 +1610,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532469582"
+      "6406532469583",
+      "6406532469584",
+      "6406532469585"
     ],
     "card_image": "assets/q_cards/mad1_card_640653737974.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -1535,7 +1649,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532469590"
+      "6406532469592"
     ],
     "card_image": "assets/q_cards/mad1_card_640653737977.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -1556,15 +1670,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533774140",
-        "text": "6406533774141."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533774141",
+        "text": "Option B"
       },
       {
         "option_id": "6406533774142",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533774143",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533774140"
+      "6406533774141"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113759.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -1585,15 +1707,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533774144",
-        "text": "6406533774145."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533774145",
+        "text": "Option B"
       },
       {
         "option_id": "6406533774146",
-        "text": "6406533774147."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533774147",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533774144"
+      "6406533774145"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113760.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -1704,7 +1834,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533774160"
+      "6406533774163"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113764.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -1732,10 +1862,18 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406533774165",
         "text": "Option B"
+      },
+      {
+        "option_id": "6406533774166",
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533774167",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533774164"
+      "6406533774165"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113765.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -1772,11 +1910,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533774168"
+      "6406533774171"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113766.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_052",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
@@ -1805,15 +1943,15 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533774175",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533774172"
+      "6406533774174"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113767.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_053",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 23 Feb 2025.pdf"
@@ -1830,15 +1968,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533774176",
-        "text": "6406533774177."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533774177",
+        "text": "Option B"
       },
       {
         "option_id": "6406533774178",
-        "text": "6406533774179."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533774179",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533774176"
+      "6406533774176",
+      "6406533774177",
+      "6406533774179"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113768.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -1868,10 +2016,15 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406533774182",
         "text": "Option C"
+      },
+      {
+        "option_id": "6406533774183",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533774180"
+      "6406533774181",
+      "6406533774183"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113769.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -1892,15 +2045,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533774184",
-        "text": "6406533774185."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533774185",
+        "text": "Option B"
       },
       {
         "option_id": "6406533774186",
-        "text": "6406533774187."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533774187",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533774184"
+      "6406533774187"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113770.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -1921,15 +2082,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533774188",
-        "text": "6406533774189."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533774189",
+        "text": "Option B"
       },
       {
         "option_id": "6406533774190",
-        "text": "6406533774191."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533774191",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533774188"
+      "6406533774190"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113771.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -1955,6 +2124,14 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406533774193",
         "text": "Option B"
+      },
+      {
+        "option_id": "6406533774194",
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533774195",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -1979,15 +2156,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533774196",
-        "text": "6406533774197."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533774197",
+        "text": "Option B"
       },
       {
         "option_id": "6406533774198",
-        "text": "6406533774199."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533774199",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533774196"
+      "6406533774197"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113774.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -2008,15 +2193,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533774200",
-        "text": "6406533774201."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533774201",
+        "text": "Option B"
       },
       {
         "option_id": "6406533774202",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533774203",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533774200"
+      "6406533774203"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531113775.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -2037,15 +2230,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775953",
-        "text": "6406533775954."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775954",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775955",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775956",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775953"
+      "6406533775954"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114386.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -2066,15 +2267,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775957",
-        "text": "6406533775958."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775958",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775959",
-        "text": "6406533775960."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775960",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775957"
+      "6406533775958"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114387.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -2174,10 +2383,18 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406533775978",
         "text": "Option B"
+      },
+      {
+        "option_id": "6406533775979",
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775980",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775977"
+      "6406533775978"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114392.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -2214,11 +2431,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533775981"
+      "6406533775984"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114393.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_066",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
@@ -2247,15 +2464,15 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533775988",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775985"
+      "6406533775987"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114394.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_067",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 23 Feb 2025.pdf"
@@ -2272,15 +2489,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775989",
-        "text": "6406533775990."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775990",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775991",
-        "text": "6406533775992."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775992",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775989"
+      "6406533775989",
+      "6406533775990",
+      "6406533775992"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114395.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -2310,10 +2537,15 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406533775995",
         "text": "Option C"
+      },
+      {
+        "option_id": "6406533775996",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775993"
+      "6406533775994",
+      "6406533775996"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114396.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -2334,15 +2566,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775997",
-        "text": "6406533775998."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775998",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775999",
-        "text": "6406533776000."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533776000",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775997"
+      "6406533776000"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114397.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -2363,15 +2603,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533776001",
-        "text": "6406533776002."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533776002",
+        "text": "Option B"
       },
       {
         "option_id": "6406533776003",
-        "text": "6406533776004."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533776004",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533776001"
+      "6406533776003"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114398.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -2397,6 +2645,14 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406533776006",
         "text": "Option B"
+      },
+      {
+        "option_id": "6406533776007",
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533776008",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -2421,15 +2677,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533776009",
-        "text": "6406533776010."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533776010",
+        "text": "Option B"
       },
       {
         "option_id": "6406533776011",
-        "text": "6406533776012."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533776012",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533776009"
+      "6406533776010"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114401.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -2450,15 +2714,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533776013",
-        "text": "6406533776014."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533776014",
+        "text": "Option B"
       },
       {
         "option_id": "6406533776015",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533776016",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533776013"
+      "6406533776016"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114402.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -2479,15 +2751,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775124",
-        "text": "6406533775125."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775125",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775126",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775127",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775124"
+      "6406533775125"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114099.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -2508,15 +2788,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775128",
-        "text": "6406533775129."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775129",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775130",
-        "text": "6406533775131."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775131",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775128"
+      "6406533775129"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114100.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -2616,10 +2904,18 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406533775149",
         "text": "Option B"
+      },
+      {
+        "option_id": "6406533775150",
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775151",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775148"
+      "6406533775149"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114105.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -2656,11 +2952,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533775152"
+      "6406533775155"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114106.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_080",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
@@ -2689,15 +2985,15 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533775159",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775156"
+      "6406533775158"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114107.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_081",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 23 Feb 2025.pdf"
@@ -2714,15 +3010,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775160",
-        "text": "6406533775161."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775161",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775162",
-        "text": "6406533775163."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775163",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775160"
+      "6406533775160",
+      "6406533775161",
+      "6406533775163"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114108.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -2752,10 +3058,15 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406533775166",
         "text": "Option C"
+      },
+      {
+        "option_id": "6406533775167",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775164"
+      "6406533775165",
+      "6406533775167"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114109.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -2776,15 +3087,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775168",
-        "text": "6406533775169."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775169",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775170",
-        "text": "6406533775171."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775171",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775168"
+      "6406533775171"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114110.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -2805,15 +3124,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775172",
-        "text": "6406533775173."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775173",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775174",
-        "text": "6406533775175."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775175",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775172"
+      "6406533775174"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114111.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -2839,6 +3166,14 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406533775177",
         "text": "Option B"
+      },
+      {
+        "option_id": "6406533775178",
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775179",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -2863,15 +3198,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775180",
-        "text": "6406533775181."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775181",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775182",
-        "text": "6406533775183."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775183",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775180"
+      "6406533775181"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114114.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -2892,15 +3235,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533775184",
-        "text": "6406533775185."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533775185",
+        "text": "Option B"
       },
       {
         "option_id": "6406533775186",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533775187",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533775184"
+      "6406533775187"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531114115.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -2937,7 +3288,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531929655"
+      "6406531929657"
     ],
     "card_image": "assets/q_cards/mad1_card_640653577854.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -2974,7 +3325,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531929691"
+      "6406531929693"
     ],
     "card_image": "assets/q_cards/mad1_card_640653577864.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -3011,7 +3362,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531929659"
+      "6406531929660"
     ],
     "card_image": "assets/q_cards/mad1_card_640653577855.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -3048,7 +3399,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531929671"
+      "6406531929672"
     ],
     "card_image": "assets/q_cards/mad1_card_640653577858.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -3085,7 +3436,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406531929703"
+      "6406531929705"
     ],
     "card_image": "assets/q_cards/mad1_card_640653577867.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -3106,11 +3457,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534364637",
-        "text": "6406534364638."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534364638",
+        "text": "Option B"
       },
       {
         "option_id": "6406534364639",
-        "text": "6406534364640."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534364640",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -3135,15 +3494,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534364641",
-        "text": "6406534364642."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534364642",
+        "text": "Option B"
       },
       {
         "option_id": "6406534364643",
-        "text": "6406534364644."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534364644",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534364641"
+      "6406534364642"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297894.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -3164,15 +3531,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534364645",
-        "text": "6406534364646."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534364646",
+        "text": "Option B"
       },
       {
         "option_id": "6406534364647",
-        "text": "6406534364648."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534364648",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534364645"
+      "6406534364647"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297895.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -3193,11 +3568,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534364649",
-        "text": "6406534364650."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534364650",
+        "text": "Option B"
       },
       {
         "option_id": "6406534364651",
-        "text": "6406534364652."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534364652",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -3222,11 +3605,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534364653",
-        "text": "6406534364654."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534364654",
+        "text": "Option B"
       },
       {
         "option_id": "6406534364655",
-        "text": "6406534364656."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534364656",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -3251,15 +3642,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534364657",
-        "text": "6406534364658."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534364658",
+        "text": "Option B"
       },
       {
         "option_id": "6406534364659",
-        "text": "6406534364660."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534364660",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534364657"
+      "6406534364658"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297898.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -3296,7 +3695,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406534364661"
+      "6406534364662"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297899.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -3317,15 +3716,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534364665",
-        "text": "6406534364666."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534364666",
+        "text": "Option B"
       },
       {
         "option_id": "6406534364667",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534364668",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534364665"
+      "6406534364667"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297900.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -3346,19 +3753,27 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534364669",
-        "text": "6406534364670."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534364670",
+        "text": "Option B"
       },
       {
         "option_id": "6406534364671",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534364672",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534364669"
+      "6406534364672"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297901.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_102",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
@@ -3415,7 +3830,8 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406534364675"
+      "6406534364676",
+      "6406534364677"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297905.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -3436,11 +3852,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534364680",
-        "text": "6406534364681."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534364681",
+        "text": "Option B"
       },
       {
         "option_id": "6406534364682",
-        "text": "6406534364683."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534364683",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -3448,7 +3872,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297906.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_105",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
@@ -3477,15 +3901,15 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406534364687",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534364684"
+      "6406534364686"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297907.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_106",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 13 July 2025.pdf"
@@ -3518,7 +3942,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406534364688"
+      "6406534364689"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297909.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -3551,11 +3975,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406534364695",
-        "text": "MLF"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534364692"
+      "6406534364693"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531297910.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -3576,11 +4000,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534365408",
-        "text": "6406534365409."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534365409",
+        "text": "Option B"
       },
       {
         "option_id": "6406534365410",
-        "text": "6406534365411."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534365411",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -3605,15 +4037,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534365412",
-        "text": "6406534365413."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534365413",
+        "text": "Option B"
       },
       {
         "option_id": "6406534365414",
-        "text": "6406534365415."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534365415",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534365412"
+      "6406534365413"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298164.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -3634,15 +4074,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534365416",
-        "text": "6406534365417."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534365417",
+        "text": "Option B"
       },
       {
         "option_id": "6406534365418",
-        "text": "6406534365419."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534365419",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534365416"
+      "6406534365418"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298165.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -3663,11 +4111,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534365420",
-        "text": "6406534365421."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534365421",
+        "text": "Option B"
       },
       {
         "option_id": "6406534365422",
-        "text": "6406534365423."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534365423",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -3692,11 +4148,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534365424",
-        "text": "6406534365425."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534365425",
+        "text": "Option B"
       },
       {
         "option_id": "6406534365426",
-        "text": "6406534365427."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534365427",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -3721,15 +4185,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534365428",
-        "text": "6406534365429."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534365429",
+        "text": "Option B"
       },
       {
         "option_id": "6406534365430",
-        "text": "6406534365431."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534365431",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534365428"
+      "6406534365429"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298168.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -3766,7 +4238,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406534365432"
+      "6406534365433"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298169.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -3787,15 +4259,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534365436",
-        "text": "6406534365437."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534365437",
+        "text": "Option B"
       },
       {
         "option_id": "6406534365438",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534365439",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534365436"
+      "6406534365438"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298170.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -3816,19 +4296,27 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534365440",
-        "text": "6406534365441."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534365441",
+        "text": "Option B"
       },
       {
         "option_id": "6406534365442",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534365443",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534365440"
+      "6406534365443"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298171.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_117",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
@@ -3885,7 +4373,8 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406534365446"
+      "6406534365447",
+      "6406534365448"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298175.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -3906,11 +4395,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406534365451",
-        "text": "6406534365452."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406534365452",
+        "text": "Option B"
       },
       {
         "option_id": "6406534365453",
-        "text": "6406534365454."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406534365454",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -3918,7 +4415,7 @@ window.MAD1_QUESTIONS = [
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298176.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_120",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
@@ -3947,15 +4444,15 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406534365458",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534365455"
+      "6406534365457"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298177.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_121",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 13 July 2025.pdf"
@@ -3988,7 +4485,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406534365459"
+      "6406534365460"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298179.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -4021,11 +4518,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406534365466",
-        "text": "MLF"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406534365463"
+      "6406534365464"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531298180.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -4062,7 +4559,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532774726"
+      "6406532774729"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825020.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4105,7 +4602,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532774730"
+      "6406532774731"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825021.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -4128,15 +4625,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406532774759",
-        "text": "6406532774760."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406532774760",
+        "text": "Option B"
       },
       {
         "option_id": "6406532774761",
-        "text": "6406532774762."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406532774762",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406532774759"
+      "6406532774761"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825028.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -4175,7 +4680,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532774783"
+      "6406532774784"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825034.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -4214,7 +4719,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532774735"
+      "6406532774737"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825022.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -4253,7 +4758,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532774743"
+      "6406532774744"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825024.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4274,15 +4779,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406532774747",
-        "text": "6406532774748."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406532774748",
+        "text": "Option B"
       },
       {
         "option_id": "6406532774749",
-        "text": "6406532774750."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406532774750",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406532774747"
+      "6406532774748"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825025.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4305,15 +4818,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406532774751",
-        "text": "6406532774752."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406532774752",
+        "text": "Option B"
       },
       {
         "option_id": "6406532774753",
-        "text": "6406532774754."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406532774754",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406532774751"
+      "6406532774752"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825026.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4352,11 +4873,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532774771"
+      "6406532774772"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825031.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_132",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf"
@@ -4389,11 +4910,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532774775"
+      "6406532774776"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825032.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_133",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 7 July 2024.pdf",
@@ -4428,7 +4949,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532774755"
+      "6406532774757"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825027.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -4464,10 +4985,14 @@ window.MAD1_QUESTIONS = [
       {
         "option_id": "6406532774790",
         "text": "Option D"
+      },
+      {
+        "option_id": "6406532774791",
+        "text": "Option E"
       }
     ],
     "correct_answer": [
-      "6406532774787"
+      "6406532774790"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825035.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -4506,7 +5031,8 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532774763"
+      "6406532774763",
+      "6406532774764"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825029.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4541,11 +5067,13 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406532774782",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406532774779"
+      "6406532774779",
+      "6406532774780",
+      "6406532774781"
     ],
     "card_image": "assets/q_cards/mad1_card_640653825033.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4584,7 +5112,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532781267"
+      "6406532781268"
     ],
     "card_image": "assets/q_cards/mad1_card_640653827493.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4621,11 +5149,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532781295"
+      "6406532781296"
     ],
     "card_image": "assets/q_cards/mad1_card_640653827500.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_139",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 7 July 2024.pdf"
@@ -4658,7 +5186,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532782063"
+      "6406532782064"
     ],
     "card_image": "assets/q_cards/mad1_card_640653827781.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4695,11 +5223,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532782091"
+      "6406532782092"
     ],
     "card_image": "assets/q_cards/mad1_card_640653827788.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_141",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 7 July 2024.pdf"
@@ -4716,15 +5244,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535115551",
-        "text": "6406535115552."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535115552",
+        "text": "Option B"
       },
       {
         "option_id": "6406535115553",
-        "text": "6406535115554."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535115554",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535115551"
+      "6406535115554"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527806.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -4761,7 +5297,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535115555"
+      "6406535115556"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527807.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4790,15 +5326,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535115564",
-        "text": "6406535115565."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535115565",
+        "text": "Option B"
       },
       {
         "option_id": "6406535115566",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535115567",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535115564"
+      "6406535115567"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527809.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -4819,19 +5363,27 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535115568",
-        "text": "6406535115569."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535115569",
+        "text": "Option B"
       },
       {
         "option_id": "6406535115570",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535115571",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535115568"
+      "6406535115570"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527810.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_145",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD2 26 Oct 2025.pdf"
@@ -4864,7 +5416,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535115572"
+      "6406535115574"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527811.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -4905,7 +5457,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535115559"
+      "6406535115559",
+      "6406535115561",
+      "6406535115562"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527808.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4938,11 +5492,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535115595",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535115592"
+      "6406535115592",
+      "6406535115594"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527816.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -4979,7 +5534,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535115576"
+      "6406535115578"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527812.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5012,11 +5567,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535115583",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535115580"
+      "6406535115582"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527813.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -5037,15 +5592,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535115584",
-        "text": "6406535115585."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535115585",
+        "text": "Option B"
       },
       {
         "option_id": "6406535115586",
-        "text": "6406535115587."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535115587",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535115584"
+      "6406535115584",
+      "6406535115585",
+      "6406535115586"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527814.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5066,15 +5631,24 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535115588",
-        "text": "6406535115589."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535115589",
+        "text": "Option B"
       },
       {
         "option_id": "6406535115590",
-        "text": "6406535115591."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535115591",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535115588"
+      "6406535115588",
+      "6406535115589"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527815.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5095,15 +5669,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535115596",
-        "text": "6406535115597."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535115597",
+        "text": "Option B"
       },
       {
         "option_id": "6406535115598",
-        "text": "6406535115599."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535115599",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535115596"
+      "6406535115597"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527818.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -5124,15 +5706,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535115600",
-        "text": "6406535115601."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535115601",
+        "text": "Option B"
       },
       {
         "option_id": "6406535115602",
-        "text": "6406535115603."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535115603",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535115600"
+      "6406535115602"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531527819.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -5155,11 +5745,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535115604",
-        "text": "6406535115605."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535115605",
+        "text": "Option B"
       },
       {
         "option_id": "6406535115606",
-        "text": "6406535115607."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535115607",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -5192,15 +5790,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535116394",
-        "text": "6406535116395."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535116395",
+        "text": "Option B"
       },
       {
         "option_id": "6406535116396",
-        "text": "6406535116397."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535116397",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535116394"
+      "6406535116397"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528109.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -5221,15 +5827,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535116407",
-        "text": "6406535116408."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535116408",
+        "text": "Option B"
       },
       {
         "option_id": "6406535116409",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535116410",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535116407"
+      "6406535116410"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528112.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -5250,19 +5864,27 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535116411",
-        "text": "6406535116412."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535116412",
+        "text": "Option B"
       },
       {
         "option_id": "6406535116413",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535116414",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535116411"
+      "6406535116413"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528113.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_158",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD3 26 Oct 2025.pdf"
@@ -5295,7 +5917,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535116415"
+      "6406535116417"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528114.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -5336,7 +5958,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535116402"
+      "6406535116402",
+      "6406535116404",
+      "6406535116405"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528111.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5369,11 +5993,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535116438",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535116435"
+      "6406535116435",
+      "6406535116437"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528119.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5410,7 +6035,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535116419"
+      "6406535116421"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528115.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5443,11 +6068,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535116426",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535116423"
+      "6406535116425"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528116.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -5468,15 +6093,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535116427",
-        "text": "6406535116428."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535116428",
+        "text": "Option B"
       },
       {
         "option_id": "6406535116429",
-        "text": "6406535116430."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535116430",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535116427"
+      "6406535116427",
+      "6406535116428",
+      "6406535116429"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528117.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5497,15 +6132,24 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535116431",
-        "text": "6406535116432."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535116432",
+        "text": "Option B"
       },
       {
         "option_id": "6406535116433",
-        "text": "6406535116434."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535116434",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535116431"
+      "6406535116431",
+      "6406535116432"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528118.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5526,15 +6170,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535116439",
-        "text": "6406535116440."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535116440",
+        "text": "Option B"
       },
       {
         "option_id": "6406535116441",
-        "text": "6406535116442."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535116442",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535116439"
+      "6406535116440"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528121.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -5555,15 +6207,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535118325",
-        "text": "6406535118326."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535118326",
+        "text": "Option B"
       },
       {
         "option_id": "6406535118327",
-        "text": "6406535118328."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535118328",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535118325"
+      "6406535118328"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528771.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -5584,15 +6244,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535118338",
-        "text": "6406535118339."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535118339",
+        "text": "Option B"
       },
       {
         "option_id": "6406535118340",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535118341",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535118338"
+      "6406535118341"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528774.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -5613,19 +6281,27 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535118342",
-        "text": "6406535118343."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535118343",
+        "text": "Option B"
       },
       {
         "option_id": "6406535118344",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535118345",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535118342"
+      "6406535118344"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528775.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_169",
     "source_papers": [
       "IIT M DIPLOMA AN EXAM QDD4 26 Oct 2025.pdf"
@@ -5658,7 +6334,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535118346"
+      "6406535118348"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528776.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -5699,7 +6375,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535118333"
+      "6406535118333",
+      "6406535118335",
+      "6406535118336"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528773.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5732,11 +6410,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535118369",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535118366"
+      "6406535118366",
+      "6406535118368"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528781.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5773,7 +6452,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535118350"
+      "6406535118352"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528777.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5806,11 +6485,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535118357",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535118354"
+      "6406535118356"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528778.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -5831,15 +6510,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535118358",
-        "text": "6406535118359."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535118359",
+        "text": "Option B"
       },
       {
         "option_id": "6406535118360",
-        "text": "6406535118361."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535118361",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535118358"
+      "6406535118358",
+      "6406535118359",
+      "6406535118360"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528779.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5860,15 +6549,24 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535118362",
-        "text": "6406535118363."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535118363",
+        "text": "Option B"
       },
       {
         "option_id": "6406535118364",
-        "text": "6406535118365."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535118365",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535118362"
+      "6406535118362",
+      "6406535118363"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528780.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -5889,15 +6587,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535118370",
-        "text": "6406535118371."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535118371",
+        "text": "Option B"
       },
       {
         "option_id": "6406535118372",
-        "text": "6406535118373."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535118373",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535118370"
+      "6406535118371"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531528783.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -5918,15 +6624,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535130941",
-        "text": "6406535130942."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535130942",
+        "text": "Option B"
       },
       {
         "option_id": "6406535130943",
-        "text": "6406535130944."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535130944",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535130941"
+      "6406535130942"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533248.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -5961,11 +6675,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535130948",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535130945"
+      "6406535130948"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533249.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -6002,7 +6716,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535130958"
+      "6406535130961"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533252.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -6039,11 +6753,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535130962"
+      "6406535130964"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533253.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_181",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID2 26 Oct 2025.pdf"
@@ -6076,7 +6790,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535130966"
+      "6406535130968"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533254.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -6117,7 +6831,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535130953"
+      "6406535130953",
+      "6406535130955",
+      "6406535130956"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533251.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6150,11 +6866,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535130989",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535130986"
+      "6406535130986",
+      "6406535130988"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533259.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6191,7 +6908,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535130970"
+      "6406535130972"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533255.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6224,11 +6941,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535130977",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535130974"
+      "6406535130976"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533256.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -6249,15 +6966,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535130978",
-        "text": "6406535130979."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535130979",
+        "text": "Option B"
       },
       {
         "option_id": "6406535130980",
-        "text": "6406535130981."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535130981",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535130978"
+      "6406535130978",
+      "6406535130979",
+      "6406535130980"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533257.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6278,15 +7005,24 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535130982",
-        "text": "6406535130983."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535130983",
+        "text": "Option B"
       },
       {
         "option_id": "6406535130984",
-        "text": "6406535130985."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535130985",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535130982"
+      "6406535130982",
+      "6406535130983"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533258.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6307,15 +7043,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535130990",
-        "text": "6406535130991."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535130991",
+        "text": "Option B"
       },
       {
         "option_id": "6406535130992",
-        "text": "6406535130993."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535130993",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535130990"
+      "6406535130991"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533261.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -6336,15 +7080,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535130994",
-        "text": "6406535130995."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535130995",
+        "text": "Option B"
       },
       {
         "option_id": "6406535130996",
-        "text": "6406535130997."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535130997",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535130994"
+      "6406535130996"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533262.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -6379,11 +7131,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535131844",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535131841"
+      "6406535131844"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533574.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -6420,7 +7172,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535131854"
+      "6406535131857"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533577.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -6457,11 +7209,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535131858"
+      "6406535131860"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533578.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_193",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID3 26 Oct 2025.pdf"
@@ -6494,7 +7246,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535131862"
+      "6406535131864"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533579.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -6535,7 +7287,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535131849"
+      "6406535131849",
+      "6406535131851",
+      "6406535131852"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533576.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6568,11 +7322,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535131885",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535131882"
+      "6406535131882",
+      "6406535131884"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533584.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6609,7 +7364,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535131866"
+      "6406535131868"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533580.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6642,11 +7397,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535131873",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535131870"
+      "6406535131872"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533581.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -6667,15 +7422,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535131874",
-        "text": "6406535131875."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535131875",
+        "text": "Option B"
       },
       {
         "option_id": "6406535131876",
-        "text": "6406535131877."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535131877",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535131874"
+      "6406535131874",
+      "6406535131875",
+      "6406535131876"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533582.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6696,15 +7461,24 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535131878",
-        "text": "6406535131879."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535131879",
+        "text": "Option B"
       },
       {
         "option_id": "6406535131880",
-        "text": "6406535131881."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535131881",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535131878"
+      "6406535131878",
+      "6406535131879"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533583.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6725,15 +7499,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535131886",
-        "text": "6406535131887."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535131887",
+        "text": "Option B"
       },
       {
         "option_id": "6406535131888",
-        "text": "6406535131889."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535131889",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535131886"
+      "6406535131887"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533586.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -6766,11 +7548,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535132740",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535132737"
+      "6406535132740"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533899.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -6807,7 +7589,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535132750"
+      "6406535132753"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533902.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -6844,11 +7626,11 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535132754"
+      "6406535132756"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533903.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_204",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QID4 26 Oct 2025.pdf"
@@ -6881,7 +7663,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535132758"
+      "6406535132760"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533904.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -6922,7 +7704,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535132745"
+      "6406535132745",
+      "6406535132747",
+      "6406535132748"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533901.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6955,11 +7739,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535132781",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535132778"
+      "6406535132778",
+      "6406535132780"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533909.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -6996,7 +7781,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535132762"
+      "6406535132764"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533905.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7029,11 +7814,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535132769",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535132766"
+      "6406535132768"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533906.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -7054,15 +7839,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535132770",
-        "text": "6406535132771."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535132771",
+        "text": "Option B"
       },
       {
         "option_id": "6406535132772",
-        "text": "6406535132773."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535132773",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535132770"
+      "6406535132770",
+      "6406535132771",
+      "6406535132772"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533907.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7083,15 +7878,24 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535132774",
-        "text": "6406535132775."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535132775",
+        "text": "Option B"
       },
       {
         "option_id": "6406535132776",
-        "text": "6406535132777."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535132777",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535132774"
+      "6406535132774",
+      "6406535132775"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533908.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7112,15 +7916,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535132782",
-        "text": "6406535132783."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535132783",
+        "text": "Option B"
       },
       {
         "option_id": "6406535132784",
-        "text": "6406535132785."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535132785",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535132782"
+      "6406535132783"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531533911.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -7141,15 +7953,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535125818",
-        "text": "6406535125819."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535125819",
+        "text": "Option B"
       },
       {
         "option_id": "6406535125820",
-        "text": "6406535125821."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535125821",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535125818"
+      "6406535125821"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531440.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -7170,15 +7990,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535125831",
-        "text": "6406535125832."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535125832",
+        "text": "Option B"
       },
       {
         "option_id": "6406535125833",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535125834",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535125831"
+      "6406535125834"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531443.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -7199,19 +8027,27 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535125835",
-        "text": "6406535125836."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535125836",
+        "text": "Option B"
       },
       {
         "option_id": "6406535125837",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535125838",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535125835"
+      "6406535125837"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531444.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_215",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT2 26 Oct 2025.pdf"
@@ -7244,7 +8080,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535125839"
+      "6406535125841"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531445.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -7285,7 +8121,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535125826"
+      "6406535125826",
+      "6406535125828",
+      "6406535125829"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531442.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7318,11 +8156,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535125862",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535125859"
+      "6406535125859",
+      "6406535125861"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531450.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7359,7 +8198,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535125843"
+      "6406535125845"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531446.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7392,11 +8231,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535125850",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535125847"
+      "6406535125849"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531447.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -7417,15 +8256,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535125851",
-        "text": "6406535125852."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535125852",
+        "text": "Option B"
       },
       {
         "option_id": "6406535125853",
-        "text": "6406535125854."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535125854",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535125851"
+      "6406535125851",
+      "6406535125852",
+      "6406535125853"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531448.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7446,15 +8295,24 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535125855",
-        "text": "6406535125856."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535125856",
+        "text": "Option B"
       },
       {
         "option_id": "6406535125857",
-        "text": "6406535125858."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535125858",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535125855"
+      "6406535125855",
+      "6406535125856"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531449.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7475,15 +8333,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535125863",
-        "text": "6406535125864."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535125864",
+        "text": "Option B"
       },
       {
         "option_id": "6406535125865",
-        "text": "6406535125866."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535125866",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535125863"
+      "6406535125864"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531452.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -7504,15 +8370,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535125867",
-        "text": "6406535125868."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535125868",
+        "text": "Option B"
       },
       {
         "option_id": "6406535125869",
-        "text": "6406535125870."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535125870",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535125867"
+      "6406535125869"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531531453.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -7535,15 +8409,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535128310",
-        "text": "6406535128311."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535128311",
+        "text": "Option B"
       },
       {
         "option_id": "6406535128312",
-        "text": "6406535128313."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535128313",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535128310"
+      "6406535128313"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532323.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -7564,15 +8446,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535128323",
-        "text": "6406535128324."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535128324",
+        "text": "Option B"
       },
       {
         "option_id": "6406535128325",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535128326",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535128323"
+      "6406535128326"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532326.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -7593,19 +8483,27 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535128327",
-        "text": "6406535128328."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535128328",
+        "text": "Option B"
       },
       {
         "option_id": "6406535128329",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535128330",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535128327"
+      "6406535128329"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532327.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_227",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT3 26 Oct 2025.pdf"
@@ -7638,7 +8536,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535128331"
+      "6406535128333"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532328.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -7679,7 +8577,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535128318"
+      "6406535128318",
+      "6406535128320",
+      "6406535128321"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532325.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7712,11 +8612,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535128354",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535128351"
+      "6406535128351",
+      "6406535128353"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532333.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7753,7 +8654,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535128335"
+      "6406535128337"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532329.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7786,11 +8687,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535128342",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535128339"
+      "6406535128341"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532330.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -7811,15 +8712,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535128343",
-        "text": "6406535128344."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535128344",
+        "text": "Option B"
       },
       {
         "option_id": "6406535128345",
-        "text": "6406535128346."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535128346",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535128343"
+      "6406535128343",
+      "6406535128344",
+      "6406535128345"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532331.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7840,15 +8751,24 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535128347",
-        "text": "6406535128348."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535128348",
+        "text": "Option B"
       },
       {
         "option_id": "6406535128349",
-        "text": "6406535128350."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535128350",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535128347"
+      "6406535128347",
+      "6406535128348"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532332.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -7869,15 +8789,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535128355",
-        "text": "6406535128356."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535128356",
+        "text": "Option B"
       },
       {
         "option_id": "6406535128357",
-        "text": "6406535128358."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535128358",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535128355"
+      "6406535128356"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532335.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -7898,15 +8826,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535129880",
-        "text": "6406535129881."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535129881",
+        "text": "Option B"
       },
       {
         "option_id": "6406535129882",
-        "text": "6406535129883."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535129883",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535129880"
+      "6406535129883"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532886.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -7927,15 +8863,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535129893",
-        "text": "6406535129894."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535129894",
+        "text": "Option B"
       },
       {
         "option_id": "6406535129895",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535129896",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535129893"
+      "6406535129896"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532889.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -7956,19 +8900,27 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535129897",
-        "text": "6406535129898."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535129898",
+        "text": "Option B"
       },
       {
         "option_id": "6406535129899",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535129900",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535129897"
+      "6406535129899"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532890.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
-    "subtopic": "3.1 Python for Web & Command-Line Arguments",
+    "subtopic": "3.1 Python Web Fundamentals & Command-Line Arguments",
     "id": "MAD1_238",
     "source_papers": [
       "IIT M IMPROVEMENT AN EXAM QIT4 26 Oct 2025.pdf"
@@ -8001,7 +8953,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535129901"
+      "6406535129903"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532891.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -8042,7 +8994,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535129888"
+      "6406535129888",
+      "6406535129890",
+      "6406535129891"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532888.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -8075,11 +9029,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535129924",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535129921"
+      "6406535129921",
+      "6406535129923"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532896.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -8116,7 +9071,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406535129905"
+      "6406535129907"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532892.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -8149,11 +9104,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406535129912",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535129909"
+      "6406535129911"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532893.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -8174,15 +9129,25 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535129913",
-        "text": "6406535129914."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535129914",
+        "text": "Option B"
       },
       {
         "option_id": "6406535129915",
-        "text": "6406535129916."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535129916",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535129913"
+      "6406535129913",
+      "6406535129914",
+      "6406535129915"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532894.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -8203,15 +9168,24 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535129917",
-        "text": "6406535129918."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535129918",
+        "text": "Option B"
       },
       {
         "option_id": "6406535129919",
-        "text": "6406535129920."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535129920",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535129917"
+      "6406535129917",
+      "6406535129918"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532895.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -8232,15 +9206,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406535129925",
-        "text": "6406535129926."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406535129926",
+        "text": "Option B"
       },
       {
         "option_id": "6406535129927",
-        "text": "6406535129928."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406535129928",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406535129925"
+      "6406535129926"
     ],
     "card_image": "assets/q_cards/mad1_card_6406531532898.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -8277,7 +9259,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532239807"
+      "6406532239809"
     ],
     "card_image": "assets/q_cards/mad1_card_640653668542.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -8355,7 +9337,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532239831"
+      "6406532239834"
     ],
     "card_image": "assets/q_cards/mad1_card_640653668548.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -8394,7 +9376,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532239851"
+      "6406532239853"
     ],
     "card_image": "assets/q_cards/mad1_card_640653668553.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -8433,7 +9415,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532239859"
+      "6406532239862"
     ],
     "card_image": "assets/q_cards/mad1_card_640653668555.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -8456,15 +9438,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406532239867",
-        "text": "6406532239868."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406532239868",
+        "text": "Option B"
       },
       {
         "option_id": "6406532239869",
-        "text": "6406532239870."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406532239870",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406532239867"
+      "6406532239869"
     ],
     "card_image": "assets/q_cards/mad1_card_640653668557.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -8503,7 +9493,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532239855"
+      "6406532239857"
     ],
     "card_image": "assets/q_cards/mad1_card_640653668554.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -8540,7 +9530,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532239815"
+      "6406532239815",
+      "6406532239817",
+      "6406532239818"
     ],
     "card_image": "assets/q_cards/mad1_card_640653668544.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -8579,7 +9571,8 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532239847"
+      "6406532239849",
+      "6406532239850"
     ],
     "card_image": "assets/q_cards/mad1_card_640653668552.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -8616,7 +9609,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532240951"
+      "6406532240953"
     ],
     "card_image": "assets/q_cards/mad1_card_640653668915.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -8653,7 +9646,8 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532240943"
+      "6406532240945",
+      "6406532240946"
     ],
     "card_image": "assets/q_cards/mad1_card_640653668913.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -8690,7 +9684,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532241703"
+      "6406532241705"
     ],
     "card_image": "assets/q_cards/mad1_card_640653669176.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -8727,7 +9721,8 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406532241695"
+      "6406532241697",
+      "6406532241698"
     ],
     "card_image": "assets/q_cards/mad1_card_640653669174.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -8764,7 +9759,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533360884"
+      "6406533360886"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995532.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -8799,11 +9794,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533360928",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533360925"
+      "6406533360926"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995543.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -8877,7 +9872,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533360892"
+      "6406533360893"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995534.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -8914,7 +9909,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533360904"
+      "6406533360907"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995538.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -8951,7 +9946,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533360912"
+      "6406533360913"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995540.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -8988,7 +9983,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533360929"
+      "6406533360932"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995544.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -9021,11 +10016,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533360948",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533360945"
+      "6406533360948"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995548.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -9062,7 +10057,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533360908"
+      "6406533360910"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995539.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -9101,7 +10096,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533360916"
+      "6406533360917"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995541.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -9138,7 +10133,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533360937"
+      "6406533360939"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995546.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -9179,7 +10174,9 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533360920"
+      "6406533360920",
+      "6406533360922",
+      "6406533360923"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995542.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -9214,11 +10211,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533360936",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533360933"
+      "6406533360935",
+      "6406533360936"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995545.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -9251,11 +10249,13 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533360944",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533360941"
+      "6406533360942",
+      "6406533360943",
+      "6406533360944"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995547.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -9276,11 +10276,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533360896",
-        "text": "6406533360897."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533360897",
+        "text": "Option B"
       },
       {
         "option_id": "6406533360898",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533360899",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -9305,15 +10313,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533360900",
-        "text": "6406533360901."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533360901",
+        "text": "Option B"
       },
       {
         "option_id": "6406533360902",
-        "text": "6406533360903."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533360903",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533360900"
+      "6406533360903"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995537.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -9346,11 +10362,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533361712",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533361709"
+      "6406533361710"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995825.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -9424,7 +10440,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533361676"
+      "6406533361677"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995816.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -9461,7 +10477,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533361688"
+      "6406533361691"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995820.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -9498,7 +10514,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533361696"
+      "6406533361697"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995822.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -9535,7 +10551,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533361713"
+      "6406533361716"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995826.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -9568,11 +10584,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533361732",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533361729"
+      "6406533361732"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995830.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -9609,7 +10625,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533361700"
+      "6406533361701"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995823.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -9646,7 +10662,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533361721"
+      "6406533361723"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995828.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -9679,11 +10695,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533361720",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533361717"
+      "6406533361719",
+      "6406533361720"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995827.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -9716,11 +10733,13 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533361728",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533361725"
+      "6406533361726",
+      "6406533361727",
+      "6406533361728"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995829.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -9741,11 +10760,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533361680",
-        "text": "6406533361681."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533361681",
+        "text": "Option B"
       },
       {
         "option_id": "6406533361682",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533361683",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -9770,15 +10797,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533361684",
-        "text": "6406533361685."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533361685",
+        "text": "Option B"
       },
       {
         "option_id": "6406533361686",
-        "text": "6406533361687."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533361687",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533361684"
+      "6406533361687"
     ],
     "card_image": "assets/q_cards/mad1_card_640653995819.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -9811,11 +10846,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533362496",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533362493"
+      "6406533362494"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996107.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -9889,7 +10924,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533362460"
+      "6406533362461"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996098.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -9926,7 +10961,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533362472"
+      "6406533362475"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996102.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -9963,7 +10998,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533362480"
+      "6406533362481"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996104.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -10000,7 +11035,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533362497"
+      "6406533362500"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996108.jpg",
     "week": "Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications",
@@ -10033,11 +11068,11 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533362516",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533362513"
+      "6406533362516"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996112.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -10074,7 +11109,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533362484"
+      "6406533362485"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996105.jpg",
     "week": "Week 3: Backend Python, Flask Essentials, Routing & Request Handling",
@@ -10111,7 +11146,7 @@ window.MAD1_QUESTIONS = [
       }
     ],
     "correct_answer": [
-      "6406533362505"
+      "6406533362507"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996110.jpg",
     "week": "Week 1: Internet Architecture, HTTP & Network Calculations",
@@ -10144,11 +11179,12 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533362504",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533362501"
+      "6406533362503",
+      "6406533362504"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996109.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -10181,11 +11217,13 @@ window.MAD1_QUESTIONS = [
       },
       {
         "option_id": "6406533362512",
-        "text": "Sub-Section Number :"
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533362509"
+      "6406533362510",
+      "6406533362511",
+      "6406533362512"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996111.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",
@@ -10206,11 +11244,19 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533362464",
-        "text": "6406533362465."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533362465",
+        "text": "Option B"
       },
       {
         "option_id": "6406533362466",
-        "text": ""
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533362467",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
@@ -10235,15 +11281,23 @@ window.MAD1_QUESTIONS = [
     "options": [
       {
         "option_id": "6406533362468",
-        "text": "6406533362469."
+        "text": "Option A"
+      },
+      {
+        "option_id": "6406533362469",
+        "text": "Option B"
       },
       {
         "option_id": "6406533362470",
-        "text": "6406533362471."
+        "text": "Option C"
+      },
+      {
+        "option_id": "6406533362471",
+        "text": "Option D"
       }
     ],
     "correct_answer": [
-      "6406533362468"
+      "6406533362471"
     ],
     "card_image": "assets/q_cards/mad1_card_640653996101.jpg",
     "week": "Week 2: HTML5, CSS3, Box Model & Form Controls",

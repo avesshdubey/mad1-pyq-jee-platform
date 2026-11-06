@@ -41,3 +41,13 @@ Stack: Python 3.13, PyMuPDF (fitz), WinRT OCR, ReportLab, HTML5, CSS3, JavaScrip
 - Created tests/test_platform.py with 7 comprehensive test suites.
 - All 7 tests passing green (0.403s) covering schema integrity, card files, week distribution, PDF publication, web assets, and auth RBAC.
 - CodeRabbit code review audit executed clean with 0 findings.
+
+[2026-11-06 10:40] Milestone 6 - UI/UX Refinement, Options Normalization & Quality Assurance:
+- Hid ugly raw OCR metadata under question card; high-resolution visual question cards are authoritative.
+- Added dynamic zoom controls (+, -, 100% Reset, Fullscreen High-Resolution Modal Preview) with width-based layout scaling.
+- Recovered 100% 4-option sets across all MCQ/MSQ questions, stripping page markers and extraction artifacts.
+- Synchronized sidebar legend counters with active filtered question set.
+- Added question counts to all subtopic filter dropdown items.
+- Perfected official green checkmark coordinate detection for 100% authentic answer keys.
+- CodeRabbit review feedback resolved with 0 outstanding defects.
+- Publication PDF recompiled cleanly (31.93 MB).

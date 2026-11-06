@@ -149,6 +149,13 @@
                         <span class="q-type-badge" id="qTypeBadge">MCQ</span>
                     </div>
                     <div class="q-meta-right">
+                        <div class="zoom-controls">
+                            <button type="button" class="btn-zoom" id="btnZoomOut" title="Zoom Out (−)">−</button>
+                            <span class="zoom-level" id="zoomLevelText">100%</span>
+                            <button type="button" class="btn-zoom" id="btnZoomIn" title="Zoom In (+)">+</button>
+                            <button type="button" class="btn-zoom btn-zoom-reset" id="btnZoomReset" title="Reset Zoom (100%)">Reset</button>
+                            <button type="button" class="btn-zoom btn-zoom-modal" id="btnZoomModal" title="Fullscreen High-Resolution Preview">⛶ Enlarge</button>
+                        </div>
                         <span class="marks-pill marks-pos">Marks: <strong id="qMarksPositive">+3</strong></span>
                         <span class="marks-pill marks-neg">Negative: <strong id="qMarksNegative">-0</strong></span>
                         <button class="btn btn-sm btn-outline-random" id="btnMetaRandom" title="Jump to a random question">🎲 Random</button>
@@ -499,6 +506,19 @@
                     <button type="submit" class="btn btn-primary">Create Account</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- EXAM HIGH-RES IMAGE PREVIEW MODAL -->
+    <div class="modal-overlay" id="examImageModal" style="display: none;">
+        <div class="modal-box modal-box-image-view">
+            <div class="modal-image-header">
+                <span class="modal-image-title" id="examImageModalTitle">Question Card Preview</span>
+                <button type="button" class="btn-close-modal" id="btnExamImageModalClose" title="Close Preview">&times;</button>
+            </div>
+            <div class="modal-image-body">
+                <img id="examImageModalImg" src="" alt="Enlarged Question Card">
+            </div>
         </div>
     </div>
 

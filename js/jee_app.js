@@ -25,6 +25,7 @@
     let timerInterval = null;
     let isPaused = false;
     let isExamSubmitted = false;
+    let currentZoom = 1.0;
 
     // DOM Elements
     const elements = {
@@ -58,6 +59,17 @@
         qStemText: document.getElementById('qStemText'),
         qOptionsContainer: document.getElementById('qOptionsContainer'),
         
+        // Zoom & Preview Modal Elements
+        btnZoomIn: document.getElementById('btnZoomIn'),
+        btnZoomOut: document.getElementById('btnZoomOut'),
+        btnZoomReset: document.getElementById('btnZoomReset'),
+        zoomLevelText: document.getElementById('zoomLevelText'),
+        btnZoomModal: document.getElementById('btnZoomModal'),
+        examImageModal: document.getElementById('examImageModal'),
+        btnExamImageModalClose: document.getElementById('btnExamImageModalClose'),
+        examImageModalImg: document.getElementById('examImageModalImg'),
+        examImageModalTitle: document.getElementById('examImageModalTitle'),
+
         // Action Buttons
         btnMarkReview: document.getElementById('btnMarkReview'),
         btnClearResponse: document.getElementById('btnClearResponse'),
@@ -232,20 +244,32 @@
         elements.authAlert.style.display = 'none';
     }
 
+    function setZoom(val) {
+        currentZoom = Math.min(2.5, Math.max(0.7, Math.round(val * 100) / 100));
+        if (elements.qCardImage) {
+            elements.qCardImage.style.width = `${currentZoom * 100}%`;
+            elements.qCardImage.style.maxWidth = currentZoom > 1 ? 'none' : '100%';
+        }
+        if (elements.zoomLevelText) {
+            elements.zoomLevelText.textContent = `${Math.round(currentZoom * 100)}%`;
+        }
+    }
+
     function buildSubtopicDropdown() {
-        const subtopics = new Set();
+        const subtopicCounts = {};
         allQuestions.forEach(q => {
             const matchWeek = (currentWeekFilter === 'ALL' || q.week.startsWith(currentWeekFilter));
             if (matchWeek && q.subtopic) {
-                subtopics.add(q.subtopic);
+                subtopicCounts[q.subtopic] = (subtopicCounts[q.subtopic] || 0) + 1;
             }
         });
 
-        elements.subtopicSelect.innerHTML = '<option value="ALL">All Subtopics</option>';
-        Array.from(subtopics).sort().forEach(st => {
+        const totalInWeek = Object.values(subtopicCounts).reduce((a, b) => a + b, 0);
+        elements.subtopicSelect.innerHTML = `<option value="ALL">All Subtopics (${totalInWeek})</option>`;
+        Object.keys(subtopicCounts).sort().forEach(st => {
             const opt = document.createElement('option');
             opt.value = st;
-            opt.textContent = st;
+            opt.textContent = `${st} (${subtopicCounts[st]})`;
             elements.subtopicSelect.appendChild(opt);
         });
         elements.subtopicSelect.value = currentSubtopicFilter;
@@ -347,20 +371,25 @@
         elements.qMarksPositive.textContent = `+${q.marks}`;
         elements.qMarksNegative.textContent = `-0`;
 
-        // Card image display
+        // Card image display & Zoom reset
+        setZoom(1.0);
         if (q.card_image) {
             elements.qCardImage.src = q.card_image;
             elements.qCardImage.style.display = 'block';
+            elements.qStemText.style.display = 'none'; // Question Card Image is authoritative
+            elements.qCardImage.onerror = () => {
+                elements.qCardImage.style.display = 'none';
+                elements.qStemText.style.display = 'block';
+                elements.qStemText.textContent = q.question_text || 'Visual card image unavailable.';
+            };
         } else {
             elements.qCardImage.style.display = 'none';
-        }
-
-        // Question stem text
-        if (q.question_text && q.question_text.trim()) {
-            elements.qStemText.textContent = q.question_text;
-            elements.qStemText.style.display = 'block';
-        } else {
-            elements.qStemText.style.display = 'none';
+            if (q.question_text && q.question_text.trim()) {
+                elements.qStemText.textContent = q.question_text;
+                elements.qStemText.style.display = 'block';
+            } else {
+                elements.qStemText.style.display = 'none';
+            }
         }
 
         // Render Option Inputs
@@ -378,13 +407,21 @@
                 const label = document.createElement('label');
                 label.className = 'option-item';
                 
+                const isSelected = resp.selectedOptions.includes(opt.option_id);
+                if (isSelected) {
+                    label.classList.add('selected');
+                }
+                
                 const radio = document.createElement('input');
                 radio.type = 'radio';
                 radio.name = `opt_${q.id}`;
                 radio.value = opt.option_id;
-                radio.checked = resp.selectedOptions.includes(opt.option_id);
+                radio.checked = isSelected;
+                
                 radio.addEventListener('change', () => {
                     resp.selectedOptions = [opt.option_id];
+                    list.querySelectorAll('.option-item').forEach(l => l.classList.remove('selected'));
+                    label.classList.add('selected');
                 });
 
                 const letterBadge = document.createElement('span');
@@ -393,7 +430,12 @@
 
                 const txt = document.createElement('span');
                 txt.className = 'option-text';
-                txt.textContent = opt.text || `Option ${String.fromCharCode(65 + idx)} (${opt.option_id})`;
+                let optText = (opt.text || '').trim();
+                if (!optText || optText === `Option ${String.fromCharCode(65 + idx)}` || optText.startsWith('640653')
+                    || /^---PAGE_\d+---$/.test(optText) || ['Java', 'MLF', 'MLT', 'SC', 'Appdev1', 'AppDev1'].includes(optText)) {
+                    optText = `Option ${String.fromCharCode(65 + idx)}`;
+                }
+                txt.textContent = optText;
 
                 label.appendChild(radio);
                 label.appendChild(letterBadge);
@@ -407,25 +449,34 @@
             list.className = 'options-list';
             const note = document.createElement('div');
             note.className = 'msq-note';
-            note.textContent = 'Note: One or more options may be correct. Select all that apply.';
+            note.style.cssText = 'font-size: 12px; font-weight: 600; color: #d97706; background: #fffbeb; border: 1px solid #fde68a; padding: 6px 12px; border-radius: 4px; margin-bottom: 8px;';
+            note.textContent = 'ℹ️ Multiple Select Question: One or more options may be correct. Select all that apply.';
             list.appendChild(note);
 
             q.options.forEach((opt, idx) => {
                 const label = document.createElement('label');
                 label.className = 'option-item';
                 
+                const isSelected = resp.selectedOptions.includes(opt.option_id);
+                if (isSelected) {
+                    label.classList.add('selected');
+                }
+                
                 const check = document.createElement('input');
                 check.type = 'checkbox';
                 check.name = `opt_${q.id}`;
                 check.value = opt.option_id;
-                check.checked = resp.selectedOptions.includes(opt.option_id);
+                check.checked = isSelected;
+                
                 check.addEventListener('change', () => {
                     if (check.checked) {
                         if (!resp.selectedOptions.includes(opt.option_id)) {
                             resp.selectedOptions.push(opt.option_id);
                         }
+                        label.classList.add('selected');
                     } else {
                         resp.selectedOptions = resp.selectedOptions.filter(id => id !== opt.option_id);
+                        label.classList.remove('selected');
                     }
                 });
 
@@ -435,7 +486,12 @@
 
                 const txt = document.createElement('span');
                 txt.className = 'option-text';
-                txt.textContent = opt.text || `Option ${String.fromCharCode(65 + idx)} (${opt.option_id})`;
+                let optText = (opt.text || '').trim();
+                if (!optText || optText === `Option ${String.fromCharCode(65 + idx)}` || optText.startsWith('640653')
+                    || /^---PAGE_\d+---$/.test(optText) || ['Java', 'MLF', 'MLT', 'SC', 'Appdev1', 'AppDev1'].includes(optText)) {
+                    optText = `Option ${String.fromCharCode(65 + idx)}`;
+                }
+                txt.textContent = optText;
 
                 label.appendChild(check);
                 label.appendChild(letterBadge);
@@ -452,10 +508,10 @@
             const input = document.createElement('input');
             input.type = 'text';
             input.className = 'form-control sa-input';
-            input.placeholder = 'e.g. 30 or 1.5';
+            input.placeholder = 'e.g. 250 or 72';
             input.value = resp.value || '';
             input.addEventListener('input', (e) => {
-                resp.value = e.target.value;
+                resp.value = e.target.value.trim();
             });
 
             saBox.appendChild(label);
@@ -531,7 +587,8 @@
 
     function updateLegendCounters() {
         let ans = 0, notAns = 0, notVis = 0, marked = 0, ansMarked = 0;
-        allQuestions.forEach(q => {
+        const targetQuestions = (currentQuestions && currentQuestions.length > 0) ? currentQuestions : allQuestions;
+        targetQuestions.forEach(q => {
             const st = responses[q.id].status;
             if (st === 'ANSWERED') ans++;
             else if (st === 'NOT_ANSWERED') notAns++;
@@ -621,19 +678,47 @@
         isExamSubmitted = true;
         stopTimer();
 
+        // Calculate active section vs full syllabus stats
+        const isSectionTest = currentWeekFilter !== 'ALL' || currentSubtopicFilter !== 'ALL';
+        const weekLabel = currentWeekFilter !== 'ALL' ? currentWeekFilter : 'All Weeks';
+        const sectionName = isSectionTest ? 
+            (currentSubtopicFilter !== 'ALL' ? `${weekLabel} - ${currentSubtopicFilter}` : weekLabel) : 
+            'Full Syllabus (All Weeks)';
+        
+        let sectionScore = 0;
+        let sectionMaxMarks = 0;
+        let sectionAttempted = 0;
+        let sectionCorrect = 0;
+        currentQuestions.forEach(q => {
+            sectionMaxMarks += q.marks;
+            const resp = responses[q.id];
+            if (resp.evaluation && resp.evaluation.isAttempted) {
+                sectionAttempted++;
+                if (resp.evaluation.isCorrect) {
+                    sectionCorrect++;
+                    sectionScore += q.marks;
+                }
+            }
+        });
+
+        const activeAttempted = isSectionTest ? sectionAttempted : attemptedCount;
+        const activeCorrect = isSectionTest ? sectionCorrect : correctCount;
+        const activeScore = isSectionTest ? sectionScore : totalScore;
+        const activeMax = isSectionTest ? sectionMaxMarks : maxMarks;
+        const activeAccuracy = activeAttempted > 0 ? Math.round((activeCorrect / activeAttempted) * 100) : 0;
+
         // Record Test Attempt in Auth & Admin storage
-        const accuracy = attemptedCount > 0 ? Math.round((correctCount / attemptedCount) * 100) : 0;
         const Auth = getAuth();
         const Admin = getAdmin();
         if (Auth) {
             Auth.recordTestAttempt({
-                section: 'Full Syllabus (All Weeks)',
-                totalQuestions: allQuestions.length,
-                attempted: attemptedCount,
-                correct: correctCount,
-                score: totalScore,
-                maxMarks: maxMarks,
-                accuracy: accuracy,
+                section: sectionName,
+                totalQuestions: isSectionTest ? currentQuestions.length : allQuestions.length,
+                attempted: activeAttempted,
+                correct: activeCorrect,
+                score: activeScore,
+                maxMarks: activeMax,
+                accuracy: activeAccuracy,
                 timeSpent: `${Math.round((180 * 60 - totalSeconds) / 60)} mins`
             });
             if (Admin) {
@@ -644,12 +729,17 @@
         }
 
         // Render Metric Cards
-        elements.resTotalScore.textContent = totalScore;
-        elements.resMaxMarks.textContent = maxMarks;
-        elements.resAccuracy.textContent = `${accuracy}%`;
-        elements.resAttempted.textContent = attemptedCount;
-        elements.resCorrect.textContent = correctCount;
-        elements.resIncorrect.textContent = attemptedCount - correctCount;
+        elements.resTotalScore.textContent = activeScore;
+        elements.resMaxMarks.textContent = activeMax;
+        elements.resAccuracy.textContent = `${activeAccuracy}%`;
+        elements.resAttempted.textContent = activeAttempted;
+        elements.resCorrect.textContent = activeCorrect;
+        elements.resIncorrect.textContent = activeAttempted - activeCorrect;
+
+        const subTitle = document.querySelector('#scorecardView .scorecard-header p');
+        if (subTitle) {
+            subTitle.textContent = `Modern Application Development 1 (MAD 1 / AppDev1) — ${sectionName} Examination Scorecard`;
+        }
 
         // Render Scorecard Detailed Table
         renderScorecardTable(categoryStats);
@@ -823,6 +913,42 @@
         if (elements.btnFooterRandom) {
             elements.btnFooterRandom.addEventListener('click', () => selectRandomQuestion());
         }
+
+        // Image Zoom Controls
+        if (elements.btnZoomIn) {
+            elements.btnZoomIn.addEventListener('click', () => setZoom(currentZoom + 0.15));
+        }
+        if (elements.btnZoomOut) {
+            elements.btnZoomOut.addEventListener('click', () => setZoom(currentZoom - 0.15));
+        }
+        if (elements.btnZoomReset) {
+            elements.btnZoomReset.addEventListener('click', () => setZoom(1.0));
+        }
+        if (elements.btnZoomModal && elements.examImageModal) {
+            elements.btnZoomModal.addEventListener('click', () => {
+                const q = currentQuestions[currentIndex];
+                if (q && q.card_image) {
+                    elements.examImageModalImg.src = q.card_image;
+                    elements.examImageModalTitle.textContent = `${q.id} — Visual Question Card (100% Full Resolution)`;
+                    elements.examImageModal.style.display = 'flex';
+                }
+            });
+        }
+        if (elements.btnExamImageModalClose && elements.examImageModal) {
+            elements.btnExamImageModalClose.addEventListener('click', () => {
+                elements.examImageModal.style.display = 'none';
+            });
+            elements.examImageModal.addEventListener('click', (e) => {
+                if (e.target === elements.examImageModal) {
+                    elements.examImageModal.style.display = 'none';
+                }
+            });
+        }
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && elements.examImageModal && elements.examImageModal.style.display === 'flex') {
+                elements.examImageModal.style.display = 'none';
+            }
+        });
 
         // Submit Examination
         elements.btnSubmitExam.addEventListener('click', () => {

@@ -1559,3 +1559,301 @@ body {
     background-color: #1e3a8a;
     border-radius: 5px;
 }
+
+/* ==========================================================================
+   ENHANCED QUESTION CARD, ZOOM CONTROLS & RESPONSE OPTIONS STYLING
+   ========================================================================== */
+
+/* Zoom Controls Toolbar */
+.zoom-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 3px 6px;
+    margin-right: 8px;
+}
+
+.btn-zoom {
+    background-color: #ffffff;
+    border: 1px solid #94a3b8;
+    color: #1e293b;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.12s ease;
+}
+
+.btn-zoom:hover {
+    background-color: #e2e8f0;
+    border-color: #64748b;
+    color: #0f172a;
+}
+
+.btn-zoom:active {
+    transform: scale(0.96);
+}
+
+.zoom-level {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1e3a8a;
+    min-width: 38px;
+    text-align: center;
+    user-select: none;
+}
+
+.btn-zoom-reset,
+.btn-zoom-modal {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+}
+
+.btn-zoom-modal {
+    background-color: #e0f2fe;
+    border-color: #7dd3fc;
+    color: #0369a1;
+}
+
+.btn-zoom-modal:hover {
+    background-color: #bae6fd;
+    border-color: #38bdf8;
+    color: #0284c7;
+}
+
+/* Question Card Image Container */
+.q-card-container {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 12px 16px;
+    text-align: center;
+    overflow-x: auto;
+    display: flex;
+    justify-content: safe center;
+    align-items: center;
+}
+
+.q-card-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: width 0.15s ease-out;
+    background-color: #ffffff;
+}
+
+/* High-Resolution Fullscreen Preview Modal */
+.modal-box-image-view {
+    max-width: 95vw !important;
+    max-height: 94vh !important;
+    width: auto !important;
+    padding: 0 !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.modal-image-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    padding: 10px 18px;
+}
+
+.modal-image-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.btn-close-modal {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+    transition: opacity 0.15s;
+}
+
+.btn-close-modal:hover {
+    opacity: 0.8;
+}
+
+.modal-image-body {
+    overflow: auto;
+    max-height: calc(92vh - 50px);
+    padding: 18px;
+    background-color: #f1f5f9;
+    text-align: center;
+}
+
+.modal-image-body img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Interactive Options Styling */
+.q-options-wrapper {
+    margin-top: 18px;
+    padding: 0 16px 20px 16px;
+}
+
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
+    background-color: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s ease;
+}
+
+.option-item:hover {
+    background-color: #f8fafc;
+    border-color: #94a3b8;
+}
+
+.option-item.selected,
+.option-item:has(input:checked) {
+    background-color: #eff6ff;
+    border-color: #2563eb;
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.12);
+}
+
+.option-item input[type="radio"],
+.option-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #2563eb;
+    margin: 0;
+    cursor: pointer;
+}
+
+.option-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #1e3a8a;
+    font-weight: 700;
+    font-size: 13px;
+    transition: all 0.15s ease;
+}
+
+.option-item.selected .option-letter,
+.option-item:has(input:checked) .option-letter {
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #1d4ed8;
+}
+
+.option-text {
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 500;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* Numeric / Short Answer Container */
+.sa-input-container {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    max-width: 480px;
+}
+
+.sa-input-container label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.sa-input {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 14px;
+    border: 1.5px solid #94a3b8;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #0f172a;
+    transition: border-color 0.15s;
+}
+
+.sa-input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Subtopic Filter Styling */
+.subtopic-filter-box {
+    margin-top: 8px;
+    padding: 4px 0;
+}
+
+.subtopic-filter-box label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.subtopic-filter-box select {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1e293b;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.subtopic-filter-box select:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
