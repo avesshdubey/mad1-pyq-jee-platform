@@ -12,3 +12,32 @@ Stack: Python 3.13, PyMuPDF (fitz), WinRT OCR, ReportLab, HTML5, CSS3, JavaScrip
 - Created public remote repository on GitHub: https://github.com/avesshdubey/mad1-pyq-jee-platform.
 - Enabled GitHub Pages on main branch with .nojekyll flag.
 - Configured 4-tier assets (GOAL.md, PRD.md, progress.txt, STEERING.md, .clinerules).
+
+[2026-11-06 10:00] Milestone 2 - Multi-Paper Extraction, WinRT OCR & Deduplication:
+- Scanned 69 question papers across 2022-2025; identified all 31 papers containing the official AppDev1 / AppDev-1 section.
+- Extracted 461 raw question occurrences.
+- Filtered out 0-mark subject confirmation and hall ticket verification prompts.
+- Executed sequential Windows Native OCR (winrt) on all cropped visual question cards to transcribe stems and monospace code blocks.
+- Solved multi-page question choices across page boundaries (136 questions recovered, 79 cards stitched vertically).
+- Deduplicated parallel exam slots into 301 unique, authentic questions across all 4 weeks:
+  - Week 1: Internet Architecture, HTTP & Network Calculations (50 Qs)
+  - Week 2: HTML5, CSS3, Box Model & Form Controls (115 Qs)
+  - Week 3: Backend Python, Flask Essentials, Routing & Request Handling (78 Qs)
+  - Week 4: Jinja2 Templating, Dynamic Rendering, SQLite & CRUD Applications (58 Qs)
+
+[2026-11-06 10:15] Milestone 3 - Categorized Publication PDF Compilation:
+- Built scripts/generate_pdf.py with ReportLab NumberedCanvas, running headers/footers, and visual cards.
+- Optimized 301 card images to high-resolution JPEG format (25.85 MB total).
+- Compiled publication-quality mad1_questions_categorized.pdf (31.93 MB, 289 pages).
+
+[2026-11-06 10:25] Milestone 4 - JEE CBT Examination Platform & Admin Control Panel:
+- Developed index.html, css/jee_style.css, js/auth.js, js/admin.js, and js/jee_app.js.
+- Implemented Candidate Authentication supporting both Email and IITM Roll Number login, quick demo buttons, registration, and persistent local storage.
+- Admin Control Panel with KPI cards, syllabus diagnostics, question bank explorer with preview, CSV/JSON export.
+- Integrated "🎲 Random Question" / "Quick Random Practice" modes across header, metadata bar, palette subfilter, and footer.
+- Built comprehensive scorecard and solutions review mode.
+
+[2026-11-06 10:30] Milestone 5 - Automated Test Verification, CodeRabbit QA & Git Auto-Push:
+- Created tests/test_platform.py with 7 comprehensive test suites.
+- All 7 tests passing green (0.403s) covering schema integrity, card files, week distribution, PDF publication, web assets, and auth RBAC.
+- CodeRabbit code review audit executed clean with 0 findings.

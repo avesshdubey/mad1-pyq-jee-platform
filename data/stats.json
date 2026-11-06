@@ -1,0 +1,28 @@
+{
+  "total_unique_questions": 301,
+  "week_counts": {
+    "Week 3": 78,
+    "Week 4": 58,
+    "Week 2": 115,
+    "Week 1": 50
+  },
+  "subtopic_counts": {
+    "3.2 Flask Application Setup & App Configuration": 31,
+    "4.1 Jinja2 Templating Basics (Variables & Control Flow)": 44,
+    "2.1 HTML5 Elements, Semantic Tags & Document Structure": 30,
+    "4.2 Jinja2 Filters, Macros & Template Inheritance": 12,
+    "3.6 Flask Responses, Redirects & Error Handling": 3,
+    "1.1 Web & Internet Basics (Client-Server Architecture, Protocols & Servers)": 10,
+    "3.1 Python for Web & Command-Line Arguments": 29,
+    "1.2 Data Transmission, Bandwidth, RTT & Propagation Delay Calculations": 17,
+    "2.2 HTML Forms, Input Types, Attributes & Form Submission": 64,
+    "1.3 Character Encoding & Representation (ASCII, Unicode, UTF-8 & Binary)": 6,
+    "2.4 CSS Box Model & Layouts (Flexbox, Positioning & Spacing)": 16,
+    "1.4 HTTP Protocol, URLs, Request/Response Headers & Status Codes": 17,
+    "2.3 CSS Selectors, Specificity & Cascade Rules": 5,
+    "4.5 Full-Stack CRUD Workflows & Form Processing": 1,
+    "3.3 Routing, Dynamic URL Converters & View Functions": 12,
+    "4.4 Database Integration in Flask (sqlite3, Cursor & Connection)": 1,
+    "3.5 Flask Request Object & Data Extraction": 3
+  }
+}

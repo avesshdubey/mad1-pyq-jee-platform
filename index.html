@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE CBT Mock Test & Admin Portal - Modern Application Development 1 (MAD 1)</title>
+    <link rel="stylesheet" href="css/jee_style.css">
+</head>
+<body>
+
+    <!-- TOP HEADER BAR (NTA / JEE Style) -->
+    <header class="jee-header">
+        <div class="header-left">
+            <div class="iit-logo-badge">IITM</div>
+            <div class="exam-title-block">
+                <h1>INDIAN INSTITUTE OF TECHNOLOGY MADRAS — BS DEGREE PROGRAMME</h1>
+                <h2>MODERN APPLICATION DEVELOPMENT 1 (MAD 1 / APPDEV 1) — PAST YEAR CBT SYSTEM</h2>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="candidate-card" id="userHeaderCard">
+                <div class="candidate-avatar">
+                    <svg viewBox="0 0 24 24" width="36" height="36" fill="#555">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <div class="candidate-info">
+                    <span class="cand-name">Candidate: <strong id="headerUserName">Avesh Dubey</strong></span>
+                    <span class="cand-roll">Roll No: <strong id="headerUserRoll">24DS109284</strong></span>
+                    <span class="cand-sub">Role: <strong id="headerUserRole">STUDENT</strong></span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="mad1_questions_categorized.pdf" download class="btn btn-pdf-download" style="background: #1e3a8a; color: #fff; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: 600; font-size: 12px; display: inline-flex; align-items: center; gap: 4px;" title="Download Categorized PDF Question Bank">📄 Download PDF</a>
+                <button class="btn btn-admin-nav" id="btnToggleAdminView" style="display: none;">⚙️ Admin Panel</button>
+                <button class="btn btn-exam-nav" id="btnToggleExamView" style="display: none;">📝 Exam Mode</button>
+                <button class="btn btn-logout" id="btnLogout">Sign Out</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- AUTHENTICATION GATE MODAL (Login & Sign Up) -->
+    <div class="modal-overlay" id="authModal" style="display: none;">
+        <div class="modal-box auth-modal-box">
+            <div class="auth-modal-header">
+                <div class="iit-logo-badge-lg">IIT MADRAS</div>
+                <h2>CBT Examination & Learning Portal</h2>
+                <p>Modern Application Development 1 (MAD 1 / AppDev1) Examination System</p>
+            </div>
+            
+            <!-- Auth Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" id="tabLoginBtn">Candidate Login</button>
+                <button class="auth-tab-btn" id="tabSignupBtn">New Student Registration</button>
+            </div>
+
+            <div class="auth-body">
+                <!-- Alert Box -->
+                <div class="auth-alert" id="authAlert" style="display: none;"></div>
+
+                <!-- LOGIN FORM -->
+                <form id="formLogin" class="auth-form">
+                    <div class="form-group">
+                        <label for="loginIdentifier">Email Address or IITM Roll Number:</label>
+                        <input type="text" id="loginIdentifier" class="form-control" placeholder="e.g. student@iitm.ac.in or 24DS109284" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-check-row">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="loginRememberMe" checked> Remember this device
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-auth-submit">Sign In & Begin Exam</button>
+
+                    <!-- Quick Demo Logins -->
+                    <div class="quick-login-box">
+                        <span class="quick-title">Quick Demo Sign-In:</span>
+                        <div class="quick-btns">
+                            <button type="button" class="btn btn-quick" id="btnQuickStudent">Student Demo (Avesh Dubey)</button>
+                            <button type="button" class="btn btn-quick" id="btnQuickAdmin">Faculty Admin Demo</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- SIGNUP FORM -->
+                <form id="formSignup" class="auth-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="signupName">Full Name:</label>
+                        <input type="text" id="signupName" class="form-control" placeholder="e.g. Avesh Dubey" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address:</label>
+                        <input type="email" id="signupEmail" class="form-control" placeholder="e.g. student@iitm.ac.in" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupRoll">IITM Roll Number / Candidate ID:</label>
+                        <input type="text" id="signupRoll" class="form-control" placeholder="e.g. 24DS109284" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Create Password (min 6 characters):</label>
+                        <input type="password" id="signupPassword" class="form-control" placeholder="••••••••" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="signupRole">Account Role:</label>
+                        <select id="signupRole" class="form-control">
+                            <option value="student">Student / Aspirant</option>
+                            <option value="admin">Teaching Assistant / Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-auth-submit">Register Account & Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== VIEW 1: JEE CBT EXAM INTERFACE ==================== -->
+    <div id="examInterfaceView" class="main-layout-container">
+        
+        <!-- SUB-HEADER BAR: Week Navigation Tabs & Timer -->
+        <div class="sub-header-bar">
+            <div class="section-tabs-container" id="sectionTabs">
+                <button class="sec-tab active" data-week="ALL">All Weeks (301)</button>
+                <button class="sec-tab" data-week="Week 1">Week 1: Internet & HTTP (50)</button>
+                <button class="sec-tab" data-week="Week 2">Week 2: HTML5 & CSS3 (115)</button>
+                <button class="sec-tab" data-week="Week 3">Week 3: Flask & Routing (78)</button>
+                <button class="sec-tab" data-week="Week 4">Week 4: Jinja2 & SQLite (58)</button>
+            </div>
+            <div class="timer-widget">
+                <span class="timer-title">Time Left:</span>
+                <span class="timer-clock" id="timerDisplay">03:00:00</span>
+                <button class="btn btn-sm btn-timer-pause" id="pauseTimerBtn">Pause</button>
+                <button class="btn btn-sm btn-random" id="btnQuickRandom" title="Practice a random question from this week">🎲 Random Question</button>
+            </div>
+        </div>
+
+        <!-- MAIN TWO-COLUMN WORKSPACE -->
+        <div class="cbt-workspace">
+            
+            <!-- LEFT COLUMN: Question Viewing & Solving Area -->
+            <main class="question-panel" id="examMain">
+                
+                <!-- Question Top Metadata Bar -->
+                <div class="q-meta-bar">
+                    <div class="q-meta-left">
+                        <span class="q-num-heading" id="qNumberLabel">Question 1</span>
+                        <span class="q-type-badge" id="qTypeBadge">MCQ</span>
+                    </div>
+                    <div class="q-meta-right">
+                        <span class="marks-pill marks-pos">Marks: <strong id="qMarksPositive">+3</strong></span>
+                        <span class="marks-pill marks-neg">Negative: <strong id="qMarksNegative">-0</strong></span>
+                        <button class="btn btn-sm btn-outline-random" id="btnMetaRandom" title="Jump to a random question">🎲 Random</button>
+                    </div>
+                </div>
+
+                <!-- Scrollable Question Content Area -->
+                <div class="q-scroll-content">
+                    
+                    <!-- Question Card High-Resolution Image -->
+                    <div class="q-card-container">
+                        <img id="qCardImage" src="" alt="Question Card" class="q-card-img">
+                    </div>
+
+                    <!-- Question Stem Fallback Text -->
+                    <div class="q-text-stem" id="qStemText" style="display: none;"></div>
+
+                    <!-- Interactive Response Options Container -->
+                    <div class="q-options-wrapper" id="qOptionsContainer">
+                        <!-- Populated dynamically via jee_app.js -->
+                    </div>
+
+                </div>
+
+                <!-- Bottom Action Controls Bar -->
+                <footer class="q-footer-actions">
+                    <div class="footer-left">
+                        <button class="btn btn-mark-review" id="btnMarkReview">Mark for Review & Next</button>
+                        <button class="btn btn-clear" id="btnClearResponse">Clear Response</button>
+                        <button class="btn btn-random-footer" id="btnFooterRandom" title="Select random question">🎲 Random Question</button>
+                    </div>
+                    <div class="footer-right">
+                        <button class="btn btn-prev" id="btnPrev" disabled>&larr; Previous</button>
+                        <button class="btn btn-next" id="btnNext">Next &rarr;</button>
+                        <button class="btn btn-save-next" id="btnSaveNext">Save & Next</button>
+                        <button class="btn btn-submit-exam" id="btnSubmitExam">Submit Test</button>
+                    </div>
+                </footer>
+
+            </main>
+
+            <!-- RIGHT COLUMN: Question Palette Sidebar -->
+            <aside class="palette-sidebar">
+                
+                <!-- Status Legend Grid -->
+                <div class="palette-legend">
+                    <div class="legend-row">
+                        <div class="legend-item"><span class="badge-legend badge-answered" id="countAnswered">0</span> Answered</div>
+                        <div class="legend-item"><span class="badge-legend badge-not-answered" id="countNotAnswered">0</span> Not Answered</div>
+                    </div>
+                    <div class="legend-row">
+                        <div class="legend-item"><span class="badge-legend badge-not-visited" id="countNotVisited">301</span> Not Visited</div>
+                        <div class="legend-item"><span class="badge-legend badge-marked-review" id="countMarkedReview">0</span> Marked for Review</div>
+                    </div>
+                    <div class="legend-row">
+                        <div class="legend-item"><span class="badge-legend badge-ans-marked-review" id="countAnsMarkedReview">0</span> Ans & Marked Review</div>
+                    </div>
+                </div>
+
+                <!-- Palette Header and Subtopic Dropdown -->
+                <div class="palette-header-box">
+                    <div class="palette-cur-sec" id="paletteSecLabel">All MAD 1 Questions [301]</div>
+                    <div class="subtopic-filter-box">
+                        <label for="subtopicFilterSelect">Filter Subtopic:</label>
+                        <select id="subtopicFilterSelect" class="form-control form-control-sm">
+                            <option value="ALL">All Subtopics</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 5-Column Question Grid -->
+                <div class="palette-grid-wrapper">
+                    <div class="palette-grid" id="paletteGrid">
+                        <!-- Populated dynamically via jee_app.js -->
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+    <!-- ==================== VIEW 2: POST-TEST SCORECARD & REVIEW ==================== -->
+    <div id="scorecardView" class="scorecard-container" style="display: none;">
+        <div class="scorecard-header">
+            <h2>IIT Madras CBT Examination Performance Report</h2>
+            <p>Modern Application Development 1 (MAD 1 / AppDev1) — Past Year Questions Exam Scorecard</p>
+        </div>
+
+        <div class="scorecard-kpi-grid">
+            <div class="kpi-card">
+                <span class="kpi-title">Total Score</span>
+                <span class="kpi-value"><span id="resTotalScore">0</span> / <span id="resMaxMarks">0</span></span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-title">Accuracy Rate</span>
+                <span class="kpi-value text-accent" id="resAccuracy">0%</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-title">Attempted</span>
+                <span class="kpi-value" id="resAttempted">0</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-title">Correct</span>
+                <span class="kpi-value text-success" id="resCorrect">0</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-title">Incorrect</span>
+                <span class="kpi-value text-danger" id="resIncorrect">0</span>
+            </div>
+        </div>
+
+        <div class="scorecard-actions-bar">
+            <button class="btn btn-primary" id="btnReviewSolutions">Review Questions & Solutions</button>
+            <button class="btn btn-outline" id="btnRetakeExam">Re-take Examination</button>
+            <button class="btn btn-secondary" id="btnScorecardAdminDashboard">Admin Management Dashboard</button>
+        </div>
+
+        <!-- Detailed Question-by-Question Solution Table -->
+        <div class="scorecard-table-wrapper">
+            <h3>Detailed Question-by-Question Evaluation</h3>
+            <table class="table scorecard-table">
+                <thead>
+                    <tr>
+                        <th>Q.ID</th>
+                        <th>Week</th>
+                        <th>Subtopic</th>
+                        <th>Type</th>
+                        <th>Your Chosen Response</th>
+                        <th>Official Answer Key</th>
+                        <th>Evaluation</th>
+                        <th>Marks</th>
+                    </tr>
+                </thead>
+                <tbody id="scorecardTableBody">
+                    <!-- Populated dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ==================== VIEW 3: ADMIN CONTROL PANEL & DASHBOARD ==================== -->
+    <div id="adminDashboardView" class="admin-dashboard-container" style="display: none;">
+        <div class="admin-top-bar">
+            <div>
+                <h2>MAD 1 Examination Administration & Analytics Control Panel</h2>
+                <p>System Management, Candidate Roster, Examination Logs & Question Bank</p>
+            </div>
+            <div class="admin-top-actions">
+                <button class="btn btn-outline" id="adminBtnExportJson">Export All Data (JSON)</button>
+                <button class="btn btn-outline" id="adminBtnExportCsv">Export Submissions (CSV)</button>
+                <button class="btn btn-danger-sm" id="adminBtnClearAttempts">Purge Attempts</button>
+            </div>
+        </div>
+
+        <!-- Admin Navigation Tabs -->
+        <div class="admin-nav-tabs">
+            <button class="admin-nav-tab active" data-tab="adminTabOverview">📊 Overview & Metrics</button>
+            <button class="admin-nav-tab" data-tab="adminTabUsers">👥 Candidate Roster</button>
+            <button class="admin-nav-tab" data-tab="adminTabAttempts">📑 Exam Attempts Feed</button>
+            <button class="admin-nav-tab" data-tab="adminTabQuestions">🗂️ Question Bank Explorer</button>
+            <button class="admin-nav-tab" data-tab="adminTabAnalytics">📈 Syllabus Analytics</button>
+        </div>
+
+        <!-- Tab 1: Overview -->
+        <div class="admin-tab-content" id="adminTabOverview">
+            <div class="admin-kpi-grid">
+                <div class="admin-kpi-card">
+                    <span class="admin-kpi-label">Question Bank Size</span>
+                    <span class="admin-kpi-val" id="adminMetricTotalQuestions">301</span>
+                    <span class="admin-kpi-sub">Verified authentic questions</span>
+                </div>
+                <div class="admin-kpi-card">
+                    <span class="admin-kpi-label">Registered Candidates</span>
+                    <span class="admin-kpi-val" id="adminMetricTotalUsers">4</span>
+                    <span class="admin-kpi-sub">Students & Administrators</span>
+                </div>
+                <div class="admin-kpi-card">
+                    <span class="admin-kpi-label">Tests Submitted</span>
+                    <span class="admin-kpi-val" id="adminMetricTotalAttempts">2</span>
+                    <span class="admin-kpi-sub">Exam attempts recorded</span>
+                </div>
+                <div class="admin-kpi-card">
+                    <span class="admin-kpi-label">Average Accuracy</span>
+                    <span class="admin-kpi-val" id="adminMetricAvgAccuracy">87%</span>
+                    <span class="admin-kpi-sub">Across all submissions</span>
+                </div>
+            </div>
+
+            <div class="admin-card-box mt-4">
+                <h3>Recent Test Submissions</h3>
+                <table class="table admin-table">
+                    <thead>
+                        <tr>
+                            <th>Attempt ID</th>
+                            <th>Candidate</th>
+                            <th>Syllabus Section</th>
+                            <th>Score / Max</th>
+                            <th>Accuracy</th>
+                            <th>Time Spent</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminRecentAttemptsTableBody">
+                        <!-- Populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 2: Users Management -->
+        <div class="admin-tab-content" id="adminTabUsers" style="display: none;">
+            <div class="admin-table-filters">
+                <input type="text" id="adminUserSearch" class="form-control" placeholder="Search by Candidate Name, Email, or Roll Number...">
+                <select id="adminUserRoleFilter" class="form-control">
+                    <option value="ALL">All Roles</option>
+                    <option value="student">Student</option>
+                    <option value="admin">Administrator</option>
+                </select>
+                <button class="btn btn-primary" id="adminBtnAddUser">+ Add Candidate</button>
+            </div>
+            <div class="admin-card-box">
+                <table class="table admin-table">
+                    <thead>
+                        <tr>
+                            <th>Roll Number</th>
+                            <th>Full Name</th>
+                            <th>Email Address</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Tests Taken</th>
+                            <th>Best Score</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminUsersTableBody">
+                        <!-- Populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 3: Attempts Feed -->
+        <div class="admin-tab-content" id="adminTabAttempts" style="display: none;">
+            <div class="admin-card-box">
+                <table class="table admin-table">
+                    <thead>
+                        <tr>
+                            <th>Attempt ID</th>
+                            <th>Candidate</th>
+                            <th>Section Examined</th>
+                            <th>Questions Attempted</th>
+                            <th>Score Awarded</th>
+                            <th>Accuracy Rate</th>
+                            <th>Duration</th>
+                            <th>Submission Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminAttemptsTableBody">
+                        <!-- Populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 4: Question Bank Explorer -->
+        <div class="admin-tab-content" id="adminTabQuestions" style="display: none;">
+            <div class="admin-table-filters">
+                <input type="text" id="adminQuestionSearch" class="form-control" placeholder="Search questions by ID, stem text, subtopic...">
+                <select id="adminQuestionWeekFilter" class="form-control">
+                    <option value="ALL">All Weeks</option>
+                    <option value="Week 1">Week 1: Internet & HTTP</option>
+                    <option value="Week 2">Week 2: HTML5 & CSS3</option>
+                    <option value="Week 3">Week 3: Flask & Routing</option>
+                    <option value="Week 4">Week 4: Jinja2 & SQLite</option>
+                </select>
+                <select id="adminQuestionTypeFilter" class="form-control">
+                    <option value="ALL">All Types</option>
+                    <option value="MCQ">MCQ</option>
+                    <option value="MSQ">MSQ</option>
+                    <option value="SA">SA (Numerical)</option>
+                </select>
+                <span class="text-muted ml-auto" id="adminQuestionFilterCount">Showing 301 of 301 questions</span>
+            </div>
+            <div class="admin-card-box">
+                <table class="table admin-table">
+                    <thead>
+                        <tr>
+                            <th>Q.ID</th>
+                            <th>Week</th>
+                            <th>Granular Subtopic</th>
+                            <th>Type</th>
+                            <th>Marks</th>
+                            <th>Visual Card</th>
+                            <th>Answer Key</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminQuestionsTableBody">
+                        <!-- Populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 5: Syllabus Analytics -->
+        <div class="admin-tab-content" id="adminTabAnalytics" style="display: none;">
+            <div class="admin-card-box">
+                <h3>IIT Madras MAD 1 Syllabus Coverage & Question Weights</h3>
+                <div id="adminSyllabusChartContainer">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ADD USER MODAL -->
+    <div class="modal-overlay" id="adminAddUserModal" style="display: none;">
+        <div class="modal-box">
+            <h3>Add New Candidate Account</h3>
+            <form id="adminFormAddUser" class="mt-3">
+                <div class="form-group">
+                    <label>Full Name:</label>
+                    <input type="text" id="adminNewUserName" class="form-control" placeholder="e.g. Ananya Rao" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address:</label>
+                    <input type="email" id="adminNewUserEmail" class="form-control" placeholder="e.g. ananya@iitm.ac.in" required>
+                </div>
+                <div class="form-group">
+                    <label>IITM Roll Number / ID:</label>
+                    <input type="text" id="adminNewUserRoll" class="form-control" placeholder="e.g. 24DS108899" required>
+                </div>
+                <div class="form-group">
+                    <label>Initial Password:</label>
+                    <input type="password" id="adminNewUserPass" class="form-control" value="Student@123" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label>Role:</label>
+                    <select id="adminNewUserRole" class="form-control">
+                        <option value="student">Student / Aspirant</option>
+                        <option value="admin">Administrator / Faculty</option>
+                    </select>
+                </div>
+                <div class="modal-footer-actions">
+                    <button type="button" class="btn btn-outline" id="adminBtnCloseAddUserModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- QUESTION CARD PREVIEW MODAL -->
+    <div class="modal-overlay" id="adminCardPreviewModal" style="display: none;">
+        <div class="modal-box modal-box-lg">
+            <div class="d-flex justify-between align-center mb-2">
+                <h3 id="adminCardPreviewTitle">Visual Question Card</h3>
+                <button class="btn btn-sm btn-outline" id="adminBtnCloseCardPreview">&times; Close</button>
+            </div>
+            <div class="card-preview-body">
+                <img id="adminCardPreviewImg" src="" alt="Question Card Preview" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/questions_data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/jee_app.js"></script>
+
+</body>
+</html>
